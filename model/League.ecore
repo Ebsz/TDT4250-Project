@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="League">
+  <eClassifiers xsi:type="ecore:EClass" name="Season"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Match"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Team">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="League">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Season" eType="#//Season"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Teams" eType="#//Team"/>
+  </eClassifiers>
+</ecore:EPackage>
