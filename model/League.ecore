@@ -1,13 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="League">
-  <eClassifiers xsi:type="ecore:EClass" name="Season"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Match"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Season">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="matchweeks" upperBound="-1"
+        eType="#//Matchweek" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" upperBound="-1" eType="#//Standing"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Matchweek">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="matches" upperBound="-1"
+        eType="#//Match" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="matchweek" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Match">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Hometeam" lowerBound="1"
+        eType="#//Team"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Awayteam" lowerBound="1"
+        eType="#//Team"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Bookings" upperBound="-1"
+        eType="#//Booking" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Date" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Goals Hometeam" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Goals Awayteam" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Referee" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Team">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="OwnedPlayer" upperBound="-1"
+        eType="#//Player" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Abbr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Stadium" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="League">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Season" eType="#//Season"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Teams" eType="#//Team"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Season" upperBound="-1"
+        eType="#//Season" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Teams" upperBound="-1"
+        eType="#//Team" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Player">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Position" eType="#//Position%20Type"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Booking">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="BookedPlayer" eType="#//Player"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" eType="#//Booking%20Type"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Minute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Standing">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Team status" eType="#//Team"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Position" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Played games" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Points" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Wins" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Draws" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Loose" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Goals for" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Goals against" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Goal difference" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Booking Type">
+    <eLiterals name="Red Card" value="1"/>
+    <eLiterals name="Yellow Card" value="2"/>
+    <eLiterals name="Goal" value="3"/>
+    <eLiterals name="Own Goal" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Position Type">
+    <eLiterals name="Keeper" value="1"/>
+    <eLiterals name="Defence" value="2"/>
+    <eLiterals name="Midfield" value="3"/>
+    <eLiterals name="Attacker" value="4"/>
   </eClassifiers>
 </ecore:EPackage>
