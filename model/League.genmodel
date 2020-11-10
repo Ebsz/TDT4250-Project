@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/model/src" modelPluginID="model" modelName="League"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    copyrightFields="false" importOrganizing="true">
+  <foreignModel>League.ecore</foreignModel>
+  <genPackages prefix="League" basePackage="TDT4250-Project" disposableProviderFactory="true"
+      ecorePackage="League.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="League.ecore#//BookingType">
+      <genEnumLiterals ecoreEnumLiteral="League.ecore#//BookingType/RedCard"/>
+      <genEnumLiterals ecoreEnumLiteral="League.ecore#//BookingType/YellowCard"/>
+      <genEnumLiterals ecoreEnumLiteral="League.ecore#//BookingType/Goal"/>
+      <genEnumLiterals ecoreEnumLiteral="League.ecore#//BookingType/OwnGoal"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="League.ecore#//PositionType">
+      <genEnumLiterals ecoreEnumLiteral="League.ecore#//PositionType/Keeper"/>
+      <genEnumLiterals ecoreEnumLiteral="League.ecore#//PositionType/Defence"/>
+      <genEnumLiterals ecoreEnumLiteral="League.ecore#//PositionType/Midfield"/>
+      <genEnumLiterals ecoreEnumLiteral="League.ecore#//PositionType/Attacker"/>
+    </genEnums>
+    <genClasses ecoreClass="League.ecore#//League">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference League.ecore#//League/Season"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference League.ecore#//League/Teams"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute League.ecore#//League/name"/>
+    </genClasses>
+    <genClasses ecoreClass="League.ecore#//Season">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute League.ecore#//Season/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference League.ecore#//Season/matchweeks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference League.ecore#//Season/standing"/>
+    </genClasses>
+    <genClasses ecoreClass="League.ecore#//Matchweek">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference League.ecore#//Matchweek/matches"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute League.ecore#//Matchweek/matchweek"/>
+    </genClasses>
+    <genClasses ecoreClass="League.ecore#//Match">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference League.ecore#//Match/Hometeam"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference League.ecore#//Match/Awayteam"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference League.ecore#//Match/Bookings"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute League.ecore#//Match/Date"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute League.ecore#//Match/Homegoals"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute League.ecore#//Match/Avaygoals"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute League.ecore#//Match/Referee"/>
+    </genClasses>
+    <genClasses ecoreClass="League.ecore#//Team">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute League.ecore#//Team/Name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference League.ecore#//Team/OwnedPlayer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute League.ecore#//Team/Abbr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute League.ecore#//Team/Stadium"/>
+    </genClasses>
+    <genClasses ecoreClass="League.ecore#//Player">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute League.ecore#//Player/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute League.ecore#//Player/Position"/>
+    </genClasses>
+    <genClasses ecoreClass="League.ecore#//Booking">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference League.ecore#//Booking/BookedPlayer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute League.ecore#//Booking/Type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute League.ecore#//Booking/Minute"/>
+    </genClasses>
+    <genClasses ecoreClass="League.ecore#//Standing">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference League.ecore#//Standing/team"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute League.ecore#//Standing/Position"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute League.ecore#//Standing/GamesPlayed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute League.ecore#//Standing/Points"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute League.ecore#//Standing/Wins"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute League.ecore#//Standing/Draws"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute League.ecore#//Standing/Loose"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute League.ecore#//Standing/GoalsFor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute League.ecore#//Standing/GoalsAgainst"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute League.ecore#//Standing/GoalDifference"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

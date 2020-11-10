@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="League">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="league" nsURI="platform:/plugin/tdt4250-Project/model/League.ecore"
+    nsPrefix="league">
+  <eClassifiers xsi:type="ecore:EClass" name="League">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Season" upperBound="-1"
+        eType="#//Season" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Teams" upperBound="-1"
+        eType="#//Team" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Season">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="matchweeks" upperBound="-1"
         eType="#//Matchweek" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" upperBound="-1" eType="#//Standing"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="standing" upperBound="-1"
+        eType="#//Standing" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Matchweek">
     <eStructuralFeatures xsi:type="ecore:EReference" name="matches" upperBound="-1"
@@ -21,8 +29,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="Bookings" upperBound="-1"
         eType="#//Booking" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Date" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Goals Hometeam" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Goals Awayteam" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Homegoals" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Avaygoals" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Referee" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Team">
@@ -32,41 +40,35 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Abbr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Stadium" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="League">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Season" upperBound="-1"
-        eType="#//Season" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Teams" upperBound="-1"
-        eType="#//Team" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Player">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Position" eType="#//Position%20Type"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Position" eType="#//PositionType"
+        transient="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Booking">
     <eStructuralFeatures xsi:type="ecore:EReference" name="BookedPlayer" eType="#//Player"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" eType="#//Booking%20Type"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" eType="#//BookingType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Minute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Standing">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Team status" eType="#//Team"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="team" eType="#//Team"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Position" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Played games" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="GamesPlayed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Points" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Wins" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Draws" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Loose" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Goals for" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Goals against" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Goal difference" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="GoalsFor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="GoalsAgainst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="GoalDifference" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="Booking Type">
-    <eLiterals name="Red Card" value="1"/>
-    <eLiterals name="Yellow Card" value="2"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="BookingType">
+    <eLiterals name="RedCard" value="1"/>
+    <eLiterals name="YellowCard" value="2"/>
     <eLiterals name="Goal" value="3"/>
-    <eLiterals name="Own Goal" value="4"/>
+    <eLiterals name="OwnGoal" value="4"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="Position Type">
+  <eClassifiers xsi:type="ecore:EEnum" name="PositionType" serializable="false">
     <eLiterals name="Keeper" value="1"/>
     <eLiterals name="Defence" value="2"/>
     <eLiterals name="Midfield" value="3"/>

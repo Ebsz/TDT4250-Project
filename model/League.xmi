@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<league:League
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:league="platform:/plugin/tdt4250-Project/model/League.ecore"
+    xsi:schemaLocation="platform:/plugin/tdt4250-Project/model/League.ecore League.ecore"
+    name="Eliteserien">
+  <Season name="2020">
+    <matchweeks
+        matchweek="1">
+      <matches
+          Hometeam="//@Teams.1"
+          Awayteam="//@Teams.0"
+          Date="2020-10-11T20:00:00.000+0200"
+          Homegoals="1"
+          Avaygoals="3"
+          Referee="Tom Harald Hagen">
+        <Bookings
+            BookedPlayer="//@Teams.0/@OwnedPlayer.3"
+            Type="YellowCard"
+            Minute="55"/>
+        <Bookings
+            BookedPlayer="//@Teams.0/@OwnedPlayer.2"
+            Type="Goal"
+            Minute="12"/>
+      </matches>
+    </matchweeks>
+    <standing
+        team="//@Teams.0"
+        Position="1"
+        GamesPlayed="1"
+        Points="3"
+        Wins="1"
+        GoalsFor="3"
+        GoalsAgainst="1"
+        GoalDifference="2"/>
+    <standing
+        team="//@Teams.1"
+        Position="2"
+        GamesPlayed="1"
+        Loose="1"
+        GoalsFor="1"
+        GoalsAgainst="3"
+        GoalDifference="-2"/>
+  </Season>
+  <Teams Name="Rosenborg BK"
+      Abbr="RBK"
+      Stadium="Lerkendal">
+    <OwnedPlayer
+        name="Andre Hansen"/>
+    <OwnedPlayer
+        name="Tore Reginiussen"/>
+    <OwnedPlayer
+        name="Markus Henriksen"/>
+    <OwnedPlayer
+        name="Pål Andre Helland"/>
+  </Teams>
+  <Teams Name="Molde"
+      Abbr="MFK"
+      Stadium="Aker Stadion">
+    <OwnedPlayer
+        name="Andreas Linde"/>
+    <OwnedPlayer
+        name="Martin Bjørnbak"/>
+    <OwnedPlayer
+        name="Magnus Wolff Eikrem"/>
+    <OwnedPlayer
+        name="Leke James"/>
+  </Teams>
+</league:League>
