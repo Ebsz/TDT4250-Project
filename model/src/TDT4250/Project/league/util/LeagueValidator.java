@@ -160,7 +160,8 @@ public class LeagueValidator extends EObjectValidator {
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
 		
-		Map<Team, String> teams = new HashMap();
+		Map<Team, String> homeTeams = new HashMap();
+		Map<Team, String> awayTeams = new HashMap();
 		boolean duplicate = false;
 		
 		EList matches = matchweek.getMatches();
@@ -168,9 +169,17 @@ public class LeagueValidator extends EObjectValidator {
 		while(itr.hasNext() && !duplicate) {
 			Match match = (Match) itr.next();
 			Team home = match.getHometeam();
+			Team away = match.getAwayteam();
 			
-			if(!teams.containsKey(home)) {
-				teams.put(home, "home");
+			if(!homeTeams.containsKey(home)) {
+				homeTeams.put(home, "home");
+			}
+			else {
+				duplicate = true;
+			}
+			
+			if(!awayTeams.containsKey(away)) {
+				awayTeams.put(away, "away");
 			}
 			else {
 				duplicate = true;
