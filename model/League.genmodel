@@ -4,7 +4,7 @@
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
     copyrightFields="false" importOrganizing="true">
   <foreignModel>League.ecore</foreignModel>
-  <genPackages prefix="League" basePackage="TDT4250-Project" disposableProviderFactory="true"
+  <genPackages prefix="League" basePackage="TDT4250.Project" disposableProviderFactory="true"
       ecorePackage="League.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="League.ecore#//BookingType">
       <genEnumLiterals ecoreEnumLiteral="League.ecore#//BookingType/RedCard"/>
