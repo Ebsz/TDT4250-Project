@@ -5,10 +5,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import org.json.*;
 
 public class ApiFetcher {
-
-	private final String API_URL = "https://google.com";
+	private final String API_BASE_URL = "http://api.football-data.org/v2/";
 	private final String API_KEY = "b7822848398f41b2b76165aeedd97ac2";
 
 	public static String sendGet(String destinationUrl) {
@@ -19,7 +19,7 @@ public class ApiFetcher {
 			connection = (HttpURLConnection) url.openConnection();
 
 			connection.setRequestMethod("GET");
-			connection.setRequestProperty("UserAgent", "Mozilla/5.0 ");
+			connection.setRequestProperty("UserAgent", "Mozilla/5.0");
 
 			connection.setUseCaches(false);
 			connection.setDoOutput(true);
@@ -43,10 +43,30 @@ public class ApiFetcher {
 		}
 	}
 
+	private int getCompetitionId(String competitionName) {
+		String response= sendGet(API_BASE_URL + "competitions");
+		JSONObject obj = new JSONObject(response);
+
+		JSONArray ar = obj.getJSONArray("competitions");
+
+		for(int i=0; i< ar.length(); i++) {
+			JSONObject o = ar.getJSONObject(i);
+			if (o.getString("name").equals(competitionName)) {
+				return o.getInt("id");
+			}
+		}
+
+		//TODO: better error handling -  raise some kind of exception?
+		return 0;
+	}
+
 	public void fetch() {
-		String response;
-		response = sendGet(API_URL);
-		System.out.println("response: " + response);
+		final String COMPETITION_NAME = "Premier League";
+
+		int competitionId = getCompetitionId(COMPETITION_NAME);
+		// TODO: Check for error
+
+		System.out.println(competitionId);
 	}
 
 	public static void main(String[] args) {
