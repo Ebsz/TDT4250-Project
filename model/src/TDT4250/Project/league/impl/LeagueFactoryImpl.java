@@ -54,6 +54,7 @@ public class LeagueFactoryImpl extends EFactoryImpl implements LeagueFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case LeaguePackage.LEAGUE: return createLeague();
@@ -74,6 +75,7 @@ public class LeagueFactoryImpl extends EFactoryImpl implements LeagueFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
 			case LeaguePackage.BOOKING_TYPE:
@@ -90,6 +92,7 @@ public class LeagueFactoryImpl extends EFactoryImpl implements LeagueFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
 			case LeaguePackage.BOOKING_TYPE:
@@ -106,6 +109,7 @@ public class LeagueFactoryImpl extends EFactoryImpl implements LeagueFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public League createLeague() {
 		LeagueImpl league = new LeagueImpl();
 		return league;
@@ -116,6 +120,7 @@ public class LeagueFactoryImpl extends EFactoryImpl implements LeagueFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Season createSeason() {
 		SeasonImpl season = new SeasonImpl();
 		return season;
@@ -126,6 +131,7 @@ public class LeagueFactoryImpl extends EFactoryImpl implements LeagueFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Matchweek createMatchweek() {
 		MatchweekImpl matchweek = new MatchweekImpl();
 		return matchweek;
@@ -136,6 +142,7 @@ public class LeagueFactoryImpl extends EFactoryImpl implements LeagueFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Match createMatch() {
 		MatchImpl match = new MatchImpl();
 		return match;
@@ -146,6 +153,7 @@ public class LeagueFactoryImpl extends EFactoryImpl implements LeagueFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Team createTeam() {
 		TeamImpl team = new TeamImpl();
 		return team;
@@ -156,6 +164,7 @@ public class LeagueFactoryImpl extends EFactoryImpl implements LeagueFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Player createPlayer() {
 		PlayerImpl player = new PlayerImpl();
 		return player;
@@ -166,6 +175,7 @@ public class LeagueFactoryImpl extends EFactoryImpl implements LeagueFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Booking createBooking() {
 		BookingImpl booking = new BookingImpl();
 		return booking;
@@ -176,6 +186,7 @@ public class LeagueFactoryImpl extends EFactoryImpl implements LeagueFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Standing createStanding() {
 		StandingImpl standing = new StandingImpl();
 		return standing;
@@ -226,6 +237,7 @@ public class LeagueFactoryImpl extends EFactoryImpl implements LeagueFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LeaguePackage getLeaguePackage() {
 		return (LeaguePackage)getEPackage();
 	}
@@ -236,6 +248,7 @@ public class LeagueFactoryImpl extends EFactoryImpl implements LeagueFactory {
 	 * @deprecated
 	 * @generated
 	 */
+	@Deprecated
 	public static LeaguePackage getPackage() {
 		return LeaguePackage.eINSTANCE;
 	}

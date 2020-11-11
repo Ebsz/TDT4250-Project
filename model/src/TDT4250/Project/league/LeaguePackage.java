@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EReference;
  * <ul>
  *   <li>each class,</li>
  *   <li>each feature of each class,</li>
+ *   <li>each operation of each class,</li>
  *   <li>each enum,</li>
  *   <li>and each data type</li>
  * </ul>
@@ -38,7 +39,7 @@ public interface LeaguePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "platform:/plugin/tdt4250-Project/model/League.ecore";
+	String eNS_URI = "platform:/plugin/TDT4250.Project/model/League.ecore";
 
 	/**
 	 * The package namespace name.
@@ -103,6 +104,15 @@ public interface LeaguePackage extends EPackage {
 	int LEAGUE_FEATURE_COUNT = 3;
 
 	/**
+	 * The number of operations of the '<em>League</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEAGUE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link TDT4250.Project.league.impl.SeasonImpl <em>Season</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -149,6 +159,15 @@ public interface LeaguePackage extends EPackage {
 	int SEASON_FEATURE_COUNT = 3;
 
 	/**
+	 * The number of operations of the '<em>Season</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEASON_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link TDT4250.Project.league.impl.MatchweekImpl <em>Matchweek</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -184,6 +203,15 @@ public interface LeaguePackage extends EPackage {
 	 * @ordered
 	 */
 	int MATCHWEEK_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Matchweek</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATCHWEEK_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link TDT4250.Project.league.impl.MatchImpl <em>Match</em>}' class.
@@ -268,6 +296,15 @@ public interface LeaguePackage extends EPackage {
 	int MATCH_FEATURE_COUNT = 7;
 
 	/**
+	 * The number of operations of the '<em>Match</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATCH_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link TDT4250.Project.league.impl.TeamImpl <em>Team</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -323,6 +360,15 @@ public interface LeaguePackage extends EPackage {
 	int TEAM_FEATURE_COUNT = 4;
 
 	/**
+	 * The number of operations of the '<em>Team</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEAM_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link TDT4250.Project.league.impl.PlayerImpl <em>Player</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -358,6 +404,15 @@ public interface LeaguePackage extends EPackage {
 	 * @ordered
 	 */
 	int PLAYER_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Player</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLAYER_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link TDT4250.Project.league.impl.BookingImpl <em>Booking</em>}' class.
@@ -404,6 +459,15 @@ public interface LeaguePackage extends EPackage {
 	 * @ordered
 	 */
 	int BOOKING_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Booking</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link TDT4250.Project.league.impl.StandingImpl <em>Standing</em>}' class.
@@ -513,6 +577,15 @@ public interface LeaguePackage extends EPackage {
 	 * @ordered
 	 */
 	int STANDING_FEATURE_COUNT = 10;
+
+	/**
+	 * The number of operations of the '<em>Standing</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STANDING_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link TDT4250.Project.league.BookingType <em>Booking Type</em>}' enum.
@@ -1024,6 +1097,7 @@ public interface LeaguePackage extends EPackage {
 	 * <ul>
 	 *   <li>each class,</li>
 	 *   <li>each feature of each class,</li>
+	 *   <li>each operation of each class,</li>
 	 *   <li>each enum,</li>
 	 *   <li>and each data type</li>
 	 * </ul>

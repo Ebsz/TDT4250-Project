@@ -67,7 +67,7 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList ownedPlayer;
+	protected EList<Player> ownedPlayer;
 
 	/**
 	 * The default value of the '{@link #getAbbr() <em>Abbr</em>}' attribute.
@@ -123,6 +123,7 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return LeaguePackage.Literals.TEAM;
 	}
@@ -132,6 +133,7 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -141,6 +143,7 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -153,9 +156,10 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getOwnedPlayer() {
+	@Override
+	public EList<Player> getOwnedPlayer() {
 		if (ownedPlayer == null) {
-			ownedPlayer = new EObjectContainmentEList(Player.class, this, LeaguePackage.TEAM__OWNED_PLAYER);
+			ownedPlayer = new EObjectContainmentEList<Player>(Player.class, this, LeaguePackage.TEAM__OWNED_PLAYER);
 		}
 		return ownedPlayer;
 	}
@@ -165,6 +169,7 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getAbbr() {
 		return abbr;
 	}
@@ -174,6 +179,7 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAbbr(String newAbbr) {
 		String oldAbbr = abbr;
 		abbr = newAbbr;
@@ -186,6 +192,7 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getStadium() {
 		return stadium;
 	}
@@ -195,6 +202,7 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setStadium(String newStadium) {
 		String oldStadium = stadium;
 		stadium = newStadium;
@@ -207,10 +215,11 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case LeaguePackage.TEAM__OWNED_PLAYER:
-				return ((InternalEList)getOwnedPlayer()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getOwnedPlayer()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -220,6 +229,7 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case LeaguePackage.TEAM__NAME:
@@ -239,6 +249,8 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case LeaguePackage.TEAM__NAME:
@@ -246,7 +258,7 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 				return;
 			case LeaguePackage.TEAM__OWNED_PLAYER:
 				getOwnedPlayer().clear();
-				getOwnedPlayer().addAll((Collection)newValue);
+				getOwnedPlayer().addAll((Collection<? extends Player>)newValue);
 				return;
 			case LeaguePackage.TEAM__ABBR:
 				setAbbr((String)newValue);
@@ -263,6 +275,7 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case LeaguePackage.TEAM__NAME:
@@ -286,6 +299,7 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case LeaguePackage.TEAM__NAME:
@@ -305,10 +319,11 @@ public class TeamImpl extends MinimalEObjectImpl.Container implements Team {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (Name: ");
 		result.append(name);
 		result.append(", Abbr: ");

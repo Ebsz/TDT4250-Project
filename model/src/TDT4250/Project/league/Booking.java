@@ -54,7 +54,7 @@ public interface Booking extends EObject {
 	 * @see TDT4250.Project.league.BookingType
 	 * @see #setType(BookingType)
 	 * @see TDT4250.Project.league.LeaguePackage#getBooking_Type()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	BookingType getType();

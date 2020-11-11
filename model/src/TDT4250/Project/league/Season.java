@@ -54,10 +54,10 @@ public interface Season extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Matchweeks</em>' containment reference list.
 	 * @see TDT4250.Project.league.LeaguePackage#getSeason_Matchweeks()
-	 * @model type="TDT4250.Project.league.Matchweek" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList getMatchweeks();
+	EList<Matchweek> getMatchweeks();
 
 	/**
 	 * Returns the value of the '<em><b>Standing</b></em>' containment reference list.
@@ -66,9 +66,9 @@ public interface Season extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Standing</em>' containment reference list.
 	 * @see TDT4250.Project.league.LeaguePackage#getSeason_Standing()
-	 * @model type="TDT4250.Project.league.Standing" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList getStanding();
+	EList<Standing> getStanding();
 
 } // Season

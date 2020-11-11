@@ -49,7 +49,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * @generated
 	 * @ordered
 	 */
-	protected static final BookingType TYPE_EDEFAULT = BookingType.RED_CARD_LITERAL;
+	protected static final BookingType TYPE_EDEFAULT = BookingType.RED_CARD;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -95,6 +95,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return LeaguePackage.Literals.BOOKING;
 	}
@@ -104,6 +105,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Player getBookedPlayer() {
 		if (bookedPlayer != null && bookedPlayer.eIsProxy()) {
 			InternalEObject oldBookedPlayer = (InternalEObject)bookedPlayer;
@@ -130,6 +132,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBookedPlayer(Player newBookedPlayer) {
 		Player oldBookedPlayer = bookedPlayer;
 		bookedPlayer = newBookedPlayer;
@@ -142,6 +145,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BookingType getType() {
 		return type;
 	}
@@ -151,6 +155,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(BookingType newType) {
 		BookingType oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
@@ -163,6 +168,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getMinute() {
 		return minute;
 	}
@@ -172,6 +178,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMinute(int newMinute) {
 		int oldMinute = minute;
 		minute = newMinute;
@@ -184,6 +191,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case LeaguePackage.BOOKING__BOOKED_PLAYER:
@@ -192,7 +200,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case LeaguePackage.BOOKING__TYPE:
 				return getType();
 			case LeaguePackage.BOOKING__MINUTE:
-				return new Integer(getMinute());
+				return getMinute();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -202,6 +210,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case LeaguePackage.BOOKING__BOOKED_PLAYER:
@@ -211,7 +220,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				setType((BookingType)newValue);
 				return;
 			case LeaguePackage.BOOKING__MINUTE:
-				setMinute(((Integer)newValue).intValue());
+				setMinute((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -222,6 +231,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case LeaguePackage.BOOKING__BOOKED_PLAYER:
@@ -242,6 +252,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case LeaguePackage.BOOKING__BOOKED_PLAYER:
@@ -259,10 +270,11 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (Type: ");
 		result.append(type);
 		result.append(", Minute: ");

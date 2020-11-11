@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see TDT4250.Project.league.LeaguePackage#getMatch()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='onlyOneRedCardPerMatch'"
  * @generated
  */
 public interface Match extends EObject {
@@ -82,10 +82,10 @@ public interface Match extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Bookings</em>' containment reference list.
 	 * @see TDT4250.Project.league.LeaguePackage#getMatch_Bookings()
-	 * @model type="TDT4250.Project.league.Booking" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList getBookings();
+	EList<Booking> getBookings();
 
 	/**
 	 * Returns the value of the '<em><b>Date</b></em>' attribute.

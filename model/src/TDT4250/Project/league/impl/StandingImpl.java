@@ -241,6 +241,7 @@ public class StandingImpl extends MinimalEObjectImpl.Container implements Standi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return LeaguePackage.Literals.STANDING;
 	}
@@ -250,6 +251,7 @@ public class StandingImpl extends MinimalEObjectImpl.Container implements Standi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Team getTeam() {
 		if (team != null && team.eIsProxy()) {
 			InternalEObject oldTeam = (InternalEObject)team;
@@ -276,6 +278,7 @@ public class StandingImpl extends MinimalEObjectImpl.Container implements Standi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTeam(Team newTeam) {
 		Team oldTeam = team;
 		team = newTeam;
@@ -288,6 +291,7 @@ public class StandingImpl extends MinimalEObjectImpl.Container implements Standi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getPosition() {
 		return position;
 	}
@@ -297,6 +301,7 @@ public class StandingImpl extends MinimalEObjectImpl.Container implements Standi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPosition(int newPosition) {
 		int oldPosition = position;
 		position = newPosition;
@@ -309,6 +314,7 @@ public class StandingImpl extends MinimalEObjectImpl.Container implements Standi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getGamesPlayed() {
 		return gamesPlayed;
 	}
@@ -318,6 +324,7 @@ public class StandingImpl extends MinimalEObjectImpl.Container implements Standi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setGamesPlayed(int newGamesPlayed) {
 		int oldGamesPlayed = gamesPlayed;
 		gamesPlayed = newGamesPlayed;
@@ -330,6 +337,7 @@ public class StandingImpl extends MinimalEObjectImpl.Container implements Standi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getPoints() {
 		return points;
 	}
@@ -339,6 +347,7 @@ public class StandingImpl extends MinimalEObjectImpl.Container implements Standi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPoints(int newPoints) {
 		int oldPoints = points;
 		points = newPoints;
@@ -351,6 +360,7 @@ public class StandingImpl extends MinimalEObjectImpl.Container implements Standi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getWins() {
 		return wins;
 	}
@@ -360,6 +370,7 @@ public class StandingImpl extends MinimalEObjectImpl.Container implements Standi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setWins(int newWins) {
 		int oldWins = wins;
 		wins = newWins;
@@ -372,6 +383,7 @@ public class StandingImpl extends MinimalEObjectImpl.Container implements Standi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getDraws() {
 		return draws;
 	}
@@ -381,6 +393,7 @@ public class StandingImpl extends MinimalEObjectImpl.Container implements Standi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDraws(int newDraws) {
 		int oldDraws = draws;
 		draws = newDraws;
@@ -393,6 +406,7 @@ public class StandingImpl extends MinimalEObjectImpl.Container implements Standi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getLoose() {
 		return loose;
 	}
@@ -402,6 +416,7 @@ public class StandingImpl extends MinimalEObjectImpl.Container implements Standi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLoose(int newLoose) {
 		int oldLoose = loose;
 		loose = newLoose;
@@ -414,6 +429,7 @@ public class StandingImpl extends MinimalEObjectImpl.Container implements Standi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getGoalsFor() {
 		return goalsFor;
 	}
@@ -423,6 +439,7 @@ public class StandingImpl extends MinimalEObjectImpl.Container implements Standi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setGoalsFor(int newGoalsFor) {
 		int oldGoalsFor = goalsFor;
 		goalsFor = newGoalsFor;
@@ -435,6 +452,7 @@ public class StandingImpl extends MinimalEObjectImpl.Container implements Standi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getGoalsAgainst() {
 		return goalsAgainst;
 	}
@@ -444,6 +462,7 @@ public class StandingImpl extends MinimalEObjectImpl.Container implements Standi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setGoalsAgainst(int newGoalsAgainst) {
 		int oldGoalsAgainst = goalsAgainst;
 		goalsAgainst = newGoalsAgainst;
@@ -456,6 +475,7 @@ public class StandingImpl extends MinimalEObjectImpl.Container implements Standi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getGoalDifference() {
 		return goalDifference;
 	}
@@ -465,6 +485,7 @@ public class StandingImpl extends MinimalEObjectImpl.Container implements Standi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setGoalDifference(int newGoalDifference) {
 		int oldGoalDifference = goalDifference;
 		goalDifference = newGoalDifference;
@@ -477,29 +498,30 @@ public class StandingImpl extends MinimalEObjectImpl.Container implements Standi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case LeaguePackage.STANDING__TEAM:
 				if (resolve) return getTeam();
 				return basicGetTeam();
 			case LeaguePackage.STANDING__POSITION:
-				return new Integer(getPosition());
+				return getPosition();
 			case LeaguePackage.STANDING__GAMES_PLAYED:
-				return new Integer(getGamesPlayed());
+				return getGamesPlayed();
 			case LeaguePackage.STANDING__POINTS:
-				return new Integer(getPoints());
+				return getPoints();
 			case LeaguePackage.STANDING__WINS:
-				return new Integer(getWins());
+				return getWins();
 			case LeaguePackage.STANDING__DRAWS:
-				return new Integer(getDraws());
+				return getDraws();
 			case LeaguePackage.STANDING__LOOSE:
-				return new Integer(getLoose());
+				return getLoose();
 			case LeaguePackage.STANDING__GOALS_FOR:
-				return new Integer(getGoalsFor());
+				return getGoalsFor();
 			case LeaguePackage.STANDING__GOALS_AGAINST:
-				return new Integer(getGoalsAgainst());
+				return getGoalsAgainst();
 			case LeaguePackage.STANDING__GOAL_DIFFERENCE:
-				return new Integer(getGoalDifference());
+				return getGoalDifference();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -509,37 +531,38 @@ public class StandingImpl extends MinimalEObjectImpl.Container implements Standi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case LeaguePackage.STANDING__TEAM:
 				setTeam((Team)newValue);
 				return;
 			case LeaguePackage.STANDING__POSITION:
-				setPosition(((Integer)newValue).intValue());
+				setPosition((Integer)newValue);
 				return;
 			case LeaguePackage.STANDING__GAMES_PLAYED:
-				setGamesPlayed(((Integer)newValue).intValue());
+				setGamesPlayed((Integer)newValue);
 				return;
 			case LeaguePackage.STANDING__POINTS:
-				setPoints(((Integer)newValue).intValue());
+				setPoints((Integer)newValue);
 				return;
 			case LeaguePackage.STANDING__WINS:
-				setWins(((Integer)newValue).intValue());
+				setWins((Integer)newValue);
 				return;
 			case LeaguePackage.STANDING__DRAWS:
-				setDraws(((Integer)newValue).intValue());
+				setDraws((Integer)newValue);
 				return;
 			case LeaguePackage.STANDING__LOOSE:
-				setLoose(((Integer)newValue).intValue());
+				setLoose((Integer)newValue);
 				return;
 			case LeaguePackage.STANDING__GOALS_FOR:
-				setGoalsFor(((Integer)newValue).intValue());
+				setGoalsFor((Integer)newValue);
 				return;
 			case LeaguePackage.STANDING__GOALS_AGAINST:
-				setGoalsAgainst(((Integer)newValue).intValue());
+				setGoalsAgainst((Integer)newValue);
 				return;
 			case LeaguePackage.STANDING__GOAL_DIFFERENCE:
-				setGoalDifference(((Integer)newValue).intValue());
+				setGoalDifference((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -550,6 +573,7 @@ public class StandingImpl extends MinimalEObjectImpl.Container implements Standi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case LeaguePackage.STANDING__TEAM:
@@ -591,6 +615,7 @@ public class StandingImpl extends MinimalEObjectImpl.Container implements Standi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case LeaguePackage.STANDING__TEAM:
@@ -622,10 +647,11 @@ public class StandingImpl extends MinimalEObjectImpl.Container implements Standi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (Position: ");
 		result.append(position);
 		result.append(", GamesPlayed: ");

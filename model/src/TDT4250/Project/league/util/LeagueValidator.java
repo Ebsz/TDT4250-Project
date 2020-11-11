@@ -13,12 +13,10 @@ import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.util.EObjectValidator;
-
-//import com.sun.tools.javac.util.List;
 
 /**
  * <!-- begin-user-doc -->
@@ -78,6 +76,7 @@ public class LeagueValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EPackage getEPackage() {
 	  return LeaguePackage.eINSTANCE;
 	}
@@ -88,7 +87,8 @@ public class LeagueValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map context) {
+	@Override
+	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
 			case LeaguePackage.LEAGUE:
 				return validateLeague((League)value, diagnostics, context);
@@ -120,7 +120,7 @@ public class LeagueValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateLeague(League league, DiagnosticChain diagnostics, Map context) {
+	public boolean validateLeague(League league, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(league, diagnostics, context);
 	}
 
@@ -129,7 +129,7 @@ public class LeagueValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateSeason(Season season, DiagnosticChain diagnostics, Map context) {
+	public boolean validateSeason(Season season, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(season, diagnostics, context);
 	}
 
@@ -138,12 +138,16 @@ public class LeagueValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMatchweek(Matchweek matchweek, DiagnosticChain diagnostics, Map context) {
+	public boolean validateMatchweek(Matchweek matchweek, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(matchweek, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(matchweek, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(matchweek, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(matchweek, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(matchweek, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryProxyResolves(matchweek, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_UniqueID(matchweek, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(matchweek, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(matchweek, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMatchweek_temaPlaysOnlyOneMatchPerWeek(matchweek, diagnostics, context);
 		return result;
 	}
@@ -154,18 +158,14 @@ public class LeagueValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public boolean validateMatchweek_temaPlaysOnlyOneMatchPerWeek(Matchweek matchweek, DiagnosticChain diagnostics, Map context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
+	public boolean validateMatchweek_temaPlaysOnlyOneMatchPerWeek(Matchweek matchweek, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		
-		Map<Team, String> homeTeams = new HashMap();
-		Map<Team, String> awayTeams = new HashMap();
+		Map<Team, String> homeTeams = new HashMap<Team, String>();
+		Map<Team, String> awayTeams = new HashMap<Team, String>();
 		boolean duplicate = false;
 		
-		EList matches = matchweek.getMatches();
-		Iterator itr = matches.iterator();
+		EList<Match> matches = matchweek.getMatches();
+		Iterator<Match> itr = matches.iterator();
 		while(itr.hasNext() && !duplicate) {
 			Match match = (Match) itr.next();
 			Team home = match.getHometeam();
@@ -206,8 +206,61 @@ public class LeagueValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMatch(Match match, DiagnosticChain diagnostics, Map context) {
-		return validate_EveryDefaultConstraint(match, diagnostics, context);
+	public boolean validateMatch(Match match, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(match, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(match, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(match, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(match, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(match, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(match, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(match, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(match, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(match, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMatch_onlyOneRedCardPerMatch(match, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the onlyOneRedCardPerMatch constraint of '<em>Match</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@SuppressWarnings("null")
+	public boolean validateMatch_onlyOneRedCardPerMatch(Match match, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		Boolean error = false;
+		EList<Booking> redCards = null;
+		
+		for (Booking booking : match.getBookings()) {
+			if (booking.getType().getName() == "RedCard") {
+				redCards.add(booking);
+			}
+		}
+		
+		for (Booking bookings : redCards) {
+			redCards.remove(bookings);
+			for (Booking books : redCards) {
+				if(books.getBookedPlayer() == bookings.getBookedPlayer()) {
+					error = true;
+				}
+			}
+		}
+		
+		if (error) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "onlyOneRedCardPerMatch", getObjectLabel(match, context) },
+						 new Object[] { match },
+						 context));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -215,7 +268,7 @@ public class LeagueValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateTeam(Team team, DiagnosticChain diagnostics, Map context) {
+	public boolean validateTeam(Team team, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(team, diagnostics, context);
 	}
 
@@ -224,7 +277,7 @@ public class LeagueValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePlayer(Player player, DiagnosticChain diagnostics, Map context) {
+	public boolean validatePlayer(Player player, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(player, diagnostics, context);
 	}
 
@@ -233,7 +286,7 @@ public class LeagueValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateBooking(Booking booking, DiagnosticChain diagnostics, Map context) {
+	public boolean validateBooking(Booking booking, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(booking, diagnostics, context);
 	}
 
@@ -242,7 +295,7 @@ public class LeagueValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateStanding(Standing standing, DiagnosticChain diagnostics, Map context) {
+	public boolean validateStanding(Standing standing, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(standing, diagnostics, context);
 	}
 
@@ -251,7 +304,7 @@ public class LeagueValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateBookingType(BookingType bookingType, DiagnosticChain diagnostics, Map context) {
+	public boolean validateBookingType(BookingType bookingType, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
@@ -260,8 +313,22 @@ public class LeagueValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePositionType(PositionType positionType, DiagnosticChain diagnostics, Map context) {
+	public boolean validatePositionType(PositionType positionType, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
+	}
+
+	/**
+	 * Returns the resource locator that will be used to fetch messages for this validator's diagnostics.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		// TODO
+		// Specialize this to return a resource locator for messages specific to this validator.
+		// Ensure that you remove @generated or mark it @generated NOT
+		return super.getResourceLocator();
 	}
 
 } //LeagueValidator

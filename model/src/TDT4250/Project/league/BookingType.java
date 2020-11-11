@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import org.eclipse.emf.common.util.AbstractEnumerator;
+import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,90 +17,90 @@ import org.eclipse.emf.common.util.AbstractEnumerator;
  * @model
  * @generated
  */
-public final class BookingType extends AbstractEnumerator {
-	/**
-	 * The '<em><b>Red Card</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #RED_CARD_LITERAL
-	 * @model name="RedCard"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int RED_CARD = 1;
-
-	/**
-	 * The '<em><b>Yellow Card</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #YELLOW_CARD_LITERAL
-	 * @model name="YellowCard"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int YELLOW_CARD = 2;
-
-	/**
-	 * The '<em><b>Goal</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #GOAL_LITERAL
-	 * @model name="Goal"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int GOAL = 3;
-
-	/**
-	 * The '<em><b>Own Goal</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #OWN_GOAL_LITERAL
-	 * @model name="OwnGoal"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int OWN_GOAL = 4;
-
+public enum BookingType implements Enumerator {
 	/**
 	 * The '<em><b>Red Card</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #RED_CARD
+	 * @see #RED_CARD_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	public static final BookingType RED_CARD_LITERAL = new BookingType(RED_CARD, "RedCard", "RedCard");
+	RED_CARD(1, "RedCard", "RedCard"),
 
 	/**
 	 * The '<em><b>Yellow Card</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #YELLOW_CARD
+	 * @see #YELLOW_CARD_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	public static final BookingType YELLOW_CARD_LITERAL = new BookingType(YELLOW_CARD, "YellowCard", "YellowCard");
+	YELLOW_CARD(2, "YellowCard", "YellowCard"),
 
 	/**
 	 * The '<em><b>Goal</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #GOAL
+	 * @see #GOAL_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	public static final BookingType GOAL_LITERAL = new BookingType(GOAL, "Goal", "Goal");
+	GOAL(3, "Goal", "Goal"),
 
 	/**
 	 * The '<em><b>Own Goal</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #OWN_GOAL
+	 * @see #OWN_GOAL_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	public static final BookingType OWN_GOAL_LITERAL = new BookingType(OWN_GOAL, "OwnGoal", "OwnGoal");
+	OWN_GOAL(4, "OwnGoal", "OwnGoal");
+
+	/**
+	 * The '<em><b>Red Card</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #RED_CARD
+	 * @model name="RedCard"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int RED_CARD_VALUE = 1;
+
+	/**
+	 * The '<em><b>Yellow Card</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #YELLOW_CARD
+	 * @model name="YellowCard"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int YELLOW_CARD_VALUE = 2;
+
+	/**
+	 * The '<em><b>Goal</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #GOAL
+	 * @model name="Goal"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int GOAL_VALUE = 3;
+
+	/**
+	 * The '<em><b>Own Goal</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #OWN_GOAL
+	 * @model name="OwnGoal"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int OWN_GOAL_VALUE = 4;
 
 	/**
 	 * An array of all the '<em><b>Booking Type</b></em>' enumerators.
@@ -110,10 +110,10 @@ public final class BookingType extends AbstractEnumerator {
 	 */
 	private static final BookingType[] VALUES_ARRAY =
 		new BookingType[] {
-			RED_CARD_LITERAL,
-			YELLOW_CARD_LITERAL,
-			GOAL_LITERAL,
-			OWN_GOAL_LITERAL,
+			RED_CARD,
+			YELLOW_CARD,
+			GOAL,
+			OWN_GOAL,
 		};
 
 	/**
@@ -122,7 +122,7 @@ public final class BookingType extends AbstractEnumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<BookingType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Booking Type</b></em>' literal with the specified literal value.
@@ -170,13 +170,34 @@ public final class BookingType extends AbstractEnumerator {
 	 */
 	public static BookingType get(int value) {
 		switch (value) {
-			case RED_CARD: return RED_CARD_LITERAL;
-			case YELLOW_CARD: return YELLOW_CARD_LITERAL;
-			case GOAL: return GOAL_LITERAL;
-			case OWN_GOAL: return OWN_GOAL_LITERAL;
+			case RED_CARD_VALUE: return RED_CARD;
+			case YELLOW_CARD_VALUE: return YELLOW_CARD;
+			case GOAL_VALUE: return GOAL;
+			case OWN_GOAL_VALUE: return OWN_GOAL;
 		}
 		return null;
 	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private final int value;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private final String name;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private final String literal;
 
 	/**
 	 * Only this class can construct instances.
@@ -185,7 +206,50 @@ public final class BookingType extends AbstractEnumerator {
 	 * @generated
 	 */
 	private BookingType(int value, String name, String literal) {
-		super(value, name, literal);
+		this.value = value;
+		this.name = name;
+		this.literal = literal;
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getValue() {
+	  return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getName() {
+	  return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getLiteral() {
+	  return literal;
+	}
+
+	/**
+	 * Returns the literal value of the enumerator, which is its string representation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		return literal;
+	}
+	
 } //BookingType

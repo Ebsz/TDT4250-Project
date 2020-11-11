@@ -31,10 +31,10 @@ public interface Matchweek extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Matches</em>' containment reference list.
 	 * @see TDT4250.Project.league.LeaguePackage#getMatchweek_Matches()
-	 * @model type="TDT4250.Project.league.Match" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList getMatches();
+	EList<Match> getMatches();
 
 	/**
 	 * Returns the value of the '<em><b>Matchweek</b></em>' attribute.

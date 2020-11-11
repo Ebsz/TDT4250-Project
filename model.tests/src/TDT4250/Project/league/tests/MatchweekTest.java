@@ -60,7 +60,7 @@ public class MatchweekTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private Matchweek getFixture() {
+	protected Matchweek getFixture() {
 		return fixture;
 	}
 
@@ -70,6 +70,7 @@ public class MatchweekTest extends TestCase {
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
+	@Override
 	protected void setUp() throws Exception {
 		setFixture(LeagueFactory.eINSTANCE.createMatchweek());
 	}
@@ -80,6 +81,7 @@ public class MatchweekTest extends TestCase {
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
+	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
 	}

@@ -4,10 +4,10 @@ package TDT4250.Project.league.util;
 
 import TDT4250.Project.league.*;
 
-import java.util.List;
-
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.util.Switch;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * @see TDT4250.Project.league.LeaguePackage
  * @generated
  */
-public class LeagueSwitch {
+public class LeagueSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -44,14 +44,16 @@ public class LeagueSwitch {
 	}
 
 	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
+	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the first non-null result returned by a <code>caseXXX</code> call.
+	 * @param ePackage the package in question.
+	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
-	public Object doSwitch(EObject theEObject) {
-		return doSwitch(theEObject.eClass(), theEObject);
+	@Override
+	protected boolean isSwitchFor(EPackage ePackage) {
+		return ePackage == modelPackage;
 	}
 
 	/**
@@ -61,73 +63,54 @@ public class LeagueSwitch {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	protected Object doSwitch(EClass theEClass, EObject theEObject) {
-		if (theEClass.eContainer() == modelPackage) {
-			return doSwitch(theEClass.getClassifierID(), theEObject);
-		}
-		else {
-			List eSuperTypes = theEClass.getESuperTypes();
-			return
-				eSuperTypes.isEmpty() ?
-					defaultCase(theEObject) :
-					doSwitch((EClass)eSuperTypes.get(0), theEObject);
-		}
-	}
-
-	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the first non-null result returned by a <code>caseXXX</code> call.
-	 * @generated
-	 */
-	protected Object doSwitch(int classifierID, EObject theEObject) {
+	@Override
+	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case LeaguePackage.LEAGUE: {
 				League league = (League)theEObject;
-				Object result = caseLeague(league);
+				T result = caseLeague(league);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case LeaguePackage.SEASON: {
 				Season season = (Season)theEObject;
-				Object result = caseSeason(season);
+				T result = caseSeason(season);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case LeaguePackage.MATCHWEEK: {
 				Matchweek matchweek = (Matchweek)theEObject;
-				Object result = caseMatchweek(matchweek);
+				T result = caseMatchweek(matchweek);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case LeaguePackage.MATCH: {
 				Match match = (Match)theEObject;
-				Object result = caseMatch(match);
+				T result = caseMatch(match);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case LeaguePackage.TEAM: {
 				Team team = (Team)theEObject;
-				Object result = caseTeam(team);
+				T result = caseTeam(team);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case LeaguePackage.PLAYER: {
 				Player player = (Player)theEObject;
-				Object result = casePlayer(player);
+				T result = casePlayer(player);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case LeaguePackage.BOOKING: {
 				Booking booking = (Booking)theEObject;
-				Object result = caseBooking(booking);
+				T result = caseBooking(booking);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case LeaguePackage.STANDING: {
 				Standing standing = (Standing)theEObject;
-				Object result = caseStanding(standing);
+				T result = caseStanding(standing);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -146,7 +129,7 @@ public class LeagueSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseLeague(League object) {
+	public T caseLeague(League object) {
 		return null;
 	}
 
@@ -161,7 +144,7 @@ public class LeagueSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseSeason(Season object) {
+	public T caseSeason(Season object) {
 		return null;
 	}
 
@@ -176,7 +159,7 @@ public class LeagueSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseMatchweek(Matchweek object) {
+	public T caseMatchweek(Matchweek object) {
 		return null;
 	}
 
@@ -191,7 +174,7 @@ public class LeagueSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseMatch(Match object) {
+	public T caseMatch(Match object) {
 		return null;
 	}
 
@@ -206,7 +189,7 @@ public class LeagueSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseTeam(Team object) {
+	public T caseTeam(Team object) {
 		return null;
 	}
 
@@ -221,7 +204,7 @@ public class LeagueSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object casePlayer(Player object) {
+	public T casePlayer(Player object) {
 		return null;
 	}
 
@@ -236,7 +219,7 @@ public class LeagueSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseBooking(Booking object) {
+	public T caseBooking(Booking object) {
 		return null;
 	}
 
@@ -251,7 +234,7 @@ public class LeagueSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseStanding(Standing object) {
+	public T caseStanding(Standing object) {
 		return null;
 	}
 
@@ -266,7 +249,8 @@ public class LeagueSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
 	 */
-	public Object defaultCase(EObject object) {
+	@Override
+	public T defaultCase(EObject object) {
 		return null;
 	}
 

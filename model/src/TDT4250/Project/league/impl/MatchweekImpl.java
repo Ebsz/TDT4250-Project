@@ -45,7 +45,7 @@ public class MatchweekImpl extends MinimalEObjectImpl.Container implements Match
 	 * @generated
 	 * @ordered
 	 */
-	protected EList matches;
+	protected EList<Match> matches;
 
 	/**
 	 * The default value of the '{@link #getMatchweek() <em>Matchweek</em>}' attribute.
@@ -81,6 +81,7 @@ public class MatchweekImpl extends MinimalEObjectImpl.Container implements Match
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return LeaguePackage.Literals.MATCHWEEK;
 	}
@@ -90,9 +91,10 @@ public class MatchweekImpl extends MinimalEObjectImpl.Container implements Match
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getMatches() {
+	@Override
+	public EList<Match> getMatches() {
 		if (matches == null) {
-			matches = new EObjectContainmentEList(Match.class, this, LeaguePackage.MATCHWEEK__MATCHES);
+			matches = new EObjectContainmentEList<Match>(Match.class, this, LeaguePackage.MATCHWEEK__MATCHES);
 		}
 		return matches;
 	}
@@ -102,6 +104,7 @@ public class MatchweekImpl extends MinimalEObjectImpl.Container implements Match
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getMatchweek() {
 		return matchweek;
 	}
@@ -111,6 +114,7 @@ public class MatchweekImpl extends MinimalEObjectImpl.Container implements Match
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMatchweek(int newMatchweek) {
 		int oldMatchweek = matchweek;
 		matchweek = newMatchweek;
@@ -123,10 +127,11 @@ public class MatchweekImpl extends MinimalEObjectImpl.Container implements Match
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case LeaguePackage.MATCHWEEK__MATCHES:
-				return ((InternalEList)getMatches()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getMatches()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -136,12 +141,13 @@ public class MatchweekImpl extends MinimalEObjectImpl.Container implements Match
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case LeaguePackage.MATCHWEEK__MATCHES:
 				return getMatches();
 			case LeaguePackage.MATCHWEEK__MATCHWEEK:
-				return new Integer(getMatchweek());
+				return getMatchweek();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -151,14 +157,16 @@ public class MatchweekImpl extends MinimalEObjectImpl.Container implements Match
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case LeaguePackage.MATCHWEEK__MATCHES:
 				getMatches().clear();
-				getMatches().addAll((Collection)newValue);
+				getMatches().addAll((Collection<? extends Match>)newValue);
 				return;
 			case LeaguePackage.MATCHWEEK__MATCHWEEK:
-				setMatchweek(((Integer)newValue).intValue());
+				setMatchweek((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -169,6 +177,7 @@ public class MatchweekImpl extends MinimalEObjectImpl.Container implements Match
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case LeaguePackage.MATCHWEEK__MATCHES:
@@ -186,6 +195,7 @@ public class MatchweekImpl extends MinimalEObjectImpl.Container implements Match
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case LeaguePackage.MATCHWEEK__MATCHES:
@@ -201,10 +211,11 @@ public class MatchweekImpl extends MinimalEObjectImpl.Container implements Match
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (matchweek: ");
 		result.append(matchweek);
 		result.append(')');

@@ -32,10 +32,10 @@ public interface League extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Season</em>' containment reference list.
 	 * @see TDT4250.Project.league.LeaguePackage#getLeague_Season()
-	 * @model type="TDT4250.Project.league.Season" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList getSeason();
+	EList<Season> getSeason();
 
 	/**
 	 * Returns the value of the '<em><b>Teams</b></em>' containment reference list.
@@ -44,10 +44,10 @@ public interface League extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Teams</em>' containment reference list.
 	 * @see TDT4250.Project.league.LeaguePackage#getLeague_Teams()
-	 * @model type="TDT4250.Project.league.Team" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList getTeams();
+	EList<Team> getTeams();
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.

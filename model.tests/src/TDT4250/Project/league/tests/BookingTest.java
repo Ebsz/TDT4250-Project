@@ -60,7 +60,7 @@ public class BookingTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private Booking getFixture() {
+	protected Booking getFixture() {
 		return fixture;
 	}
 
@@ -70,6 +70,7 @@ public class BookingTest extends TestCase {
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
+	@Override
 	protected void setUp() throws Exception {
 		setFixture(LeagueFactory.eINSTANCE.createBooking());
 	}
@@ -80,6 +81,7 @@ public class BookingTest extends TestCase {
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
+	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
 	}

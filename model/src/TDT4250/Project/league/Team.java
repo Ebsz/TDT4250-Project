@@ -55,10 +55,10 @@ public interface Team extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Owned Player</em>' containment reference list.
 	 * @see TDT4250.Project.league.LeaguePackage#getTeam_OwnedPlayer()
-	 * @model type="TDT4250.Project.league.Player" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList getOwnedPlayer();
+	EList<Player> getOwnedPlayer();
 
 	/**
 	 * Returns the value of the '<em><b>Abbr</b></em>' attribute.

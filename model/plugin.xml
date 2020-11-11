@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated League -->
       <package
-            uri="platform:/plugin/tdt4250-Project/model/League.ecore"
+            uri="platform:/plugin/TDT4250.Project/model/League.ecore"
             class="TDT4250.Project.league.LeaguePackage"
             genModel="League.genmodel"/>
    </extension>

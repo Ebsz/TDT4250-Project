@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import org.eclipse.emf.common.util.AbstractEnumerator;
+import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,90 +17,90 @@ import org.eclipse.emf.common.util.AbstractEnumerator;
  * @model
  * @generated
  */
-public final class PositionType extends AbstractEnumerator {
-	/**
-	 * The '<em><b>Keeper</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #KEEPER_LITERAL
-	 * @model name="Keeper"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int KEEPER = 1;
-
-	/**
-	 * The '<em><b>Defence</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #DEFENCE_LITERAL
-	 * @model name="Defence"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int DEFENCE = 2;
-
-	/**
-	 * The '<em><b>Midfield</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #MIDFIELD_LITERAL
-	 * @model name="Midfield"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int MIDFIELD = 3;
-
-	/**
-	 * The '<em><b>Attacker</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #ATTACKER_LITERAL
-	 * @model name="Attacker"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int ATTACKER = 4;
-
+public enum PositionType implements Enumerator {
 	/**
 	 * The '<em><b>Keeper</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #KEEPER
+	 * @see #KEEPER_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	public static final PositionType KEEPER_LITERAL = new PositionType(KEEPER, "Keeper", "Keeper");
+	KEEPER(1, "Keeper", "Keeper"),
 
 	/**
 	 * The '<em><b>Defence</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #DEFENCE
+	 * @see #DEFENCE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	public static final PositionType DEFENCE_LITERAL = new PositionType(DEFENCE, "Defence", "Defence");
+	DEFENCE(2, "Defence", "Defence"),
 
 	/**
 	 * The '<em><b>Midfield</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #MIDFIELD
+	 * @see #MIDFIELD_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	public static final PositionType MIDFIELD_LITERAL = new PositionType(MIDFIELD, "Midfield", "Midfield");
+	MIDFIELD(3, "Midfield", "Midfield"),
 
 	/**
 	 * The '<em><b>Attacker</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #ATTACKER
+	 * @see #ATTACKER_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	public static final PositionType ATTACKER_LITERAL = new PositionType(ATTACKER, "Attacker", "Attacker");
+	ATTACKER(4, "Attacker", "Attacker");
+
+	/**
+	 * The '<em><b>Keeper</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #KEEPER
+	 * @model name="Keeper"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int KEEPER_VALUE = 1;
+
+	/**
+	 * The '<em><b>Defence</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #DEFENCE
+	 * @model name="Defence"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int DEFENCE_VALUE = 2;
+
+	/**
+	 * The '<em><b>Midfield</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #MIDFIELD
+	 * @model name="Midfield"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MIDFIELD_VALUE = 3;
+
+	/**
+	 * The '<em><b>Attacker</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #ATTACKER
+	 * @model name="Attacker"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int ATTACKER_VALUE = 4;
 
 	/**
 	 * An array of all the '<em><b>Position Type</b></em>' enumerators.
@@ -110,10 +110,10 @@ public final class PositionType extends AbstractEnumerator {
 	 */
 	private static final PositionType[] VALUES_ARRAY =
 		new PositionType[] {
-			KEEPER_LITERAL,
-			DEFENCE_LITERAL,
-			MIDFIELD_LITERAL,
-			ATTACKER_LITERAL,
+			KEEPER,
+			DEFENCE,
+			MIDFIELD,
+			ATTACKER,
 		};
 
 	/**
@@ -122,7 +122,7 @@ public final class PositionType extends AbstractEnumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<PositionType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Position Type</b></em>' literal with the specified literal value.
@@ -170,13 +170,34 @@ public final class PositionType extends AbstractEnumerator {
 	 */
 	public static PositionType get(int value) {
 		switch (value) {
-			case KEEPER: return KEEPER_LITERAL;
-			case DEFENCE: return DEFENCE_LITERAL;
-			case MIDFIELD: return MIDFIELD_LITERAL;
-			case ATTACKER: return ATTACKER_LITERAL;
+			case KEEPER_VALUE: return KEEPER;
+			case DEFENCE_VALUE: return DEFENCE;
+			case MIDFIELD_VALUE: return MIDFIELD;
+			case ATTACKER_VALUE: return ATTACKER;
 		}
 		return null;
 	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private final int value;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private final String name;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private final String literal;
 
 	/**
 	 * Only this class can construct instances.
@@ -185,7 +206,50 @@ public final class PositionType extends AbstractEnumerator {
 	 * @generated
 	 */
 	private PositionType(int value, String name, String literal) {
-		super(value, name, literal);
+		this.value = value;
+		this.name = name;
+		this.literal = literal;
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getValue() {
+	  return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getName() {
+	  return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getLiteral() {
+	  return literal;
+	}
+
+	/**
+	 * Returns the literal value of the enumerator, which is its string representation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		return literal;
+	}
+	
 } //PositionType

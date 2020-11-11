@@ -16,13 +16,14 @@ import TDT4250.Project.league.Standing;
 import TDT4250.Project.league.Team;
 
 import TDT4250.Project.league.util.LeagueValidator;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.EValidator;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -159,6 +160,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 		EValidator.Registry.INSTANCE.put
 			(theLeaguePackage,
 			 new EValidator.Descriptor() {
+				 @Override
 				 public EValidator getEValidator() {
 					 return LeagueValidator.INSTANCE;
 				 }
@@ -177,6 +179,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLeague() {
 		return leagueEClass;
 	}
@@ -186,6 +189,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getLeague_Season() {
 		return (EReference)leagueEClass.getEStructuralFeatures().get(0);
 	}
@@ -195,6 +199,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getLeague_Teams() {
 		return (EReference)leagueEClass.getEStructuralFeatures().get(1);
 	}
@@ -204,6 +209,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLeague_Name() {
 		return (EAttribute)leagueEClass.getEStructuralFeatures().get(2);
 	}
@@ -213,6 +219,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSeason() {
 		return seasonEClass;
 	}
@@ -222,6 +229,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSeason_Name() {
 		return (EAttribute)seasonEClass.getEStructuralFeatures().get(0);
 	}
@@ -231,6 +239,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSeason_Matchweeks() {
 		return (EReference)seasonEClass.getEStructuralFeatures().get(1);
 	}
@@ -240,6 +249,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSeason_Standing() {
 		return (EReference)seasonEClass.getEStructuralFeatures().get(2);
 	}
@@ -249,6 +259,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMatchweek() {
 		return matchweekEClass;
 	}
@@ -258,6 +269,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMatchweek_Matches() {
 		return (EReference)matchweekEClass.getEStructuralFeatures().get(0);
 	}
@@ -267,6 +279,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMatchweek_Matchweek() {
 		return (EAttribute)matchweekEClass.getEStructuralFeatures().get(1);
 	}
@@ -276,6 +289,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMatch() {
 		return matchEClass;
 	}
@@ -285,6 +299,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMatch_Hometeam() {
 		return (EReference)matchEClass.getEStructuralFeatures().get(0);
 	}
@@ -294,6 +309,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMatch_Awayteam() {
 		return (EReference)matchEClass.getEStructuralFeatures().get(1);
 	}
@@ -303,6 +319,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMatch_Bookings() {
 		return (EReference)matchEClass.getEStructuralFeatures().get(2);
 	}
@@ -312,6 +329,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMatch_Date() {
 		return (EAttribute)matchEClass.getEStructuralFeatures().get(3);
 	}
@@ -321,6 +339,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMatch_Homegoals() {
 		return (EAttribute)matchEClass.getEStructuralFeatures().get(4);
 	}
@@ -330,6 +349,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMatch_Avaygoals() {
 		return (EAttribute)matchEClass.getEStructuralFeatures().get(5);
 	}
@@ -339,6 +359,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMatch_Referee() {
 		return (EAttribute)matchEClass.getEStructuralFeatures().get(6);
 	}
@@ -348,6 +369,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTeam() {
 		return teamEClass;
 	}
@@ -357,6 +379,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTeam_Name() {
 		return (EAttribute)teamEClass.getEStructuralFeatures().get(0);
 	}
@@ -366,6 +389,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTeam_OwnedPlayer() {
 		return (EReference)teamEClass.getEStructuralFeatures().get(1);
 	}
@@ -375,6 +399,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTeam_Abbr() {
 		return (EAttribute)teamEClass.getEStructuralFeatures().get(2);
 	}
@@ -384,6 +409,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTeam_Stadium() {
 		return (EAttribute)teamEClass.getEStructuralFeatures().get(3);
 	}
@@ -393,6 +419,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getPlayer() {
 		return playerEClass;
 	}
@@ -402,6 +429,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPlayer_Name() {
 		return (EAttribute)playerEClass.getEStructuralFeatures().get(0);
 	}
@@ -411,6 +439,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPlayer_Position() {
 		return (EAttribute)playerEClass.getEStructuralFeatures().get(1);
 	}
@@ -420,6 +449,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBooking() {
 		return bookingEClass;
 	}
@@ -429,6 +459,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBooking_BookedPlayer() {
 		return (EReference)bookingEClass.getEStructuralFeatures().get(0);
 	}
@@ -438,6 +469,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getBooking_Type() {
 		return (EAttribute)bookingEClass.getEStructuralFeatures().get(1);
 	}
@@ -447,6 +479,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getBooking_Minute() {
 		return (EAttribute)bookingEClass.getEStructuralFeatures().get(2);
 	}
@@ -456,6 +489,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getStanding() {
 		return standingEClass;
 	}
@@ -465,6 +499,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getStanding_Team() {
 		return (EReference)standingEClass.getEStructuralFeatures().get(0);
 	}
@@ -474,6 +509,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getStanding_Position() {
 		return (EAttribute)standingEClass.getEStructuralFeatures().get(1);
 	}
@@ -483,6 +519,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getStanding_GamesPlayed() {
 		return (EAttribute)standingEClass.getEStructuralFeatures().get(2);
 	}
@@ -492,6 +529,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getStanding_Points() {
 		return (EAttribute)standingEClass.getEStructuralFeatures().get(3);
 	}
@@ -501,6 +539,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getStanding_Wins() {
 		return (EAttribute)standingEClass.getEStructuralFeatures().get(4);
 	}
@@ -510,6 +549,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getStanding_Draws() {
 		return (EAttribute)standingEClass.getEStructuralFeatures().get(5);
 	}
@@ -519,6 +559,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getStanding_Loose() {
 		return (EAttribute)standingEClass.getEStructuralFeatures().get(6);
 	}
@@ -528,6 +569,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getStanding_GoalsFor() {
 		return (EAttribute)standingEClass.getEStructuralFeatures().get(7);
 	}
@@ -537,6 +579,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getStanding_GoalsAgainst() {
 		return (EAttribute)standingEClass.getEStructuralFeatures().get(8);
 	}
@@ -546,6 +589,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getStanding_GoalDifference() {
 		return (EAttribute)standingEClass.getEStructuralFeatures().get(9);
 	}
@@ -555,6 +599,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getBookingType() {
 		return bookingTypeEEnum;
 	}
@@ -564,6 +609,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getPositionType() {
 		return positionTypeEEnum;
 	}
@@ -573,6 +619,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LeagueFactory getLeagueFactory() {
 		return (LeagueFactory)getEFactoryInstance();
 	}
@@ -674,9 +721,13 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Create type parameters
+
+		// Set bounds for type parameters
+
 		// Add supertypes to classes
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(leagueEClass, League.class, "League", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLeague_Season(), this.getSeason(), null, "Season", null, 0, -1, League.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLeague_Teams(), this.getTeam(), null, "Teams", null, 0, -1, League.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -712,7 +763,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 
 		initEClass(bookingEClass, Booking.class, "Booking", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBooking_BookedPlayer(), this.getPlayer(), null, "BookedPlayer", null, 0, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBooking_Type(), this.getBookingType(), "Type", null, 0, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBooking_Type(), this.getBookingType(), "Type", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBooking_Minute(), ecorePackage.getEInt(), "Minute", null, 0, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(standingEClass, Standing.class, "Standing", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -729,16 +780,16 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 
 		// Initialize enums and add enum literals
 		initEEnum(bookingTypeEEnum, BookingType.class, "BookingType");
-		addEEnumLiteral(bookingTypeEEnum, BookingType.RED_CARD_LITERAL);
-		addEEnumLiteral(bookingTypeEEnum, BookingType.YELLOW_CARD_LITERAL);
-		addEEnumLiteral(bookingTypeEEnum, BookingType.GOAL_LITERAL);
-		addEEnumLiteral(bookingTypeEEnum, BookingType.OWN_GOAL_LITERAL);
+		addEEnumLiteral(bookingTypeEEnum, BookingType.RED_CARD);
+		addEEnumLiteral(bookingTypeEEnum, BookingType.YELLOW_CARD);
+		addEEnumLiteral(bookingTypeEEnum, BookingType.GOAL);
+		addEEnumLiteral(bookingTypeEEnum, BookingType.OWN_GOAL);
 
 		initEEnum(positionTypeEEnum, PositionType.class, "PositionType");
-		addEEnumLiteral(positionTypeEEnum, PositionType.KEEPER_LITERAL);
-		addEEnumLiteral(positionTypeEEnum, PositionType.DEFENCE_LITERAL);
-		addEEnumLiteral(positionTypeEEnum, PositionType.MIDFIELD_LITERAL);
-		addEEnumLiteral(positionTypeEEnum, PositionType.ATTACKER_LITERAL);
+		addEEnumLiteral(positionTypeEEnum, PositionType.KEEPER);
+		addEEnumLiteral(positionTypeEEnum, PositionType.DEFENCE);
+		addEEnumLiteral(positionTypeEEnum, PositionType.MIDFIELD);
+		addEEnumLiteral(positionTypeEEnum, PositionType.ATTACKER);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -761,6 +812,12 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 		   source,
 		   new String[] {
 			   "constraints", "temaPlaysOnlyOneMatchPerWeek"
+		   });
+		addAnnotation
+		  (matchEClass,
+		   source,
+		   new String[] {
+			   "constraints", "onlyOneRedCardPerMatch"
 		   });
 	}
 

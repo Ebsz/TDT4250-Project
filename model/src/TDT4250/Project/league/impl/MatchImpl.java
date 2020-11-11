@@ -72,7 +72,7 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList bookings;
+	protected EList<Booking> bookings;
 
 	/**
 	 * The default value of the '{@link #getDate() <em>Date</em>}' attribute.
@@ -168,6 +168,7 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return LeaguePackage.Literals.MATCH;
 	}
@@ -177,6 +178,7 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Team getHometeam() {
 		if (hometeam != null && hometeam.eIsProxy()) {
 			InternalEObject oldHometeam = (InternalEObject)hometeam;
@@ -203,6 +205,7 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHometeam(Team newHometeam) {
 		Team oldHometeam = hometeam;
 		hometeam = newHometeam;
@@ -215,6 +218,7 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Team getAwayteam() {
 		if (awayteam != null && awayteam.eIsProxy()) {
 			InternalEObject oldAwayteam = (InternalEObject)awayteam;
@@ -241,6 +245,7 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAwayteam(Team newAwayteam) {
 		Team oldAwayteam = awayteam;
 		awayteam = newAwayteam;
@@ -253,9 +258,10 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getBookings() {
+	@Override
+	public EList<Booking> getBookings() {
 		if (bookings == null) {
-			bookings = new EObjectContainmentEList(Booking.class, this, LeaguePackage.MATCH__BOOKINGS);
+			bookings = new EObjectContainmentEList<Booking>(Booking.class, this, LeaguePackage.MATCH__BOOKINGS);
 		}
 		return bookings;
 	}
@@ -265,6 +271,7 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Date getDate() {
 		return date;
 	}
@@ -274,6 +281,7 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDate(Date newDate) {
 		Date oldDate = date;
 		date = newDate;
@@ -286,6 +294,7 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getHomegoals() {
 		return homegoals;
 	}
@@ -295,6 +304,7 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHomegoals(int newHomegoals) {
 		int oldHomegoals = homegoals;
 		homegoals = newHomegoals;
@@ -307,6 +317,7 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getAvaygoals() {
 		return avaygoals;
 	}
@@ -316,6 +327,7 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAvaygoals(int newAvaygoals) {
 		int oldAvaygoals = avaygoals;
 		avaygoals = newAvaygoals;
@@ -328,6 +340,7 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getReferee() {
 		return referee;
 	}
@@ -337,6 +350,7 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setReferee(String newReferee) {
 		String oldReferee = referee;
 		referee = newReferee;
@@ -349,10 +363,11 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case LeaguePackage.MATCH__BOOKINGS:
-				return ((InternalEList)getBookings()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getBookings()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -362,6 +377,7 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case LeaguePackage.MATCH__HOMETEAM:
@@ -375,9 +391,9 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 			case LeaguePackage.MATCH__DATE:
 				return getDate();
 			case LeaguePackage.MATCH__HOMEGOALS:
-				return new Integer(getHomegoals());
+				return getHomegoals();
 			case LeaguePackage.MATCH__AVAYGOALS:
-				return new Integer(getAvaygoals());
+				return getAvaygoals();
 			case LeaguePackage.MATCH__REFEREE:
 				return getReferee();
 		}
@@ -389,6 +405,8 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case LeaguePackage.MATCH__HOMETEAM:
@@ -399,16 +417,16 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 				return;
 			case LeaguePackage.MATCH__BOOKINGS:
 				getBookings().clear();
-				getBookings().addAll((Collection)newValue);
+				getBookings().addAll((Collection<? extends Booking>)newValue);
 				return;
 			case LeaguePackage.MATCH__DATE:
 				setDate((Date)newValue);
 				return;
 			case LeaguePackage.MATCH__HOMEGOALS:
-				setHomegoals(((Integer)newValue).intValue());
+				setHomegoals((Integer)newValue);
 				return;
 			case LeaguePackage.MATCH__AVAYGOALS:
-				setAvaygoals(((Integer)newValue).intValue());
+				setAvaygoals((Integer)newValue);
 				return;
 			case LeaguePackage.MATCH__REFEREE:
 				setReferee((String)newValue);
@@ -422,6 +440,7 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case LeaguePackage.MATCH__HOMETEAM:
@@ -454,6 +473,7 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case LeaguePackage.MATCH__HOMETEAM:
@@ -479,10 +499,11 @@ public class MatchImpl extends MinimalEObjectImpl.Container implements Match {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (Date: ");
 		result.append(date);
 		result.append(", Homegoals: ");

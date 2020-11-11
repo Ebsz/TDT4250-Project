@@ -47,7 +47,7 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList season;
+	protected EList<Season> season;
 
 	/**
 	 * The cached value of the '{@link #getTeams() <em>Teams</em>}' containment reference list.
@@ -57,7 +57,7 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList teams;
+	protected EList<Team> teams;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -93,6 +93,7 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return LeaguePackage.Literals.LEAGUE;
 	}
@@ -102,9 +103,10 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getSeason() {
+	@Override
+	public EList<Season> getSeason() {
 		if (season == null) {
-			season = new EObjectContainmentEList(Season.class, this, LeaguePackage.LEAGUE__SEASON);
+			season = new EObjectContainmentEList<Season>(Season.class, this, LeaguePackage.LEAGUE__SEASON);
 		}
 		return season;
 	}
@@ -114,9 +116,10 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getTeams() {
+	@Override
+	public EList<Team> getTeams() {
 		if (teams == null) {
-			teams = new EObjectContainmentEList(Team.class, this, LeaguePackage.LEAGUE__TEAMS);
+			teams = new EObjectContainmentEList<Team>(Team.class, this, LeaguePackage.LEAGUE__TEAMS);
 		}
 		return teams;
 	}
@@ -126,6 +129,7 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -135,6 +139,7 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -147,12 +152,13 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case LeaguePackage.LEAGUE__SEASON:
-				return ((InternalEList)getSeason()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getSeason()).basicRemove(otherEnd, msgs);
 			case LeaguePackage.LEAGUE__TEAMS:
-				return ((InternalEList)getTeams()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getTeams()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -162,6 +168,7 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case LeaguePackage.LEAGUE__SEASON:
@@ -179,15 +186,17 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case LeaguePackage.LEAGUE__SEASON:
 				getSeason().clear();
-				getSeason().addAll((Collection)newValue);
+				getSeason().addAll((Collection<? extends Season>)newValue);
 				return;
 			case LeaguePackage.LEAGUE__TEAMS:
 				getTeams().clear();
-				getTeams().addAll((Collection)newValue);
+				getTeams().addAll((Collection<? extends Team>)newValue);
 				return;
 			case LeaguePackage.LEAGUE__NAME:
 				setName((String)newValue);
@@ -201,6 +210,7 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case LeaguePackage.LEAGUE__SEASON:
@@ -221,6 +231,7 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case LeaguePackage.LEAGUE__SEASON:
@@ -238,10 +249,11 @@ public class LeagueImpl extends MinimalEObjectImpl.Container implements League {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(')');

@@ -48,6 +48,7 @@ public class LeagueAdapterFactory extends AdapterFactoryImpl {
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
+	@Override
 	public boolean isFactoryForType(Object object) {
 		if (object == modelPackage) {
 			return true;
@@ -64,33 +65,42 @@ public class LeagueAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected LeagueSwitch modelSwitch =
-		new LeagueSwitch() {
-			public Object caseLeague(League object) {
+	protected LeagueSwitch<Adapter> modelSwitch =
+		new LeagueSwitch<Adapter>() {
+			@Override
+			public Adapter caseLeague(League object) {
 				return createLeagueAdapter();
 			}
-			public Object caseSeason(Season object) {
+			@Override
+			public Adapter caseSeason(Season object) {
 				return createSeasonAdapter();
 			}
-			public Object caseMatchweek(Matchweek object) {
+			@Override
+			public Adapter caseMatchweek(Matchweek object) {
 				return createMatchweekAdapter();
 			}
-			public Object caseMatch(Match object) {
+			@Override
+			public Adapter caseMatch(Match object) {
 				return createMatchAdapter();
 			}
-			public Object caseTeam(Team object) {
+			@Override
+			public Adapter caseTeam(Team object) {
 				return createTeamAdapter();
 			}
-			public Object casePlayer(Player object) {
+			@Override
+			public Adapter casePlayer(Player object) {
 				return createPlayerAdapter();
 			}
-			public Object caseBooking(Booking object) {
+			@Override
+			public Adapter caseBooking(Booking object) {
 				return createBookingAdapter();
 			}
-			public Object caseStanding(Standing object) {
+			@Override
+			public Adapter caseStanding(Standing object) {
 				return createStandingAdapter();
 			}
-			public Object defaultCase(EObject object) {
+			@Override
+			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
 		};
@@ -103,8 +113,9 @@ public class LeagueAdapterFactory extends AdapterFactoryImpl {
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
+	@Override
 	public Adapter createAdapter(Notifier target) {
-		return (Adapter)modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject)target);
 	}
 
 

@@ -67,7 +67,7 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList matchweeks;
+	protected EList<Matchweek> matchweeks;
 
 	/**
 	 * The cached value of the '{@link #getStanding() <em>Standing</em>}' containment reference list.
@@ -77,7 +77,7 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList standing;
+	protected EList<Standing> standing;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -93,6 +93,7 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return LeaguePackage.Literals.SEASON;
 	}
@@ -102,6 +103,7 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -111,6 +113,7 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -123,9 +126,10 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getMatchweeks() {
+	@Override
+	public EList<Matchweek> getMatchweeks() {
 		if (matchweeks == null) {
-			matchweeks = new EObjectContainmentEList(Matchweek.class, this, LeaguePackage.SEASON__MATCHWEEKS);
+			matchweeks = new EObjectContainmentEList<Matchweek>(Matchweek.class, this, LeaguePackage.SEASON__MATCHWEEKS);
 		}
 		return matchweeks;
 	}
@@ -135,9 +139,10 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getStanding() {
+	@Override
+	public EList<Standing> getStanding() {
 		if (standing == null) {
-			standing = new EObjectContainmentEList(Standing.class, this, LeaguePackage.SEASON__STANDING);
+			standing = new EObjectContainmentEList<Standing>(Standing.class, this, LeaguePackage.SEASON__STANDING);
 		}
 		return standing;
 	}
@@ -147,12 +152,13 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case LeaguePackage.SEASON__MATCHWEEKS:
-				return ((InternalEList)getMatchweeks()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getMatchweeks()).basicRemove(otherEnd, msgs);
 			case LeaguePackage.SEASON__STANDING:
-				return ((InternalEList)getStanding()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getStanding()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -162,6 +168,7 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case LeaguePackage.SEASON__NAME:
@@ -179,6 +186,8 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case LeaguePackage.SEASON__NAME:
@@ -186,11 +195,11 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 				return;
 			case LeaguePackage.SEASON__MATCHWEEKS:
 				getMatchweeks().clear();
-				getMatchweeks().addAll((Collection)newValue);
+				getMatchweeks().addAll((Collection<? extends Matchweek>)newValue);
 				return;
 			case LeaguePackage.SEASON__STANDING:
 				getStanding().clear();
-				getStanding().addAll((Collection)newValue);
+				getStanding().addAll((Collection<? extends Standing>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -201,6 +210,7 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case LeaguePackage.SEASON__NAME:
@@ -221,6 +231,7 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case LeaguePackage.SEASON__NAME:
@@ -238,10 +249,11 @@ public class SeasonImpl extends MinimalEObjectImpl.Container implements Season {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(')');
