@@ -4,17 +4,21 @@ package TDT4250.Project.league.util;
 
 import TDT4250.Project.league.*;
 
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
-
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import org.eclipse.emf.ecore.util.EObjectValidator;
+
+//import com.sun.tools.javac.util.List;
 
 /**
  * <!-- begin-user-doc -->
@@ -148,21 +152,39 @@ public class LeagueValidator extends EObjectValidator {
 	 * Validates the temaPlaysOnlyOneMatchPerWeek constraint of '<em>Matchweek</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean validateMatchweek_temaPlaysOnlyOneMatchPerWeek(Matchweek matchweek, DiagnosticChain diagnostics, Map context) {
 		// TODO implement the constraint
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
+		
+		Map<Team, String> teams = new HashMap();
+		boolean duplicate = false;
+		
+		EList matches = matchweek.getMatches();
+		Iterator itr = matches.iterator();
+		while(itr.hasNext() && !duplicate) {
+			Match match = (Match) itr.next();
+			Team home = match.getHometeam();
+			
+			if(!teams.containsKey(home)) {
+				teams.put(home, "home");
+			}
+			else {
+				duplicate = true;
+			}
+		}
+		
+		if (duplicate) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(new BasicDiagnostic
 						(Diagnostic.ERROR,
 						 DIAGNOSTIC_SOURCE,
 						 0,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericConstraint_diagnostic", new Object[] { "temaPlaysOnlyOneMatchPerWeek", getObjectLabel(matchweek, context) }),
+						 EcorePlugin.INSTANCE.getString("_UI_GenericConstraint_diagnostic // Team played more than one match during a matchweek", new Object[] { "temaPlaysOnlyOneMatchPerWeek", getObjectLabel(matchweek, context) }),
 						 new Object[] { matchweek }));
 			}
 			return false;
