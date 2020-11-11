@@ -15,12 +15,14 @@ import TDT4250.Project.league.Season;
 import TDT4250.Project.league.Standing;
 import TDT4250.Project.league.Team;
 
+import TDT4250.Project.league.util.LeagueValidator;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -152,6 +154,15 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 
 		// Initialize created meta-data
 		theLeaguePackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theLeaguePackage,
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return LeagueValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theLeaguePackage.freeze();
@@ -731,6 +742,26 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";
+		addAnnotation
+		  (matchweekEClass,
+		   source,
+		   new String[] {
+			   "constraints", "temaPlaysOnlyOneMatchPerWeek"
+		   });
 	}
 
 } //LeaguePackageImpl
