@@ -147,14 +147,28 @@ public class LeagueValidator extends EObjectValidator {
 	 * Validates the correctNumberOfMatchesPerSeason constraint of '<em>Season</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
+	@SuppressWarnings("unused")
 	public boolean validateSeason_correctNumberOfMatchesPerSeason(Season season, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
+		int numberOfTeams = 0;
+		int numberOfMatches = 0;
+		
+		League league = (League) season.eContainer();
+		
+		// Calculate total number of teams
+		for (Team team : league.getTeams()) {
+			numberOfTeams += 1;
+		}
+		
+		// Calculate total number of matches
+		for (Matchweek matchweek : season.getMatchweeks()) {
+			for (Match match : matchweek.getMatches()) {
+				numberOfMatches += 1;
+			}
+		}
+		
+		if (numberOfTeams != numberOfMatches) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(createDiagnostic
@@ -335,14 +349,15 @@ public class LeagueValidator extends EObjectValidator {
 	 * Validates the playerPlaysForOnlyOneTeam constraint of '<em>Player</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean validatePlayer_playerPlaysForOnlyOneTeam(Player player, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
+		boolean error = false;
+		Team team = (Team) player.eContainer();
+		
+		// TODO: Er det i det hele tatt mulig å registreres for 2 lag?
+		
+		if (error) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(createDiagnostic
