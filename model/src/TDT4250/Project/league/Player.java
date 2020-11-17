@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see TDT4250.Project.league.LeaguePackage#getPlayer()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='playerPlaysForOnlyOneTeam'"
  * @generated
  */
 public interface Player extends EObject {
