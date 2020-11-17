@@ -130,7 +130,45 @@ public class LeagueValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateSeason(Season season, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(season, diagnostics, context);
+		if (!validate_NoCircularContainment(season, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(season, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(season, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(season, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(season, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(season, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(season, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(season, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(season, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSeason_correctNumberOfMatchesPerSeason(season, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the correctNumberOfMatchesPerSeason constraint of '<em>Season</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSeason_correctNumberOfMatchesPerSeason(Season season, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "correctNumberOfMatchesPerSeason", getObjectLabel(season, context) },
+						 new Object[] { season },
+						 context));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -148,7 +186,7 @@ public class LeagueValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(matchweek, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(matchweek, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(matchweek, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMatchweek_temaPlaysOnlyOneMatchPerWeek(matchweek, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMatchweek_teamsPlaysOnlyOneMatchPerWeek(matchweek, diagnostics, context);
 		return result;
 	}
 
@@ -158,7 +196,7 @@ public class LeagueValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public boolean validateMatchweek_temaPlaysOnlyOneMatchPerWeek(Matchweek matchweek, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateMatchweek_teamsPlaysOnlyOneMatchPerWeek(Matchweek matchweek, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		
 		Map<Team, String> homeTeams = new HashMap<Team, String>();
 		Map<Team, String> awayTeams = new HashMap<Team, String>();
@@ -237,6 +275,8 @@ public class LeagueValidator extends EObjectValidator {
 			}
 		}
 		
+		System.out.println(redCards);
+		
 		for (Booking bookings : redCards) {
 			redCards.remove(bookings);
 			for (Booking books : redCards) {
@@ -278,7 +318,45 @@ public class LeagueValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validatePlayer(Player player, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(player, diagnostics, context);
+		if (!validate_NoCircularContainment(player, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(player, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(player, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(player, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(player, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(player, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(player, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(player, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(player, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePlayer_playerPlaysForOnlyOneTeam(player, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the playerPlaysForOnlyOneTeam constraint of '<em>Player</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlayer_playerPlaysForOnlyOneTeam(Player player, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "playerPlaysForOnlyOneTeam", getObjectLabel(player, context) },
+						 new Object[] { player },
+						 context));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**
