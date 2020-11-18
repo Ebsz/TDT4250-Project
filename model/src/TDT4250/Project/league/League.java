@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see TDT4250.Project.league.LeaguePackage#getLeague()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='allTeamsMeetsHomeAndAway'"
  * @generated
  */
 public interface League extends EObject {

@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 import junit.framework.TestCase;
 import TDT4250.Project.league.*;
-import TDT4250.Project.league.util.LeagueValidator;
 
 
 public class LeagueValidatorTest extends TestCase {
@@ -51,29 +50,58 @@ public class LeagueValidatorTest extends TestCase {
 		return null;
 	}
 	
-	public void testOnlyOneRedCardPerMatch_valid() {
+	public void testCorrectNumberOfCards_valid() {
 		League Testliga = (League) testInstance.getContents().get(0);
 		Season season = (Season) Testliga.getSeason().get(0);
 		Matchweek matchweek = (Matchweek) season.getMatchweeks().get(0);
-		Match match = (Match) matchweek.getMatches().get(0);	
-		assertNull(findDiagnostics(diagnostics, match, "onlyOneRedCardPerMatch"));
+		Match match = (Match) matchweek.getMatches().get(0);
+		
+		assertNull(findDiagnostics(diagnostics, match, "correctNumberOfCards"));
 	}
 	
-	public void testOnlyOneRedCardPerMatch_invalid() {
+	public void testCorrectNumberOfCards_invalid() {
 		League Testliga = (League) testInstance.getContents().get(0);
 		Season season = (Season) Testliga.getSeason().get(0);
 		Matchweek matchweek = (Matchweek) season.getMatchweeks().get(0);
 		Match match = (Match) matchweek.getMatches().get(1);	
-		System.out.println(match);
-		assertNotNull(findDiagnostics(diagnostics, match, "onlyOneRedCardPerMatch"));
+
+		assertNotNull(findDiagnostics(diagnostics, match, "correctNumberOfCards"));
 	}
 	
 	public void testTeamsPlaysOnlyOneMatchPerWeek_valid( ) {
-		// TODO: Write valid test for this constraint
+		League Testliga = (League) testInstance.getContents().get(0);
+		Season season = (Season) Testliga.getSeason().get(0);
+		Matchweek matchweek = (Matchweek) season.getMatchweeks().get(1);
+		
+		assertNull(findDiagnostics(diagnostics, matchweek, "teamsPlaysOnlyOneMatchPerWeek"));
 	}
 
 	public void testTeamsPlaysOnlyOneMatchPerWeek_invalid( ) {
-		// TODO: Write invalid test for this constraint
+		League Testliga = (League) testInstance.getContents().get(0);
+		Season season = (Season) Testliga.getSeason().get(0);
+		Matchweek matchweek = (Matchweek) season.getMatchweeks().get(0);
+		
+		assertNotNull(findDiagnostics(diagnostics, matchweek, "teamsPlaysOnlyOneMatchPerWeek"));
+	}
+	
+	public void testAllTeamsMeetsHomeAndAway_valid( ) {
+		League Testliga = (League) testInstance.getContents().get(0);
+		
+		assertNotNull(findDiagnostics(diagnostics, Testliga, "allTeamsMeetsHomeAndAway"));	
+	}
+	
+	public void testCorrectNumberOfMatchesPerSeason_valid( ) {
+		League Testliga = (League) testInstance.getContents().get(0);
+		Season season = (Season) Testliga.getSeason().get(1);
+		
+		assertNull(findDiagnostics(diagnostics, season, "correctNumberOfMatchesPerSeason"));
+	}
+
+	public void testCorrectNumberOfMatchesPerSeason_invalid( ) {
+		League Testliga = (League) testInstance.getContents().get(0);
+		Season season = (Season) Testliga.getSeason().get(0);
+		
+		assertNotNull(findDiagnostics(diagnostics, season, "correctNumberOfMatchesPerSeason"));
 	}
 	
 }
