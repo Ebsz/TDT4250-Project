@@ -121,7 +121,69 @@ public class LeagueValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateLeague(League league, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(league, diagnostics, context);
+		if (!validate_NoCircularContainment(league, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(league, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(league, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(league, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(league, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(league, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(league, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(league, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(league, diagnostics, context);
+		if (result || diagnostics != null) result &= validateLeague_allTeamsMeetsHomeAndAway(league, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the allTeamsMeetsHomeAndAway constraint of '<em>League</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@SuppressWarnings("null")
+	public boolean validateLeague_allTeamsMeetsHomeAndAway(League league, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		EList<Team> teams = league.getTeams();
+		boolean error = false;
+		
+		for (Team team : league.getTeams()) {
+			
+			// Creates a list of the teams opponents
+			EList<Team> opponents = null;
+			for (Season season : league.getSeason()) {
+				for (Matchweek matchweek : season.getMatchweeks()) {
+					for (Match match : matchweek.getMatches()) {
+						if (match.getHometeam() == team) {
+							opponents.add(match.getAwayteam());
+						}
+						if (match.getAwayteam() == team) {
+							opponents.add(match.getHometeam());
+						}
+					}
+				}
+			}
+			
+			// Changes boolean error if not every team is in the opponents list
+			for (Team o : opponents)
+				if (! teams.contains(o)) {
+					error = true;
+				}
+			}
+		
+		if (error) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "allTeamsMeetsHomeAndAway", getObjectLabel(league, context) },
+						 new Object[] { league },
+						 context));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -268,18 +330,20 @@ public class LeagueValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(match, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(match, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(match, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMatch_onlyOneRedCardPerMatch(match, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMatch_correctNumberOfCards(match, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the onlyOneRedCardPerMatch constraint of '<em>Match</em>'.
+	 * Validates the correctNumberOfCards constraint of '<em>Match</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	@SuppressWarnings("null")
-	public boolean validateMatch_onlyOneRedCardPerMatch(Match match, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateMatch_correctNumberOfCards(Match match, DiagnosticChain diagnostics, Map<Object, Object> context) {
+
+		// Check that a player receives maximum one red car per match
 		Boolean error = false;
 		EList<Booking> redCards = null;
 		
@@ -289,16 +353,18 @@ public class LeagueValidator extends EObjectValidator {
 			}
 		}
 		
-		System.out.println(redCards);
-		
-		for (Booking bookings : redCards) {
-			redCards.remove(bookings);
-			for (Booking books : redCards) {
-				if(books.getBookedPlayer() == bookings.getBookedPlayer()) {
+		for (Booking booking : redCards) {
+			redCards.remove(booking);
+			for (Booking b : redCards) {
+				if(b.getBookedPlayer().getName() == booking.getBookedPlayer().getName()) {
 					error = true;
 				}
 			}
 		}
+		
+		// Check that if a player receives two yellow cards, it also implies a red
+		
+		// TODO: Implement this check
 		
 		if (error) {
 			if (diagnostics != null) {
@@ -308,7 +374,7 @@ public class LeagueValidator extends EObjectValidator {
 						 DIAGNOSTIC_SOURCE,
 						 0,
 						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "onlyOneRedCardPerMatch", getObjectLabel(match, context) },
+						 new Object[] { "correctNumberOfCards", getObjectLabel(match, context) },
 						 new Object[] { match },
 						 context));
 			}
@@ -332,46 +398,7 @@ public class LeagueValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validatePlayer(Player player, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(player, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(player, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(player, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(player, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(player, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(player, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(player, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(player, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(player, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePlayer_playerPlaysForOnlyOneTeam(player, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * Validates the playerPlaysForOnlyOneTeam constraint of '<em>Player</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public boolean validatePlayer_playerPlaysForOnlyOneTeam(Player player, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		boolean error = false;
-		Team team = (Team) player.eContainer();
-		
-		// TODO: Er det i det hele tatt mulig å registreres for 2 lag?
-		
-		if (error) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "playerPlaysForOnlyOneTeam", getObjectLabel(player, context) },
-						 new Object[] { player },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return validate_EveryDefaultConstraint(player, diagnostics, context);
 	}
 
 	/**
@@ -414,13 +441,10 @@ public class LeagueValidator extends EObjectValidator {
 	 * Returns the resource locator that will be used to fetch messages for this validator's diagnostics.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		// TODO
-		// Specialize this to return a resource locator for messages specific to this validator.
-		// Ensure that you remove @generated or mark it @generated NOT
 		return super.getResourceLocator();
 	}
 

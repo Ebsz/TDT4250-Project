@@ -808,6 +808,12 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 	protected void createEcoreAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore";
 		addAnnotation
+		  (leagueEClass,
+		   source,
+		   new String[] {
+			   "constraints", "allTeamsMeetsHomeAndAway"
+		   });
+		addAnnotation
 		  (seasonEClass,
 		   source,
 		   new String[] {
@@ -823,13 +829,7 @@ public class LeaguePackageImpl extends EPackageImpl implements LeaguePackage {
 		  (matchEClass,
 		   source,
 		   new String[] {
-			   "constraints", "onlyOneRedCardPerMatch"
-		   });
-		addAnnotation
-		  (playerEClass,
-		   source,
-		   new String[] {
-			   "constraints", "playerPlaysForOnlyOneTeam"
+			   "constraints", "correctNumberOfCards"
 		   });
 	}
 

@@ -6,7 +6,7 @@
     xmlns:league="platform:/plugin/TDT4250.Project/model/League.ecore"
     xsi:schemaLocation="platform:/plugin/TDT4250.Project/model/League.ecore ../../../../../../model/League.ecore"
     name="Testliga">
-  <Season name="2020">
+  <Season name="Test RedCard">
     <matchweeks
         matchweek="1">
       <matches
@@ -21,8 +21,8 @@
             Minute="5"/>
       </matches>
       <matches
-          Hometeam="//@Teams.0"
-          Awayteam="//@Teams.1"
+          Hometeam="//@Teams.1"
+          Awayteam="//@Teams.0"
           Date="2020-10-22T00:00:00.000+0200"
           Homegoals="1"
           Avaygoals="2"
@@ -34,6 +34,26 @@
             BookedPlayer="//@Teams.0/@OwnedPlayer.0"
             Minute="10"/>
       </matches>
+    </matchweeks>
+    <matchweeks
+        matchweek="2">
+      <matches
+          Hometeam="//@Teams.1"
+          Awayteam="//@Teams.0"
+          Date="2021-06-11T00:00:00.000+0200"
+          Referee="Vegard"/>
+    </matchweeks>
+  </Season>
+  <Season name="Test correct number of matches">
+    <matchweeks>
+      <matches
+          Hometeam="//@Teams.1"
+          Awayteam="//@Teams.0"/>
+    </matchweeks>
+    <matchweeks>
+      <matches
+          Hometeam="//@Teams.0"
+          Awayteam="//@Teams.1"/>
     </matchweeks>
   </Season>
   <Teams Name="Rosenborg BK"
