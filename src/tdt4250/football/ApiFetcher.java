@@ -7,6 +7,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import org.json.*;
 
+
 public class ApiFetcher {
 	private final String API_BASE_URL = "http://api.football-data.org/v2/";
 	private final String API_KEY = "b7822848398f41b2b76165aeedd97ac2";
@@ -65,9 +66,10 @@ public class ApiFetcher {
 
 		int competitionId = getCompetitionId(COMPETITION_NAME);
 		// TODO: Check for error
-
+		
 		System.out.println(competitionId);
 	}
+	
 
 	public static void main(String[] args) {
 		ApiFetcher apiFetcher = new ApiFetcher();
