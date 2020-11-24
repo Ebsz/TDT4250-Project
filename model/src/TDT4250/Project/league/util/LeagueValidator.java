@@ -4,8 +4,10 @@ package TDT4250.Project.league.util;
 
 import TDT4250.Project.league.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
@@ -148,7 +150,7 @@ public class LeagueValidator extends EObjectValidator {
 		for (Team team : league.getTeams()) {
 			
 			// Creates a list of the teams opponents
-			EList<Team> opponents = null;
+			List<Team> opponents = new ArrayList<>();
 			for (Season season : league.getSeason()) {
 				for (Matchweek matchweek : season.getMatchweeks()) {
 					for (Match match : matchweek.getMatches()) {
@@ -273,42 +275,29 @@ public class LeagueValidator extends EObjectValidator {
 	 * @generated NOT
 	 */
 	public boolean validateMatchweek_teamsPlaysOnlyOneMatchPerWeek(Matchweek matchweek, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean error = false;
+		List<Team> teams = new ArrayList<>();
 		
-		Map<Team, String> homeTeams = new HashMap<Team, String>();
-		Map<Team, String> awayTeams = new HashMap<Team, String>();
-		boolean duplicate = false;
-		
-		EList<Match> matches = matchweek.getMatches();
-		Iterator<Match> itr = matches.iterator();
-		while(itr.hasNext() && !duplicate) {
-			Match match = (Match) itr.next();
-			Team home = match.getHometeam();
-			Team away = match.getAwayteam();
-			
-			if(!homeTeams.containsKey(home)) {
-				homeTeams.put(home, "home");
+		for (Match match : matchweek.getMatches()) {
+			if(teams.contains(match.getAwayteam()) || teams.contains(match.getHometeam())) {
+				error = true;
 			}
-			else {
-				duplicate = true;
-			}
-			
-			if(!awayTeams.containsKey(away)) {
-				awayTeams.put(away, "away");
-			}
-			else {
-				duplicate = true;
-			}
+			teams.add(match.getHometeam());
+			teams.add(match.getAwayteam());
 		}
 		
-		if (duplicate) {
+		
+		if (error) {
 			if (diagnostics != null) {
 				diagnostics.add
-					(new BasicDiagnostic
+					(createDiagnostic
 						(Diagnostic.ERROR,
 						 DIAGNOSTIC_SOURCE,
 						 0,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericConstraint_diagnostic // Team played more than one match during a matchweek", new Object[] { "temaPlaysOnlyOneMatchPerWeek", getObjectLabel(matchweek, context) }),
-						 new Object[] { matchweek }));
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "teamsPlaysOnlyOneMatchPerWeek", getObjectLabel(matchweek, context) },
+						 new Object[] { matchweek },
+						 context));
 			}
 			return false;
 		}
@@ -345,7 +334,7 @@ public class LeagueValidator extends EObjectValidator {
 
 		// Check that a player receives maximum one red car per match
 		Boolean error = false;
-		EList<Booking> redCards = null;
+		List<Booking> redCards = new ArrayList<>();
 		
 		for (Booking booking : match.getBookings()) {
 			if (booking.getType().getName() == "RedCard") {
@@ -363,8 +352,26 @@ public class LeagueValidator extends EObjectValidator {
 		}
 		
 		// Check that if a player receives two yellow cards, it also implies a red
+		List<Booking> yellowCards = new ArrayList<>();
+		for (Booking booking : match.getBookings()) {
+			if (booking.getType().getName() == "YellowCard") {
+				yellowCards.add(booking);
+			}
+		}
 		
-		// TODO: Implement this check
+		for (Booking booking : yellowCards) {
+			int numberOfYellowCards = 0;
+			yellowCards.remove(booking);
+			for (Booking b : yellowCards) {
+				if(b.getBookedPlayer().getName() == booking.getBookedPlayer().getName()) {
+					numberOfYellowCards++;
+					yellowCards.remove(b);
+				}
+				if (numberOfYellowCards > 2) {
+					error = true;
+				}
+			}
+		}
 		
 		if (error) {
 			if (diagnostics != null) {

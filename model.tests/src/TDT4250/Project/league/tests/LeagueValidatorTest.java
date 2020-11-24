@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 import junit.framework.TestCase;
 import TDT4250.Project.league.*;
+import TDT4250.Project.league.util.LeagueValidator;
 
 
 public class LeagueValidatorTest extends TestCase {
@@ -49,7 +50,7 @@ public class LeagueValidatorTest extends TestCase {
 		}
 		return null;
 	}
-	
+
 	public void testCorrectNumberOfCards_valid() {
 		League Testliga = (League) testInstance.getContents().get(0);
 		Season season = (Season) Testliga.getSeason().get(0);
@@ -58,7 +59,7 @@ public class LeagueValidatorTest extends TestCase {
 		
 		assertNull(findDiagnostics(diagnostics, match, "correctNumberOfCards"));
 	}
-	
+
 	public void testCorrectNumberOfCards_invalid() {
 		League Testliga = (League) testInstance.getContents().get(0);
 		Season season = (Season) Testliga.getSeason().get(0);
@@ -67,7 +68,7 @@ public class LeagueValidatorTest extends TestCase {
 
 		assertNotNull(findDiagnostics(diagnostics, match, "correctNumberOfCards"));
 	}
-	
+
 	public void testTeamsPlaysOnlyOneMatchPerWeek_valid( ) {
 		League Testliga = (League) testInstance.getContents().get(0);
 		Season season = (Season) Testliga.getSeason().get(0);
@@ -75,7 +76,7 @@ public class LeagueValidatorTest extends TestCase {
 		
 		assertNull(findDiagnostics(diagnostics, matchweek, "teamsPlaysOnlyOneMatchPerWeek"));
 	}
-
+	
 	public void testTeamsPlaysOnlyOneMatchPerWeek_invalid( ) {
 		League Testliga = (League) testInstance.getContents().get(0);
 		Season season = (Season) Testliga.getSeason().get(0);
@@ -83,13 +84,13 @@ public class LeagueValidatorTest extends TestCase {
 		
 		assertNotNull(findDiagnostics(diagnostics, matchweek, "teamsPlaysOnlyOneMatchPerWeek"));
 	}
-	
+
 	public void testAllTeamsMeetsHomeAndAway_valid( ) {
 		League Testliga = (League) testInstance.getContents().get(0);
 		
-		assertNotNull(findDiagnostics(diagnostics, Testliga, "allTeamsMeetsHomeAndAway"));	
+		assertNull(findDiagnostics(diagnostics, Testliga, "allTeamsMeetsHomeAndAway"));	
 	}
-	
+
 	public void testCorrectNumberOfMatchesPerSeason_valid( ) {
 		League Testliga = (League) testInstance.getContents().get(0);
 		Season season = (Season) Testliga.getSeason().get(1);

@@ -24,5 +24,6 @@ public class RunValidation {
 		League league = (League) resource.getContents().get(0);
 		Diagnostic diagnostics = Diagnostician.INSTANCE.validate(league);
 		System.out.println(diagnostics.getSeverity());
+		
 	}
 }
