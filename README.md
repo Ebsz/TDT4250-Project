@@ -71,7 +71,7 @@ The Eclipse PlantUML plugin is incompatible with the latest graphviz version, so
    * /src
       * /impl
       * /util
-         */LeagueValidator.java
+         * /LeagueValidator.java
 * TDT4250-Project.tests
    * /src
       * /LeagueValidatorTests.java
