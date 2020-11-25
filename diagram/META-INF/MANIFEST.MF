@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: TDT4250.Project.diagram;singleton:=true
+Bundle-SymbolicName: diagram;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: TDT4250.Project.diagram.Activator
 Bundle-Localization: plugin
