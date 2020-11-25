@@ -3,6 +3,9 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="league" nsURI="platform:/plugin/TDT4250.Project/model/League.ecore"
     nsPrefix="league">
   <eClassifiers xsi:type="ecore:EClass" name="League">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="allTeamsMeetsHomeAndAway"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Season" upperBound="-1"
         eType="#//Season" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Teams" upperBound="-1"
@@ -10,6 +13,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Season">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="correctNumberOfMatchesPerSeason"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="matchweeks" upperBound="-1"
         eType="#//Matchweek" containment="true"/>
@@ -18,7 +24,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Matchweek">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="temaPlaysOnlyOneMatchPerWeek"/>
+      <details key="constraints" value="teamsPlaysOnlyOneMatchPerWeek"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="matches" upperBound="-1"
         eType="#//Match" containment="true"/>
@@ -26,7 +32,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Match">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="onlyOneRedCardPerMatch"/>
+      <details key="constraints" value="correctNumberOfCards"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Hometeam" lowerBound="1"
         eType="#//Team"/>

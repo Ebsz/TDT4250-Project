@@ -12,6 +12,8 @@ Export-Package: TDT4250.Project.league.tests
 Require-Bundle: org.eclipse.core.runtime,
  model;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
- org.junit;visibility:=reexport
+ org.junit;visibility:=reexport,
+ org.eclipse.acceleo.query;bundle-version="7.0.0",
+ org.antlr.runtime;bundle-version="3.2.0"
 Eclipse-LazyStart: true
 Bundle-ActivationPolicy: lazy

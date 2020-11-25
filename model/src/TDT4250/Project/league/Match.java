@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see TDT4250.Project.league.LeaguePackage#getMatch()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='onlyOneRedCardPerMatch'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='correctNumberOfCards'"
  * @generated
  */
 public interface Match extends EObject {
