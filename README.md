@@ -64,6 +64,8 @@ From the software site http://hallvard.github.io/plantuml (type into text field)
 In addition, install the graphviz command line application and register its path to dot executable in the PlantUML preferences in Eclipse. 
 The Eclipse PlantUML plugin is incompatible with the latest graphviz version, so use v2.38.
 
+#### ApiFetcher
+To use the ApiFetcher, you will need to import the libraries found under `lib/`. In Eclipse, select all the `*.jar` files and right click -> Build Path -> Add to build path.
 
 <!-- Repo Structure -->
 ## Repo Structure
