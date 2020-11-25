@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:league="platform:/plugin/TDT4250.Project/model/League.ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description platform:/plugin/TDT4250.Project/model/League.ecore platform:/resource/model/League.ecore http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
   <viewpoint:DAnalysis uid="_Nl8-oC78EeuC__Tb92H6Vg" selectedViews="_8Ywn8C79EeuC__Tb92H6Vg" version="14.3.1.202003261200">
     <semanticResources>platform:/resource/model/League.xmi</semanticResources>
@@ -142,3 +143,11 @@
     <target xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0"/>
   </diagram:DSemanticDiagram>
 </xmi:XMI>
+=======
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description" uid="_Nl8-oC78EeuC__Tb92H6Vg" selectedViews="_8Ywn8C79EeuC__Tb92H6Vg" version="14.3.1.202003261200">
+  <semanticResources>platform:/resource/model/League.xmi</semanticResources>
+  <ownedViews xmi:type="viewpoint:DView" uid="_8Ywn8C79EeuC__Tb92H6Vg">
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']"/>
+  </ownedViews>
+</viewpoint:DAnalysis>
+>>>>>>> 59f3e876e5a17e20bd246c2679925ae48c4eb5e7
