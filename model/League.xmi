@@ -3,8 +3,8 @@
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:league="platform:/plugin/tdt4250-Project/model/League.ecore"
-    xsi:schemaLocation="platform:/plugin/tdt4250-Project/model/League.ecore League.ecore"
+    xmlns:league="platform:/plugin/TDT4250.Project/model/League.ecore"
+    xsi:schemaLocation="platform:/plugin/TDT4250.Project/model/League.ecore League.ecore"
     name="Eliteserien">
   <Season name="2020">
     <matchweeks
@@ -25,6 +25,27 @@
             Type="Goal"
             Minute="12"/>
       </matches>
+      <matches
+          Hometeam="//@Teams.0"
+          Awayteam="//@Teams.1"
+          Date="2020-11-29T00:00:00.000+0100"
+          Homegoals="2"
+          Avaygoals="2"
+          Referee="Vegard">
+        <Bookings
+            BookedPlayer="//@Teams.0/@OwnedPlayer.3"
+            Minute="3"/>
+      </matches>
+    </matchweeks>
+    <matchweeks
+        matchweek="2">
+      <matches
+          Hometeam="//@Teams.0"
+          Awayteam="//@Teams.1"
+          Date="2020-12-05T00:00:00.000+0100"
+          Homegoals="4"
+          Avaygoals="5"
+          Referee="Jonas"/>
     </matchweeks>
     <standing
         team="//@Teams.0"
