@@ -12,8 +12,6 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 import junit.framework.TestCase;
 import TDT4250.Project.league.*;
-import TDT4250.Project.league.util.LeagueValidator;
-
 
 public class LeagueValidatorTest extends TestCase {
 	
