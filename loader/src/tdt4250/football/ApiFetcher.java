@@ -5,13 +5,25 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import org.json.*;
+
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 
 public class ApiFetcher {
 	private final String API_BASE_URL = "http://api.football-data.org/v2/";
 	private final String API_KEY = "b7822848398f41b2b76165aeedd97ac2";
 
+	/**
+	 * Send a HTTP GET request to a specified url and return the response
+	 *
+	 * @param destinationUrl
+	 * @return String containing the response or null on error
+	 */
 	public static String sendGet(String destinationUrl) {
 		HttpURLConnection connection = null;
 
@@ -44,7 +56,13 @@ public class ApiFetcher {
 		}
 	}
 
-	private int getCompetitionId(String competitionName) {
+	/**
+	 * 
+	 * 
+	 * @param competitionName
+	 * @return
+	 */
+	public int getCompetitionId(String competitionName) {
 		String response= sendGet(API_BASE_URL + "competitions");
 		JSONObject obj = new JSONObject(response);
 
@@ -59,20 +77,5 @@ public class ApiFetcher {
 
 		//TODO: better error handling -  raise some kind of exception?
 		return 0;
-	}
-
-	public void fetch() {
-		final String COMPETITION_NAME = "Premier League";
-
-		int competitionId = getCompetitionId(COMPETITION_NAME);
-		// TODO: Check for error
-		
-		System.out.println(competitionId);
-	}
-	
-
-	public static void main(String[] args) {
-		ApiFetcher apiFetcher = new ApiFetcher();
-		apiFetcher.fetch();
 	}
 }
