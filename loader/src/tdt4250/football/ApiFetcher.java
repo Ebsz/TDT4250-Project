@@ -13,7 +13,12 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-
+/**
+ * Class for fetching data from the remote API
+ *
+ * As all data from the API is formatted as JSON, the methods of this class returns the JSON 
+ * as String's that have to be parsed later.
+ */
 public class ApiFetcher {
 	private final String API_BASE_URL = "http://api.football-data.org/v2/";
 	private final String API_KEY = "b7822848398f41b2b76165aeedd97ac2";
@@ -57,12 +62,13 @@ public class ApiFetcher {
 	}
 
 	/**
+	 * Get the ID of a competition by name.
+	 * Competitions are referred to by ID in the API, so this is a necessary step in fetching them.
 	 * 
-	 * 
-	 * @param competitionName
-	 * @return
+	 * @param competitionName name of the competition.
+	 * @return Competition ID
 	 */
-	public int getCompetitionId(String competitionName) {
+	public int getCompetitionIdByName(String competitionName) {
 		String response= sendGet(API_BASE_URL + "competitions");
 		JSONObject obj = new JSONObject(response);
 
