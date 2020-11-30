@@ -11,16 +11,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import tdt4250.football.json.folder.Team;
 
 public class Parser {
-	
-	private static ObjectMapper objectMapper = getDefaultObjectMapper();
-	
-	
-	private static ObjectMapper getDefaultObjectMapper() {
-		ObjectMapper defaultObjectMapper = new ObjectMapper();
-		defaultObjectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-		return defaultObjectMapper;
-	}
-
 	/**
 	 * Parse a JSON string into a single JsonNode object
 	 *
@@ -29,7 +19,7 @@ public class Parser {
 	 * @throws IOException
 	 */
 	public static JsonNode parse(String src) throws IOException{
-		return objectMapper.readTree(src);
+		return getObjectMapper().readTree(src);
 	}
 
 	/**
@@ -40,11 +30,10 @@ public class Parser {
 	 * @param dataClass
 	 * @return
 	 * @throws JsonProcessingException
-	 */
-	public static <A> A fromJson(JsonNode node ,Class<A> dataClass) throws JsonProcessingException{
-		return objectMapper.treeToValue(node, dataClass);
+	 */	
+	public static <A> A fromJson(JsonNode node, Class<A> dataClass) throws JsonProcessingException{
+		return getObjectMapper().treeToValue(node, dataClass);
 	}
-
 
 	/**
 	 * Convert a JsonNode to a list of objects
@@ -84,5 +73,14 @@ public class Parser {
 		}
 
 		return teams;
+	}
+
+	private static ObjectMapper objectMapper = null;
+	private static ObjectMapper getObjectMapper() {
+		if (objectMapper == null) {
+			objectMapper = new ObjectMapper();
+			objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+		}
+		return objectMapper;
 	}
 }
