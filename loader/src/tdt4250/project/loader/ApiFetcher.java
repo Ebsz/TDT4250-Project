@@ -1,4 +1,4 @@
-package tdt4250.football;
+package tdt4250.project.loader;
 
 import java.io.BufferedReader;
 import java.io.IOException;

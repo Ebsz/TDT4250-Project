@@ -1,4 +1,4 @@
-package tdt4250.football;
+package tdt4250.project.loader;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import TDT4250.Project.league.League;
 import TDT4250.Project.league.LeagueFactory;
 import TDT4250.Project.league.LeaguePackage;
-import tdt4250.football.json.folder.Team;
+import tdt4250.project.loader.json.Team;
 
 /**
  *

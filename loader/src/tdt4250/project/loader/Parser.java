@@ -1,4 +1,4 @@
-package tdt4250.football;
+package tdt4250.project.loader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import tdt4250.football.json.folder.Team;
+import tdt4250.project.loader.json.Team;
 
 public class Parser {
 	/**

@@ -1,4 +1,4 @@
-package tdt4250.football.json.folder;
+package tdt4250.project.loader.json;
 
 public class Standing {
 	private Team team;
