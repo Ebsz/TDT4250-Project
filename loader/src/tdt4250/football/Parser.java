@@ -57,10 +57,6 @@ public class Parser {
 		return list;
 	}
 
-	public static void populatePojos() {
-		
-	}
-
 	public static List<Team> parseTeams(String teamsJson) {
 		List<Team> teams = new ArrayList<>();
 
