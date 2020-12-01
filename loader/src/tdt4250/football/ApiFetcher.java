@@ -20,8 +20,8 @@ import org.json.JSONObject;
  * as String's that have to be parsed later.
  */
 public class ApiFetcher {
-	private final String API_BASE_URL = "http://api.football-data.org/v2/";
-	private final String API_KEY = "b7822848398f41b2b76165aeedd97ac2";
+	private static final String API_BASE_URL = "http://api.football-data.org/v2/";
+	private static final String API_KEY = "b7822848398f41b2b76165aeedd97ac2";
 
 	/**
 	 * Send a HTTP GET request to a specified url and return the response
@@ -38,6 +38,8 @@ public class ApiFetcher {
 
 			connection.setRequestMethod("GET");
 			connection.setRequestProperty("UserAgent", "Mozilla/5.0");
+
+			connection.setRequestProperty("X-Auth-Token", API_KEY);
 
 			connection.setUseCaches(false);
 			connection.setDoOutput(true);
