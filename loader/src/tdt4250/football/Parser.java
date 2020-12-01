@@ -1,5 +1,6 @@
 package tdt4250.football;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -44,7 +45,44 @@ public class Parser {
 		return objectMapper.treeToValue(node, dataClass);
 	}
 
+
+	/**
+	 * Convert a JsonNode to a list of objects
+	 *
+	 * The JsonNode must be a direct list of objects, where the objects correspond to dataClass
+	 *
+	 * @param <T> object type
+	 * @param node
+	 * @param dataClass
+	 * @return list of objects of type T
+	 * @throws JsonProcessingException
+	 */
+	public static <T> List<T> fromJsonNodeToList(JsonNode node, Class<T> dataClass) throws JsonProcessingException {
+		List<T> list = new ArrayList<>();
+
+		// TODO: There is a better way to do this with Jackson, that avoids directly iterate over each part of the node
+		for (JsonNode n: node) {
+			list.add(fromJson(n, dataClass));
+		}
+
+		return list;
+	}
+
 	public static void populatePojos() {
 		
+	}
+
+	public static List<Team> parseTeams(String teamsJson) {
+		List<Team> teams = new ArrayList<>();
+
+		try {
+			JsonNode teamsNode = parse(teamsJson).get("teams");
+			teams = fromJsonNodeToList(teamsNode, Team.class);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return teams;
 	}
 }

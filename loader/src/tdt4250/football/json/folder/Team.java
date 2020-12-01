@@ -2,6 +2,8 @@ package tdt4250.football.json.folder;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Team {
 	private String name;
 	private List<Player> ownedPlayer; 
@@ -11,12 +13,17 @@ public class Team {
 	public String getName() {
 		return name;
 	}
+
 	public List<Player> getOwnedPlayer() {
 		return ownedPlayer;
 	}
+
+	@JsonProperty("tla")
 	public String getAbbreviation() {
 		return abbreviation;
 	}
+
+	@JsonProperty("venue")
 	public String getStadium() {
 		return stadium;
 	}
