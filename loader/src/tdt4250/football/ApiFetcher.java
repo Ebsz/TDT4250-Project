@@ -70,6 +70,14 @@ public class ApiFetcher {
 		return response;
 	}
 
+	// TODO: Add parameterizing by season
+	public static String getCompetitionTeams(int competitionID) {
+		final String URI = API_BASE_URL + "competitions/" + String.valueOf(competitionID) + "/teams";
+
+		String response = sendGet(URI);
+		return response;
+	}
+
 	/**
 	 * Get the ID of a competition by name.
 	 * Competitions are referred to by ID in the API, so this is a necessary step in fetching them.
