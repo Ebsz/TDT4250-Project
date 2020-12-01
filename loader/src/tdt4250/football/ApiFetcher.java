@@ -63,14 +63,21 @@ public class ApiFetcher {
 		}
 	}
 
+	public static String getCompetition(int id) {
+		final String URI = API_BASE_URL + "competitions/" + String.valueOf(id);
+
+		String response = sendGet(URI);
+		return response;
+	}
+
 	/**
 	 * Get the ID of a competition by name.
 	 * Competitions are referred to by ID in the API, so this is a necessary step in fetching them.
-	 * 
+	 *
 	 * @param competitionName name of the competition.
 	 * @return Competition ID
 	 */
-	public int getCompetitionIdByName(String competitionName) {
+	public static int getCompetitionIdByName(String competitionName) {
 		String response= sendGet(API_BASE_URL + "competitions");
 		JSONObject obj = new JSONObject(response);
 
