@@ -2,6 +2,7 @@ package tdt4250.football;
 
 import java.io.IOException;
 import java.util.Collections;
+import java.util.List;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -12,6 +13,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import TDT4250.Project.league.League;
 import TDT4250.Project.league.LeagueFactory;
 import TDT4250.Project.league.LeaguePackage;
+import tdt4250.football.json.folder.Team;
 
 /**
  *
@@ -60,12 +62,22 @@ public class Loader {
 		return league;
 	}
 
-	public static void main(String[] args) {
+	public void testing() {
 		final String COMPETITION_NAME = "Premier League";
+		final int COMPETITION_ID = 2021;
 
+		String teamsJson = ApiFetcher.getCompetitionTeams(COMPETITION_ID);
+		List<Team> teamDataObjects = Parser.parseTeams(teamsJson);
+
+		for (Team t : teamDataObjects) {
+			System.out.println(t.getName());
+			System.out.println(t.getStadium());
+			System.out.println(t.getAbbreviation());
+		}
+	}
+
+	public static void main(String[] args) {
 		Loader loader = new Loader();
-		League league = loader.createLeague(COMPETITION_NAME);
-
-		loader.saveLeagueAsXMI(league, XMI_OUT_FILENAME);
+		loader.testing();
 	}
 }
