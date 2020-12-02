@@ -54,8 +54,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Player">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Position" eType="#//PositionType"
-        transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Position" lowerBound="1"
+        eType="#//PositionType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Booking">
     <eStructuralFeatures xsi:type="ecore:EReference" name="BookedPlayer" eType="#//Player"/>
@@ -80,7 +80,7 @@
     <eLiterals name="Goal" value="3"/>
     <eLiterals name="OwnGoal" value="4"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="PositionType" serializable="false">
+  <eClassifiers xsi:type="ecore:EEnum" name="PositionType">
     <eLiterals name="Keeper" value="1"/>
     <eLiterals name="Defence" value="2"/>
     <eLiterals name="Midfield" value="3"/>

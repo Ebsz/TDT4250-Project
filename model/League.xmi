@@ -64,6 +64,24 @@
         GoalsFor="1"
         GoalsAgainst="3"
         GoalDifference="-2"/>
+    <standing
+        team="//@Teams.2"
+        Position="3"
+        GamesPlayed="3"
+        Draws="1"
+        Loose="1"
+        GoalsFor="4"
+        GoalsAgainst="2"
+        GoalDifference="5"/>
+    <standing
+        team="//@Teams.3"
+        Position="4"/>
+    <standing
+        team="//@Teams.4"
+        Position="5"/>
+    <standing
+        team="//@Teams.5"
+        Position="6"/>
   </Season>
   <Teams Name="Rosenborg BK"
       Abbr="RBK"
@@ -71,11 +89,14 @@
     <OwnedPlayer
         name="Andre Hansen"/>
     <OwnedPlayer
-        name="Tore Reginiussen"/>
+        name="Tore Reginiussen"
+        Position="Defence"/>
     <OwnedPlayer
-        name="Markus Henriksen"/>
+        name="Markus Henriksen"
+        Position="Midfield"/>
     <OwnedPlayer
-        name="Pål Andre Helland"/>
+        name="Pål Andre Helland"
+        Position="Attacker"/>
   </Teams>
   <Teams Name="Molde"
       Abbr="MFK"
@@ -83,10 +104,25 @@
     <OwnedPlayer
         name="Andreas Linde"/>
     <OwnedPlayer
-        name="Martin Bjørnbak"/>
+        name="Martin Bjørnbak"
+        Position="Defence"/>
     <OwnedPlayer
-        name="Magnus Wolff Eikrem"/>
+        name="Magnus Wolff Eikrem"
+        Position="Midfield"/>
     <OwnedPlayer
-        name="Leke James"/>
+        name="Leke James"
+        Position="Attacker"/>
   </Teams>
+  <Teams Name="Ranheim"
+      Abbr="RIL"
+      Stadium="Extra Arena"/>
+  <Teams Name="Vålerenga"
+      Abbr="VIF"
+      Stadium="Intility"/>
+  <Teams Name="BodøGlimt"
+      Abbr="BG"
+      Stadium="Nord"/>
+  <Teams Name="Brann"
+      Abbr="BRA"
+      Stadium="Brann"/>
 </league:League>
