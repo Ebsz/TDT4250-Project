@@ -32,7 +32,12 @@ public class TeamData {
 	public String getStadium() {
 		return stadium;
 	}
-
+	/**
+	 * Creates a list of TeamData from JSON data
+	 *
+	 * @param jsonData JSON data containing data about teams
+	 * @return list of the resulting TeamData
+	 */
 	public static List<TeamData> fromJson(String jsonData) {
 		List<TeamData> teams = new ArrayList<>();
 

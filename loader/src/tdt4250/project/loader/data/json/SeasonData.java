@@ -22,6 +22,12 @@ public class SeasonData {
 		return standing;
 	}
 
+	/**
+	 * Creates SeasonData from JSON data
+	 *
+	 * @param leagueJson
+	 * @return the resulting SeasonData object
+	 */
 	public static SeasonData fromJson(String leagueJson) {
 		SeasonData seasonData = new SeasonData();
 

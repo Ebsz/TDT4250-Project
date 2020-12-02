@@ -12,6 +12,10 @@ import tdt4250.project.loader.data.json.SeasonData;
 import tdt4250.project.loader.data.json.TeamData;
 
 
+/**
+ * Helper class for parsing JSON to data objects.
+ * The actual parsing takes place in the data classes by calling the methods specified here
+ */
 public class Parser {
 	/**
 	 * Parse a JSON string into a single JsonNode object
@@ -27,13 +31,13 @@ public class Parser {
 	/**
 	 * Converts a JsonNode into a single Java object
 	 *
-	 * @param <A> object type
+	 * @param <T> object type
 	 * @param node
 	 * @param dataClass
 	 * @return
 	 * @throws JsonProcessingException
 	 */
-	public static <A> A fromJson(JsonNode node, Class<A> dataClass) throws JsonProcessingException{
+	public static <T> T fromJson(JsonNode node, Class<T> dataClass) throws JsonProcessingException{
 		return getObjectMapper().treeToValue(node, dataClass);
 	}
 
@@ -42,7 +46,7 @@ public class Parser {
 	 *
 	 * The JsonNode must be a direct list of objects, where the objects correspond to dataClass
 	 *
-	 * @param <T> object type
+	 * @param <T> type of object
 	 * @param node
 	 * @param dataClass
 	 * @return list of objects of type T

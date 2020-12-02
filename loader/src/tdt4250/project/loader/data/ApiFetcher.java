@@ -14,18 +14,17 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 /**
- * Class for fetching data from the remote API
+ * Fetches data from the remote API
  *
- * As all data from the API is formatted as JSON, the methods of this class returns the JSON
- * as Strings that have to be parsed later.
- *
+ * All data from the API is formatted as JSON - the methods in this class
+ * simply return it as Strings that have to be parsed later.
  */
 public class ApiFetcher {
 	private static final String API_BASE_URL = "http://api.football-data.org/v2/";
 	private static final String API_KEY = "b7822848398f41b2b76165aeedd97ac2";
 
 	/**
-	 * Send a HTTP GET request to a specified url and return the response
+	 * Send a HTTP GET request to a specified URL and return the response
 	 *
 	 * @param destinationUrl
 	 * @return String containing the response or null on error
