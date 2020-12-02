@@ -1,12 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description" uid="_KyTikC8NEeu1ju-yLds1Yw" selectedViews="_03xVMC8dEeuFuZZYnjfPTQ" version="14.3.1.202003261200">
-  <semanticResources>platform:/resource/model/League.xmi</semanticResources>
-  <ownedViews xmi:type="viewpoint:DView" uid="_03xVMC8dEeuFuZZYnjfPTQ">
-    <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']"/>
-  </ownedViews>
-</viewpoint:DAnalysis>
-=======
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/tree/description/1.0.0" xmlns:league="platform:/plugin/TDT4250.Project/model/League.ecore" xmlns:tree="http://www.eclipse.org/sirius/tree/1.0.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/tree/description/1.0.0 http://www.eclipse.org/sirius/tree/1.0.0#//description platform:/plugin/TDT4250.Project/model/League.ecore platform:/resource/model/League.ecore">
   <viewpoint:DAnalysis uid="_KyTikC8NEeu1ju-yLds1Yw" selectedViews="_03xVMC8dEeuFuZZYnjfPTQ" version="14.3.1.202003261200">
     <semanticResources>platform:/resource/model/League.xmi</semanticResources>
@@ -75,4 +67,3 @@
     <description xmi:type="description_1:TreeDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTree']"/>
   </tree:DTree>
 </xmi:XMI>
->>>>>>> 2cab862bc1e33cc0e146f9d07d2ff98bdb5a8ed5
