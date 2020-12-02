@@ -21,11 +21,14 @@ public class DataLoader {
 			System.out.println("ERROR: could not find league '" +  leagueName + "'");
 		}
 
-		return getLeagueData(leagueID);
+		return getLeagueData(leagueID, leagueName);
 	}
 
-	public static LeagueData getLeagueData(int leagueID) {
+	private static LeagueData getLeagueData(int leagueID, String leagueName) {
 		LeagueData league = new LeagueData();
+
+		league.name = leagueName;
+		league.teams = getLeagueTeams(leagueID);
 
 		return league;
 	}

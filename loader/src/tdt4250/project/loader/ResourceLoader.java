@@ -27,7 +27,6 @@ public class ResourceLoader {
 	public static final String COMPETITION_NAME = "Premier League";
 	public static final int COMPETITION_ID = 2021;
 
-
 	/**
 	 * Save the League model object as an .xmi file
 	 *
@@ -55,7 +54,7 @@ public class ResourceLoader {
 	}
 
 	public void load() {
-		LeagueData leagueData = DataLoader.getLeagueData(COMPETITION_ID);
+		LeagueData leagueData = DataLoader.getLeagueData(COMPETITION_NAME);
 
 		League league = Mapper.mapLeague(leagueData);
 
