@@ -2,15 +2,15 @@ package tdt4250.project.loader.data.json;
 
 import java.util.List;
 
-public class League {
-	private Season season; 
-	private List<Team> teams;
+public class LeagueData {
+	private SeasonData season;
+	private List<TeamData> teams;
 	private String name;
 	
-	public Season getSeason() {
+	public SeasonData getSeason() {
 		return season;
 	}
-	public List<Team> getTeams() {
+	public List<TeamData> getTeams() {
 		return teams;
 	}
 	public String getName() {

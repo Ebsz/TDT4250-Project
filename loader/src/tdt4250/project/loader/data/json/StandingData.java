@@ -1,7 +1,7 @@
 package tdt4250.project.loader.data.json;
 
-public class Standing {
-	private Team team;
+public class StandingData {
+	private TeamData team;
 	private int position;
 	private int gamesPlayed;
 	private int points;
@@ -12,7 +12,7 @@ public class Standing {
 	private int goalsAgainst;
 	private int goalDifference;
 	
-	public Team getTeam() {
+	public TeamData getTeam() {
 		return team;
 	}
 	public int getPosition() {

@@ -1,6 +1,6 @@
 package tdt4250.project.loader.data;
 
-import tdt4250.project.loader.data.json.League;
+import tdt4250.project.loader.data.json.LeagueData;
 
 /**
  * Class for loading data objects
@@ -9,7 +9,7 @@ import tdt4250.project.loader.data.json.League;
  */
 public class DataLoader {
 
-	public static League getLeague() {
+	public static LeagueData getLeague() {
 		return null;
 	}
 }

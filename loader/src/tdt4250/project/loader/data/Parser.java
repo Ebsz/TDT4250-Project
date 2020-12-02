@@ -8,7 +8,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import tdt4250.project.loader.data.json.Team;
+import tdt4250.project.loader.data.json.TeamData;
 
 
 public class Parser {
@@ -58,12 +58,12 @@ public class Parser {
 		return list;
 	}
 
-	public static List<Team> parseTeams(String teamsJson) {
-		List<Team> teams = new ArrayList<>();
+	public static List<TeamData> parseTeams(String teamsJson) {
+		List<TeamData> teams = new ArrayList<>();
 
 		try {
 			JsonNode teamsNode = parse(teamsJson).get("teams");
-			teams = fromJsonNodeToList(teamsNode, Team.class);
+			teams = fromJsonNodeToList(teamsNode, TeamData.class);
 
 		} catch (IOException e) {
 			e.printStackTrace();

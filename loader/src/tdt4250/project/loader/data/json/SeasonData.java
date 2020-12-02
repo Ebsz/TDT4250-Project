@@ -2,18 +2,18 @@ package tdt4250.project.loader.data.json;
 
 import java.util.List;
 
-public class Season {
+public class SeasonData {
 	private String name;
-	private List<Matchweek> matchweeks;
-	private Standing standing;
+	private List<MatchweekData> matchweeks;
+	private StandingData standing;
 	
 	public String getName() {
 		return name;
 	}
-	public List<Matchweek> getMatchweeks() {
+	public List<MatchweekData> getMatchweeks() {
 		return matchweeks;
 	}
-	public Standing getStanding() {
+	public StandingData getStanding() {
 		return standing;
 	}
 }

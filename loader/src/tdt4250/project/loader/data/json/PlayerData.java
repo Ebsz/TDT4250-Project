@@ -1,6 +1,6 @@
 package tdt4250.project.loader.data.json;
 
-public class Player {
+public class PlayerData {
 	private String name;
 	private String position;
 	

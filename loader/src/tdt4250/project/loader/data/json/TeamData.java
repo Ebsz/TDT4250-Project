@@ -4,9 +4,9 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Team {
+public class TeamData {
 	private String name;
-	private List<Player> ownedPlayer; 
+	private List<PlayerData> ownedPlayer; 
 	private String abbreviation;
 	private String stadium;
 	
@@ -14,7 +14,7 @@ public class Team {
 		return name;
 	}
 
-	public List<Player> getOwnedPlayer() {
+	public List<PlayerData> getOwnedPlayer() {
 		return ownedPlayer;
 	}
 

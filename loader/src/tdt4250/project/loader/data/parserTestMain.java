@@ -9,9 +9,9 @@ import org.junit.jupiter.api.Test;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 
-import tdt4250.project.loader.data.json.Booking;
-import tdt4250.project.loader.data.json.Match;
-import tdt4250.project.loader.data.json.Player;
+import tdt4250.project.loader.data.json.BookingData;
+import tdt4250.project.loader.data.json.MatchData;
+import tdt4250.project.loader.data.json.PlayerData;
 
 public class parserTestMain {
 	
@@ -37,7 +37,7 @@ public class parserTestMain {
 	@Test
 	void fromJson() throws IOException {
 		JsonNode node = Parser.parse(playerJson);
-		Player player = Parser.fromJson(node, Player.class);
+		PlayerData player = Parser.fromJson(node, PlayerData.class);
 		
 		assertEquals(player.getName(), "Rune Bratseth");
 	}
@@ -45,11 +45,11 @@ public class parserTestMain {
 	@Test
 	void matchTest() throws IOException{
 		JsonNode node = Parser.parse(matchJson);
-		Match match = Parser.fromJson(node, Match.class);
+		MatchData match = Parser.fromJson(node, MatchData.class);
 		
 		System.out.println(match.getAwayGoals());
 		System.out.println(match.getHomeGoals());
-		for (Booking b : match.getBookings()) {
+		for (BookingData b : match.getBookings()) {
 			System.out.println(b.getBookedPlayer().getName());
 			System.out.println(b.getMinute());
 		}
@@ -58,7 +58,7 @@ public class parserTestMain {
 	@Test
 	void bookingTest() throws IOException{
 		JsonNode node = Parser.parse(bookingJson);
-		Booking booking = Parser.fromJson(node, Booking.class);
+		BookingData booking = Parser.fromJson(node, BookingData.class);
 		
 	}
 }

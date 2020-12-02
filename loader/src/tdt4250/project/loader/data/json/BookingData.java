@@ -1,10 +1,10 @@
 package tdt4250.project.loader.data.json;
 
-public class Booking {
-	private Player bookedPlayer;
+public class BookingData {
+	private PlayerData bookedPlayer;
 	private int minute;
 	
-	public Player getBookedPlayer() {
+	public PlayerData getBookedPlayer() {
 		return bookedPlayer;
 	}
 	public int getMinute() {

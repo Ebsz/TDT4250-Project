@@ -3,22 +3,22 @@ import java.util.Date;
 import java.util.List;
 
 
-public class Match {
-	private Team hometeam;
-	private Team awayteam;
-	private List<Booking> bookings;
+public class MatchData {
+	private TeamData hometeam;
+	private TeamData awayteam;
+	private List<BookingData> bookings;
 	private Date date; 
 	private int homeGoals;
 	private int awayGoals;
 	private String referee;
 	
-	public Team getHometeam() {
+	public TeamData getHometeam() {
 		return hometeam;
 	}
-	public Team getAwayteam() {
+	public TeamData getAwayteam() {
 		return awayteam;
 	}
-	public List<Booking> getBookings() {
+	public List<BookingData> getBookings() {
 		return bookings;
 	}
 	public Date getDate() {
