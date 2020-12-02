@@ -3,10 +3,10 @@ package tdt4250.project.loader.data.json;
 import java.util.List;
 
 public class LeagueData {
-	private SeasonData season;
-	private List<TeamData> teams;
-	private String name;
-	
+	public SeasonData season;
+	public List<TeamData> teams;
+	public String name;
+
 	public SeasonData getSeason() {
 		return season;
 	}

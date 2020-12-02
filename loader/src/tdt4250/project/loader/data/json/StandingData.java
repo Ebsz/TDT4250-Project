@@ -1,16 +1,16 @@
 package tdt4250.project.loader.data.json;
 
 public class StandingData {
-	private TeamData team;
-	private int position;
-	private int gamesPlayed;
-	private int points;
-	private int wins;
-	private int draws;
-	private int losses;
-	private int goalsFor;
-	private int goalsAgainst;
-	private int goalDifference;
+	public TeamData team;
+	public int position;
+	public int gamesPlayed;
+	public int points;
+	public int wins;
+	public int draws;
+	public int losses;
+	public int goalsFor;
+	public int goalsAgainst;
+	public int goalDifference;
 	
 	public TeamData getTeam() {
 		return team;

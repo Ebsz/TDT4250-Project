@@ -4,14 +4,14 @@ import java.util.List;
 
 
 public class MatchData {
-	private TeamData hometeam;
-	private TeamData awayteam;
-	private List<BookingData> bookings;
-	private Date date; 
-	private int homeGoals;
-	private int awayGoals;
-	private String referee;
-	
+	public TeamData hometeam;
+	public TeamData awayteam;
+	public List<BookingData> bookings;
+	public Date date;
+	public int homeGoals;
+	public int awayGoals;
+	public String referee;
+
 	public TeamData getHometeam() {
 		return hometeam;
 	}

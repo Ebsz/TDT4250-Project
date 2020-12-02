@@ -5,11 +5,11 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class TeamData {
-	private String name;
-	private List<PlayerData> ownedPlayer; 
-	private String abbreviation;
-	private String stadium;
-	
+	public String name;
+	public List<PlayerData> ownedPlayer;
+	public String abbreviation;
+	public String stadium;
+
 	public String getName() {
 		return name;
 	}
