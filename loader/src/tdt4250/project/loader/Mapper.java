@@ -6,8 +6,10 @@ import java.util.List;
 import TDT4250.Project.league.League;
 import TDT4250.Project.league.LeagueFactory;
 import TDT4250.Project.league.LeaguePackage;
+import TDT4250.Project.league.Season;
 import TDT4250.Project.league.Team;
 import tdt4250.project.loader.data.json.LeagueData;
+import tdt4250.project.loader.data.json.SeasonData;
 import tdt4250.project.loader.data.json.TeamData;
 
 /**
@@ -34,8 +36,17 @@ public class Mapper {
 		league.setName(leagueData.name);
 
 		league.getTeams().addAll(mapTeams(leagueData.teams));
+		league.getSeason().add(mapSeason(leagueData.season));
 
 		return league;
+	}
+
+	private static Season mapSeason(SeasonData seasonData) {
+		Season season = getLeagueFactory().createSeason();
+
+		season.setName(seasonData.name);
+
+		return season;
 	}
 
 	private static LeagueFactory leagueFactory;

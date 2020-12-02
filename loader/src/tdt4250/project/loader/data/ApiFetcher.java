@@ -16,8 +16,9 @@ import org.json.JSONObject;
 /**
  * Class for fetching data from the remote API
  *
- * As all data from the API is formatted as JSON, the methods of this class returns the JSON 
+ * As all data from the API is formatted as JSON, the methods of this class returns the JSON
  * as Strings that have to be parsed later.
+ *
  */
 public class ApiFetcher {
 	private static final String API_BASE_URL = "http://api.football-data.org/v2/";

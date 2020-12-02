@@ -6,7 +6,7 @@ public class SeasonData {
 	public String name;
 	public List<MatchweekData> matchweeks;
 	public StandingData standing;
-	
+
 	public String getName() {
 		return name;
 	}

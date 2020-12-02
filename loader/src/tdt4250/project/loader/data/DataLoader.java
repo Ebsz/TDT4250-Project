@@ -2,8 +2,9 @@ package tdt4250.project.loader.data;
 
 import java.util.List;
 
-import tdt4250.project.loader.data.json.TeamData;
 import tdt4250.project.loader.data.json.LeagueData;
+import tdt4250.project.loader.data.json.SeasonData;
+import tdt4250.project.loader.data.json.TeamData;
 
 
 /**
@@ -24,11 +25,16 @@ public class DataLoader {
 		return getLeagueData(leagueID, leagueName);
 	}
 
+	/**
+	 * Primary entrypoint for the dataloader.
+	 * Fetches data about the league and all its leaf data-nodes recursively
+	 */
 	private static LeagueData getLeagueData(int leagueID, String leagueName) {
 		LeagueData league = new LeagueData();
 
 		league.name = leagueName;
 		league.teams = getLeagueTeams(leagueID);
+		league.season = getLatestSeason(leagueID);
 
 		return league;
 	}
@@ -38,5 +44,12 @@ public class DataLoader {
 		List<TeamData> teamData = Parser.parseTeams(teamsJson);
 
 		return teamData;
+	}
+
+	private static SeasonData getLatestSeason(int leagueID) {
+		String leagueJson = ApiFetcher.getCompetition(leagueID);
+		SeasonData seasonData = Parser.parseSeason(leagueJson);
+
+		return seasonData;
 	}
 }
