@@ -1,6 +1,10 @@
 package tdt4250.project.loader.data;
 
+import java.util.List;
+
+import tdt4250.project.loader.data.json.TeamData;
 import tdt4250.project.loader.data.json.LeagueData;
+
 
 /**
  * Class for loading data objects
@@ -9,7 +13,27 @@ import tdt4250.project.loader.data.json.LeagueData;
  */
 public class DataLoader {
 
-	public static LeagueData getLeague() {
-		return null;
+	public static LeagueData getLeagueData(String leagueName) {
+		int leagueID = ApiFetcher.getCompetitionIdByName(leagueName);
+
+		if (leagueID == 0) {
+			// TODO: Properly handle errors here
+			System.out.println("ERROR: could not find league '" +  leagueName + "'");
+		}
+
+		return getLeagueData(leagueID);
+	}
+
+	public static LeagueData getLeagueData(int leagueID) {
+		LeagueData league = new LeagueData();
+
+		return league;
+	}
+
+	private static List<TeamData> getLeagueTeams(int leagueID) {
+		String teamsJson = ApiFetcher.getCompetitionTeams(leagueID);
+		List<TeamData> teamData = Parser.parseTeams(teamsJson);
+
+		return teamData;
 	}
 }
