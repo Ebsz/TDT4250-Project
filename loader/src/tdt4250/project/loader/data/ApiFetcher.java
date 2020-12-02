@@ -1,4 +1,4 @@
-package tdt4250.project.loader;
+package tdt4250.project.loader.data;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -13,7 +13,9 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import TDT4250.Project.league.League;
 import TDT4250.Project.league.LeagueFactory;
 import TDT4250.Project.league.LeaguePackage;
-import tdt4250.project.loader.json.Team;
+import tdt4250.project.loader.data.ApiFetcher;
+import tdt4250.project.loader.data.Parser;
+import tdt4250.project.loader.data.json.Team;
 
 /**
  *
@@ -21,7 +23,7 @@ import tdt4250.project.loader.json.Team;
  *
  * Fetches data from the API, creating .xmi models from it.
  */
-public class Loader {
+public class ResourceLoader {
 
 	public static final String XMI_OUT_FILENAME = "league.xmi";
 	public static final String XMI_OUT_DIRECTORY = "output";
@@ -77,7 +79,7 @@ public class Loader {
 	}
 
 	public static void main(String[] args) {
-		Loader loader = new Loader();
+		ResourceLoader loader = new ResourceLoader();
 		loader.testing();
 	}
 }

@@ -1,4 +1,4 @@
-package tdt4250.project.loader;
+package tdt4250.project.loader.data;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -9,9 +9,9 @@ import org.junit.jupiter.api.Test;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 
-import tdt4250.project.loader.json.Booking;
-import tdt4250.project.loader.json.Match;
-import tdt4250.project.loader.json.Player;
+import tdt4250.project.loader.data.json.Booking;
+import tdt4250.project.loader.data.json.Match;
+import tdt4250.project.loader.data.json.Player;
 
 public class parserTestMain {
 	

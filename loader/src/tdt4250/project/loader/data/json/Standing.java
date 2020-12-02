@@ -1,4 +1,4 @@
-package tdt4250.project.loader.json;
+package tdt4250.project.loader.data.json;
 
 public class Standing {
 	private Team team;
