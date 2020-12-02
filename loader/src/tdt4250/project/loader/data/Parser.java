@@ -59,38 +59,6 @@ public class Parser {
 		return list;
 	}
 
-	public static List<TeamData> parseTeams(String teamsJson) {
-		List<TeamData> teams = new ArrayList<>();
-
-		try {
-			JsonNode teamsNode = parse(teamsJson).get("teams");
-			teams = fromJsonNodeToList(teamsNode, TeamData.class);
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		return teams;
-	}
-
-	public static SeasonData parseSeason(String leagueJson) {
-		SeasonData seasonData = new SeasonData();
-
-		try {
-			JsonNode leagueNode = parse(leagueJson);
-
-			// TODO: toString includes quotes" in the resulting string - find a more elegant solution?
-			String startDate = leagueNode.get("currentSeason").get("startDate").toString();
-
-			// API date is YYYY-MM-DD, but we define seasons by starting year, so strip the rest
-			seasonData.name = startDate.substring(1, 5);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		return seasonData;
-	}
-
 	private static ObjectMapper objectMapper = null;
 	private static ObjectMapper getObjectMapper() {
 		if (objectMapper == null) {

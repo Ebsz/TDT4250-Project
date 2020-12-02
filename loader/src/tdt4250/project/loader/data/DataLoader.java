@@ -41,14 +41,14 @@ public class DataLoader {
 
 	private static List<TeamData> getLeagueTeams(int leagueID) {
 		String teamsJson = ApiFetcher.getCompetitionTeams(leagueID);
-		List<TeamData> teamData = Parser.parseTeams(teamsJson);
+		List<TeamData> teamData = TeamData.fromJson(teamsJson);
 
 		return teamData;
 	}
 
 	private static SeasonData getLatestSeason(int leagueID) {
 		String leagueJson = ApiFetcher.getCompetition(leagueID);
-		SeasonData seasonData = Parser.parseSeason(leagueJson);
+		SeasonData seasonData = SeasonData.fromJson(leagueJson);
 
 		return seasonData;
 	}

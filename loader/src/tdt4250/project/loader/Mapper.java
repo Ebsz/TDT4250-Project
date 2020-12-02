@@ -16,7 +16,6 @@ import tdt4250.project.loader.data.json.TeamData;
  * Maps data objects to model instance objects
  */
 public class Mapper {
-
 	public static List<Team> mapTeams(List<TeamData> teamData) {
 		List<Team> teams = new ArrayList<>();
 
