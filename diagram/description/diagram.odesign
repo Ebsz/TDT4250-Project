@@ -137,6 +137,15 @@
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_orange']"/>
           </style>
         </containerMappings>
+        <toolSections>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="dcPlayer" mappings="//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='TeamDiagram']/@defaultLayer/@containerMappings[name='TeamContainer']/@subContainerMappings[name='Players']/@subNodeMappings[name='Player']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='PlayerDiagram']"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
       </defaultLayer>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="PlayerDiagram" domainClass="league::Player" enablePopupBars="true">
@@ -190,7 +199,7 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="SeasonDiagram" domainClass="league::Season" enablePopupBars="true">
       <defaultLayer name="Default">
         <containerMappings name="Season" semanticCandidatesExpression="aql:self" domainClass="league::Season" childrenPresentation="VerticalStack">
-          <subContainerMappings name="Matchweek" semanticCandidatesExpression="aql:self.matchweeks" domainClass="league::Matchweek" childrenPresentation="List">
+          <subContainerMappings name="Matchweek" semanticCandidatesExpression="aql:self.matchweeks" doubleClickDescription="//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='']" domainClass="league::Matchweek" childrenPresentation="List">
             <subNodeMappings name="Matches" semanticCandidatesExpression="aql:self.matches" domainClass="league::Match">
               <style xsi:type="style:BundledImageDescription" labelSize="12" showIcon="false" labelExpression="aql: self.Hometeam.Name + ' ' + self.Homegoals + ' - ' + self.Avaygoals + ' ' + self.Awayteam.Name" labelPosition="node" resizeKind="NSEW">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -213,6 +222,15 @@
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_orange']"/>
           </style>
         </containerMappings>
+        <toolSections>
+          <ownedTools xsi:type="tool:DoubleClickDescription" mappings="//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonDiagram']/@defaultLayer/@containerMappings[name='Season']/@subContainerMappings[name='Matchweek']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='MatchweekDiagram']"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
       </defaultLayer>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_2:EditionTableDescription" name="SeasonTable" domainClass="league::Season">
@@ -315,8 +333,23 @@
           <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
         </defaultBackground>
       </ownedColumnMappings>
+          <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+        </defaultStyle>
+        <subItemMappings name="Match" domainClass="league::Match" semanticCandidatesExpression="feature:eAllContents">
+          <defaultStyle showIcon="false" labelExpression="aql: ' ' + self.Hometeam.Name + ' ' + self.Homegoals + ' - ' + self.Avaygoals + ' ' + self.Awayteam.Name">
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+          </defaultStyle>
+          <subItemMappings name="Booking" domainClass="league::Booking" semanticCandidatesExpression="feature:eAllContents">
+            <defaultStyle showIcon="false" labelExpression="aql:self.Minute + '\'  ' + self.Type+ ' - ' + self.BookedPlayer.name">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </defaultStyle>
+          </subItemMappings>
+        </subItemMappings>
+      </subItemMappings>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_3:TreeDescription" name="SeasonTree" domainClass="league::Season"/>
     <ownedJavaExtensions qualifiedClassName="diagram.Services"/>
   </ownedViewpoints>
 </description:Group>
