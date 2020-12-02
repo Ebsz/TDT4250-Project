@@ -1,69 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/tree/description/1.0.0" xmlns:league="platform:/plugin/TDT4250.Project/model/League.ecore" xmlns:tree="http://www.eclipse.org/sirius/tree/1.0.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/tree/description/1.0.0 http://www.eclipse.org/sirius/tree/1.0.0#//description platform:/plugin/TDT4250.Project/model/League.ecore platform:/resource/model/League.ecore">
-  <viewpoint:DAnalysis uid="_KyTikC8NEeu1ju-yLds1Yw" selectedViews="_03xVMC8dEeuFuZZYnjfPTQ" version="14.3.1.202003261200">
-    <semanticResources>platform:/resource/model/League.xmi</semanticResources>
-    <ownedViews xmi:type="viewpoint:DView" uid="_03xVMC8dEeuFuZZYnjfPTQ">
-      <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_P6evUjSJEeuFiL3LlG8YwQ" name="new SeasonTree" repPath="#_P6evUDSJEeuFiL3LlG8YwQ" changeId="ff9c30fc-5472-4042-bd7f-278a2164a0fa">
-        <description xmi:type="description_1:TreeDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTree']"/>
-        <target xmi:type="league:Season" href="platform:/resource/model/League.xmi#//@Season.0"/>
-      </ownedRepresentationDescriptors>
-    </ownedViews>
-  </viewpoint:DAnalysis>
-  <tree:DTree uid="_P6evUDSJEeuFiL3LlG8YwQ">
-    <target xmi:type="league:Season" href="platform:/resource/model/League.xmi#//@Season.0"/>
-    <ownedTreeItems xmi:type="tree:DTreeItem" uid="_ULDMoDSJEeuFiL3LlG8YwQ" name=" Matchweek 1">
-      <target xmi:type="league:Matchweek" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0"/>
-      <ownedTreeItems xmi:type="tree:DTreeItem" uid="_ikYpsDSJEeuFiL3LlG8YwQ" name=" Molde 1 - 3 Rosenborg BK">
-        <target xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0"/>
-        <ownedTreeItems xmi:type="tree:DTreeItem" uid="_6l_BgDSJEeuFiL3LlG8YwQ" name="55' YellowCard - Pål Andre Helland">
-          <target xmi:type="league:Booking" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0/@Bookings.0"/>
-          <semanticElements xmi:type="league:Booking" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0/@Bookings.0"/>
-          <ownedStyle xmi:type="tree:TreeItemStyle" uid="_6l_BgTSJEeuFiL3LlG8YwQ" showIcon="false" backgroundColor="136,136,136"/>
-          <actualMapping xmi:type="description_1:TreeItemMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTree']/@subItemMappings[name='Matchweek']/@subItemMappings[name='Match']/@subItemMappings[name='Booking']"/>
-        </ownedTreeItems>
-        <ownedTreeItems xmi:type="tree:DTreeItem" uid="_pyfZsDSKEeuFiL3LlG8YwQ" name="12' Goal - Markus Henriksen">
-          <target xmi:type="league:Booking" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0/@Bookings.1"/>
-          <semanticElements xmi:type="league:Booking" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0/@Bookings.1"/>
-          <ownedStyle xmi:type="tree:TreeItemStyle" uid="_pyfZsTSKEeuFiL3LlG8YwQ" showIcon="false" backgroundColor="136,136,136"/>
-          <actualMapping xmi:type="description_1:TreeItemMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTree']/@subItemMappings[name='Matchweek']/@subItemMappings[name='Match']/@subItemMappings[name='Booking']"/>
-        </ownedTreeItems>
-        <semanticElements xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0"/>
-        <ownedStyle xmi:type="tree:TreeItemStyle" uid="_ikYpsTSJEeuFiL3LlG8YwQ" showIcon="false" backgroundColor="136,136,136"/>
-        <actualMapping xmi:type="description_1:TreeItemMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTree']/@subItemMappings[name='Matchweek']/@subItemMappings[name='Match']"/>
-      </ownedTreeItems>
-      <ownedTreeItems xmi:type="tree:DTreeItem" uid="_nWyowDSJEeuFiL3LlG8YwQ" name=" Rosenborg BK 2 - 2 Molde">
-        <target xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.1"/>
-        <ownedTreeItems xmi:type="tree:DTreeItem" uid="_6l_okDSJEeuFiL3LlG8YwQ" name="3' Pål Andre Helland - RedCard">
-          <target xmi:type="league:Booking" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.1/@Bookings.0"/>
-          <semanticElements xmi:type="league:Booking" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.1/@Bookings.0"/>
-          <ownedStyle xmi:type="tree:TreeItemStyle" uid="_6l_okTSJEeuFiL3LlG8YwQ" showIcon="false" backgroundColor="136,136,136"/>
-          <actualMapping xmi:type="description_1:TreeItemMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTree']/@subItemMappings[name='Matchweek']/@subItemMappings[name='Match']/@subItemMappings[name='Booking']"/>
-        </ownedTreeItems>
-        <semanticElements xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.1"/>
-        <ownedStyle xmi:type="tree:TreeItemStyle" uid="_nWyowTSJEeuFiL3LlG8YwQ" showIcon="false" backgroundColor="136,136,136"/>
-        <actualMapping xmi:type="description_1:TreeItemMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTree']/@subItemMappings[name='Matchweek']/@subItemMappings[name='Match']"/>
-      </ownedTreeItems>
-      <semanticElements xmi:type="league:Matchweek" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0"/>
-      <ownedStyle xmi:type="tree:TreeItemStyle" uid="_ULHeEDSJEeuFiL3LlG8YwQ" showIcon="false" backgroundColor="136,136,136">
-        <labelFormat>bold</labelFormat>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:TreeItemMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTree']/@subItemMappings[name='Matchweek']"/>
-    </ownedTreeItems>
-    <ownedTreeItems xmi:type="tree:DTreeItem" uid="_ULJTQDSJEeuFiL3LlG8YwQ" name=" Matchweek 2">
-      <target xmi:type="league:Matchweek" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.1"/>
-      <ownedTreeItems xmi:type="tree:DTreeItem" uid="_ikZQwDSJEeuFiL3LlG8YwQ" name="Rosenborg BK 4 - 5 Molde">
-        <target xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.1/@matches.0"/>
-        <semanticElements xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.1/@matches.0"/>
-        <ownedStyle xmi:type="tree:TreeItemStyle" uid="_ikZQwTSJEeuFiL3LlG8YwQ" showIcon="false"/>
-        <actualMapping xmi:type="description_1:TreeItemMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTree']/@subItemMappings[name='Matchweek']/@subItemMappings[name='Match']"/>
-      </ownedTreeItems>
-      <semanticElements xmi:type="league:Matchweek" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.1"/>
-      <ownedStyle xmi:type="tree:TreeItemStyle" uid="_ULJTQTSJEeuFiL3LlG8YwQ" showIcon="false" backgroundColor="136,136,136">
-        <labelFormat>bold</labelFormat>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:TreeItemMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTree']/@subItemMappings[name='Matchweek']"/>
-    </ownedTreeItems>
-    <description xmi:type="description_1:TreeDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTree']"/>
-  </tree:DTree>
-</xmi:XMI>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description" uid="_KyTikC8NEeu1ju-yLds1Yw" selectedViews="_03xVMC8dEeuFuZZYnjfPTQ" version="14.3.1.202003261200">
+  <semanticResources>platform:/resource/model/League.xmi</semanticResources>
+  <ownedViews xmi:type="viewpoint:DView" uid="_03xVMC8dEeuFuZZYnjfPTQ">
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']"/>
+  </ownedViews>
+</viewpoint:DAnalysis>
