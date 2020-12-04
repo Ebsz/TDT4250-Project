@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 import TDT4250.Project.league.League;
+import tdt4250.project.loader.data.CompetitionData;
 import tdt4250.project.loader.data.DataLoader;
 import tdt4250.project.loader.data.json.LeagueData;
 
@@ -54,6 +55,9 @@ public class ResourceLoader {
 	}
 
 	public void load() {
+		CompetitionData cData = new CompetitionData(COMPETITION_ID);
+		cData.load();
+
 		LeagueData leagueData = DataLoader.getLeagueData(COMPETITION_NAME);
 
 		League league = Mapper.mapLeague(leagueData);

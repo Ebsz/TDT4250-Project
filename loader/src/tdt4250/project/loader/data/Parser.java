@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -61,6 +62,12 @@ public class Parser {
 		}
 
 		return list;
+	}
+
+	public static <T> T parseObject(String json, Class<T> objectClass) throws JsonProcessingException {
+		T obj = getObjectMapper().readValue(json, objectClass);
+
+		return obj;
 	}
 
 	private static ObjectMapper objectMapper = null;
