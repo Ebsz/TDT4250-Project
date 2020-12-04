@@ -1,5 +1,7 @@
 package tdt4250.project.loader.jsondata;
 
-public class TeamsJson {
+import java.util.List;
 
+public class TeamsJson {
+	public List<TeamJson> teams;
 }

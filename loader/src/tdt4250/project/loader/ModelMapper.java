@@ -1,10 +1,15 @@
 package tdt4250.project.loader;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import TDT4250.Project.league.League;
 import TDT4250.Project.league.LeagueFactory;
 import TDT4250.Project.league.LeaguePackage;
 import TDT4250.Project.league.Season;
+import TDT4250.Project.league.Team;
 import tdt4250.project.loader.data.CompetitionData;
+import tdt4250.project.loader.jsondata.TeamJson;
 
 /**
  * Maps data from the API to model instances that can be exported as .xmi
@@ -22,6 +27,7 @@ public class ModelMapper {
 		league.setName(competitionData.competitionJson.name);
 
 		league.getSeason().add(mapCurrentSeason());
+		league.getTeams().addAll(mapTeams());
 
 		return league;
 	}
@@ -35,6 +41,22 @@ public class ModelMapper {
 		season.setName(seasonStartingYear);
 
 		return season;
+	}
+
+	private List<Team> mapTeams() {
+		List<Team> teams = new ArrayList<>();
+
+		for (TeamJson t : competitionData.teamsJson.teams) {
+			Team team = getLeagueFactory().createTeam();
+
+			team.setName(t.name);
+			team.setAbbr(t.tla);
+			team.setStadium(t.venue);
+
+			teams.add(team);
+		}
+
+		return teams;
 	}
 
 	private static LeagueFactory leagueFactory;
