@@ -78,6 +78,13 @@ public class ApiFetcher {
 		return response;
 	}
 
+	public static String getStandings(int competitionID) {
+		final String URI = API_BASE_URL + "competitions/" + String.valueOf(competitionID) + "/standings";
+
+		String response = sendGet(URI);
+		return response;
+	}
+
 	/**
 	 * Get the ID of a competition by name.
 	 * Competitions are referred to by ID in the API, so this is a necessary step in fetching them.

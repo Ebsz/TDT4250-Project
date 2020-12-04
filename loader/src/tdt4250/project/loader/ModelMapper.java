@@ -7,8 +7,10 @@ import TDT4250.Project.league.League;
 import TDT4250.Project.league.LeagueFactory;
 import TDT4250.Project.league.LeaguePackage;
 import TDT4250.Project.league.Season;
+import TDT4250.Project.league.Standing;
 import TDT4250.Project.league.Team;
 import tdt4250.project.loader.data.CompetitionData;
+import tdt4250.project.loader.jsondata.StandingJson;
 import tdt4250.project.loader.jsondata.TeamJson;
 
 /**
@@ -17,30 +19,20 @@ import tdt4250.project.loader.jsondata.TeamJson;
 public class ModelMapper {
 
 	private CompetitionData competitionData;
+	private League league;
 
 	public ModelMapper(CompetitionData data) {
+		league = getLeagueFactory().createLeague();
 		competitionData = data;
 	}
 
 	public League mapLeague() {
-		League league = getLeagueFactory().createLeague();
 		league.setName(competitionData.competitionJson.name);
 
-		league.getSeason().add(mapCurrentSeason());
 		league.getTeams().addAll(mapTeams());
+		league.getSeason().add(mapCurrentSeason());
 
 		return league;
-	}
-
-	private Season mapCurrentSeason() {
-		Season season = getLeagueFactory().createSeason();
-		String startDate = competitionData.competitionJson.currentSeason.startDate;
-
-		// API date is YYYY-MM-DD, but we define seasons by starting year, so strip the rest
-		String seasonStartingYear =  startDate.substring(0, 4);
-		season.setName(seasonStartingYear);
-
-		return season;
 	}
 
 	private List<Team> mapTeams() {
@@ -57,6 +49,46 @@ public class ModelMapper {
 		}
 
 		return teams;
+	}
+
+	private Season mapCurrentSeason() {
+		Season season = getLeagueFactory().createSeason();
+		String startDate = competitionData.competitionJson.currentSeason.startDate;
+
+		// API date is YYYY-MM-DD, but we define seasons by starting year, so strip the rest
+		String seasonStartingYear =  startDate.substring(0, 4);
+		season.setName(seasonStartingYear);
+
+		season.getStanding().addAll(mapStandings());
+
+		return season;
+	}
+
+
+	private List<Standing> mapStandings() {
+		List<Standing> standings = new ArrayList<>();
+
+		for (StandingJson s :  competitionData.standingsJson.standings) {
+			Standing standing = getLeagueFactory().createStanding();
+			standing.setPosition(s.position);
+			standing.setGamesPlayed(s.playedGames);
+
+			standing.setWins(s.won);
+			standing.setDraws(s.draw);
+			standing.setLoose(s.lost);
+			standing.setPoints(s.points);
+			standing.setGoalsFor(s.goalsFor);
+			standing.setGoalsAgainst(s.goalsAgainst);
+			standing.setGoalDifference(s.goalsDifference);
+
+			Team team =  league.getTeams().stream().filter(t -> t.getName().equals(s.team.name)).findFirst().get();
+
+			standing.setTeam(team);
+
+			standings.add(standing);
+		}
+
+		return standings;
 	}
 
 	private static LeagueFactory leagueFactory;

@@ -1,5 +1,8 @@
 package tdt4250.project.loader.data.json;
 
+/**
+ * Standing for a single team
+ */
 public class StandingData {
 	public TeamData team;
 	public int position;
@@ -11,7 +14,7 @@ public class StandingData {
 	public int goalsFor;
 	public int goalsAgainst;
 	public int goalDifference;
-	
+
 	public TeamData getTeam() {
 		return team;
 	}
@@ -42,4 +45,4 @@ public class StandingData {
 	public int getGoalDifference() {
 		return goalDifference;
 	}
-}	
+}
