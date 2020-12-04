@@ -2,13 +2,16 @@ package tdt4250.project.loader.data;
 
 import java.util.List;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+
 import tdt4250.project.loader.data.json.LeagueData;
 import tdt4250.project.loader.data.json.SeasonData;
 import tdt4250.project.loader.data.json.TeamData;
+import tdt4250.project.loader.jsondata.CompetitionJson;
 
 
 /**
- * Class for loading data objects
+ * Class for loading league data
  *
  * Fetches Json data from the API, and parses them to data objects
  */

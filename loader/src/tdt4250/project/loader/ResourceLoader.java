@@ -55,14 +55,18 @@ public class ResourceLoader {
 	}
 
 	public void load() {
-		CompetitionData cData = new CompetitionData(COMPETITION_ID);
-		cData.load();
+		CompetitionData data = new CompetitionData(COMPETITION_ID);
+		data.load();
 
-		LeagueData leagueData = DataLoader.getLeagueData(COMPETITION_NAME);
+		ModelMapper mapper = new ModelMapper(data);
+		League league = mapper.mapLeague();
 
-		League league = Mapper.mapLeague(leagueData);
+		System.out.println("league:" + league);
 
 		saveLeagueAsXMI(league, XMI_OUT_FILENAME);
+
+		//LeagueData leagueData = DataLoader.getLeagueData(COMPETITION_NAME);
+		//League league = Mapper.mapLeague(leagueData);
 	}
 
 	public static void main(String[] args) {
