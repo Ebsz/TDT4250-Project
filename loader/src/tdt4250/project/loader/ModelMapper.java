@@ -6,10 +6,12 @@ import java.util.List;
 import TDT4250.Project.league.League;
 import TDT4250.Project.league.LeagueFactory;
 import TDT4250.Project.league.LeaguePackage;
+import TDT4250.Project.league.Player;
 import TDT4250.Project.league.Season;
 import TDT4250.Project.league.Standing;
 import TDT4250.Project.league.Team;
 import tdt4250.project.loader.data.CompetitionData;
+import tdt4250.project.loader.jsondata.PlayerJson;
 import tdt4250.project.loader.jsondata.StandingJson;
 import tdt4250.project.loader.jsondata.TeamJson;
 
@@ -45,10 +47,25 @@ public class ModelMapper {
 			team.setAbbr(t.tla);
 			team.setStadium(t.venue);
 
+			team.getOwnedPlayer().addAll(mapPlayers(t.players));
+
 			teams.add(team);
 		}
 
 		return teams;
+	}
+
+	private List<Player> mapPlayers(List<PlayerJson> playerData) {
+		List<Player> players = new ArrayList<>();
+
+		for (PlayerJson pData : playerData) {
+			Player player =  getLeagueFactory().createPlayer();
+			player.setName(pData.name);
+
+			players.add(player);
+		}
+
+		return players;
 	}
 
 	private Season mapCurrentSeason() {
@@ -63,7 +80,6 @@ public class ModelMapper {
 
 		return season;
 	}
-
 
 	private List<Standing> mapStandings() {
 		List<Standing> standings = new ArrayList<>();
@@ -82,9 +98,6 @@ public class ModelMapper {
 			standing.setGoalDifference(s.goalsDifference);
 
 			Team team = getTeam(s.team.name);
-
-
-
 			standing.setTeam(team);
 
 			standings.add(standing);
