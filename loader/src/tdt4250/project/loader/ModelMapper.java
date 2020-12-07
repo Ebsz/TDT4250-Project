@@ -81,7 +81,9 @@ public class ModelMapper {
 			standing.setGoalsAgainst(s.goalsAgainst);
 			standing.setGoalDifference(s.goalsDifference);
 
-			Team team =  league.getTeams().stream().filter(t -> t.getName().equals(s.team.name)).findFirst().get();
+			Team team = getTeam(s.team.name);
+
+
 
 			standing.setTeam(team);
 
@@ -89,6 +91,18 @@ public class ModelMapper {
 		}
 
 		return standings;
+	}
+
+	/**
+	 * Get a team by name.
+	 *
+	 * This method has to be used after League has been populated using mapTeams()
+	 *
+	 * @param teamName
+	 * @return team, or null.
+	 */
+	private Team getTeam(String teamName) {
+		return league.getTeams().stream().filter(t -> t.getName().equals(teamName)).findFirst().get();
 	}
 
 	private static LeagueFactory leagueFactory;
