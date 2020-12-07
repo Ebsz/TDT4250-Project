@@ -3,6 +3,8 @@ package tdt4250.project.loader.data;
 import com.fasterxml.jackson.core.JsonProcessingException;
 
 import tdt4250.project.loader.jsondata.CompetitionJson;
+import tdt4250.project.loader.jsondata.MatchJson;
+import tdt4250.project.loader.jsondata.MatchesJson;
 import tdt4250.project.loader.jsondata.StandingsJson;
 import tdt4250.project.loader.jsondata.TeamsJson;
 
@@ -15,6 +17,7 @@ public class CompetitionData {
 	public CompetitionJson competitionJson;
 	public TeamsJson teamsJson;
 	public StandingsJson standingsJson;
+	public MatchesJson matchesJson; 
 
 	private int leagueID;
 
@@ -31,6 +34,11 @@ public class CompetitionData {
 			competitionJson = Parser.parseObject(competition, CompetitionJson.class);
 			teamsJson = Parser.parseObject(ApiFetcher.getCompetitionTeams(leagueID), TeamsJson.class);
 			standingsJson = Parser.parseObject(ApiFetcher.getStandings(leagueID), StandingsJson.class);
+			matchesJson = Parser.parseObject(ApiFetcher.getMatches(leagueID), MatchesJson.class);
+			for(MatchJson m : matchesJson.matches) {
+				System.out.println(m.homeTeam.name);
+				System.out.println(m.homeGoals);
+			}
 
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();

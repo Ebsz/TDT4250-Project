@@ -6,10 +6,15 @@ import java.util.List;
 import TDT4250.Project.league.League;
 import TDT4250.Project.league.LeagueFactory;
 import TDT4250.Project.league.LeaguePackage;
+import TDT4250.Project.league.Match;
+import TDT4250.Project.league.Matchweek;
 import TDT4250.Project.league.Season;
 import TDT4250.Project.league.Standing;
 import TDT4250.Project.league.Team;
 import tdt4250.project.loader.data.CompetitionData;
+import tdt4250.project.loader.data.json.TeamData;
+import tdt4250.project.loader.jsondata.MatchJson;
+import tdt4250.project.loader.jsondata.MatchWeekJson;
 import tdt4250.project.loader.jsondata.StandingJson;
 import tdt4250.project.loader.jsondata.TeamJson;
 
@@ -31,7 +36,7 @@ public class ModelMapper {
 
 		league.getTeams().addAll(mapTeams());
 		league.getSeason().add(mapCurrentSeason());
-
+		
 		return league;
 	}
 
@@ -39,17 +44,27 @@ public class ModelMapper {
 		List<Team> teams = new ArrayList<>();
 
 		for (TeamJson t : competitionData.teamsJson.teams) {
-			Team team = getLeagueFactory().createTeam();
-
-			team.setName(t.name);
-			team.setAbbr(t.tla);
-			team.setStadium(t.venue);
-
+//			Team team = getLeagueFactory().createTeam();
+//
+//			team.setName(t.name);
+//			team.setAbbr(t.tla);
+//			team.setStadium(t.venue);
+			Team team = mapTeam(t);
 			teams.add(team);
 		}
 
 		return teams;
 	}
+	
+	private Team mapTeam(TeamJson teamJson) {
+		Team team = getLeagueFactory().createTeam();
+		
+		team.setName(teamJson.name);
+		team.setAbbr(teamJson.tla);
+		team.setStadium(teamJson.venue);
+		return team;
+	}
+	
 
 	private Season mapCurrentSeason() {
 		Season season = getLeagueFactory().createSeason();
@@ -60,7 +75,8 @@ public class ModelMapper {
 		season.setName(seasonStartingYear);
 
 		season.getStanding().addAll(mapStandings());
-
+		
+		
 		return season;
 	}
 
@@ -92,6 +108,30 @@ public class ModelMapper {
 
 		return standings;
 	}
+	
+//	private Matchweek mapMatchWeek() {
+//		Matchweek matchWeek = getLeagueFactory().createMatchweek();
+//		
+//		for () {
+//			
+//		}
+//	}
+	
+	private Match mapMatch(MatchJson matchJson) {
+		Match match = getLeagueFactory().createMatch();
+		
+		
+		match.setHometeam(mapTeam(matchJson.homeTeam));
+		match.setAwayteam(mapTeam(matchJson.awayTeam));
+		
+		match.setReferee(matchJson.referee);
+		
+		match.setHomegoals(matchJson.homeGoals);
+		match.setAvaygoals(matchJson.awayGoals);
+		
+		return match;
+	}
+
 
 	/**
 	 * Get a team by name.
@@ -105,6 +145,18 @@ public class ModelMapper {
 		return league.getTeams().stream().filter(t -> t.getName().equals(teamName)).findFirst().get();
 	}
 
+
+	private List<Match> mapMatches(){
+		List<Match> matches = new ArrayList<>();
+		
+		for (MatchJson m : competitionData.matchesJson.matches) {
+			Match match = mapMatch(m);
+			matches.add(match);
+		}
+		return matches;
+	}
+	
+	
 	private static LeagueFactory leagueFactory;
 	private static LeagueFactory getLeagueFactory() {
 		if (leagueFactory == null) {

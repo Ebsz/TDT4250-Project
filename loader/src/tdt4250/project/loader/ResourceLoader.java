@@ -60,6 +60,7 @@ public class ResourceLoader {
 
 		ModelMapper mapper = new ModelMapper(data);
 		League league = mapper.mapLeague();
+	
 
 		System.out.println("league:" + league);
 

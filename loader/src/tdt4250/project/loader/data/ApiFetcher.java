@@ -108,4 +108,12 @@ public class ApiFetcher {
 		//TODO: better error handling -  raise some kind of exception?
 		return 0;
 	}
+	
+	public static String getMatches(int competitionID) {
+		final String URI = API_BASE_URL + "competitions/" +String.valueOf(competitionID) +"/matches" ;
+		String response = sendGet(URI);
+		
+		return response;
+		
+	}
 }
