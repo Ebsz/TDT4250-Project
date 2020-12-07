@@ -15,6 +15,7 @@ import tdt4250.project.loader.data.CompetitionData;
 import tdt4250.project.loader.data.json.TeamData;
 import tdt4250.project.loader.jsondata.MatchJson;
 import tdt4250.project.loader.jsondata.MatchWeekJson;
+import tdt4250.project.loader.jsondata.MatchesJson;
 import tdt4250.project.loader.jsondata.StandingJson;
 import tdt4250.project.loader.jsondata.TeamJson;
 
@@ -44,26 +45,17 @@ public class ModelMapper {
 		List<Team> teams = new ArrayList<>();
 
 		for (TeamJson t : competitionData.teamsJson.teams) {
-//			Team team = getLeagueFactory().createTeam();
-//
-//			team.setName(t.name);
-//			team.setAbbr(t.tla);
-//			team.setStadium(t.venue);
-			Team team = mapTeam(t);
+			Team team = getLeagueFactory().createTeam();
+
+			team.setName(t.name);
+			team.setAbbr(t.tla);
+			team.setStadium(t.venue);
 			teams.add(team);
 		}
 
 		return teams;
 	}
 	
-	private Team mapTeam(TeamJson teamJson) {
-		Team team = getLeagueFactory().createTeam();
-		
-		team.setName(teamJson.name);
-		team.setAbbr(teamJson.tla);
-		team.setStadium(teamJson.venue);
-		return team;
-	}
 	
 
 	private Season mapCurrentSeason() {
@@ -75,7 +67,7 @@ public class ModelMapper {
 		season.setName(seasonStartingYear);
 
 		season.getStanding().addAll(mapStandings());
-		
+		season.getMatchweeks().addAll();
 		
 		return season;
 	}
@@ -109,25 +101,29 @@ public class ModelMapper {
 		return standings;
 	}
 	
-//	private Matchweek mapMatchWeek() {
-//		Matchweek matchWeek = getLeagueFactory().createMatchweek();
-//		
-//		for () {
-//			
-//		}
-//	}
+	private List<Matchweek> mapMatchWeek() {
+		
+		Matchweek matchWeek = getLeagueFactory().createMatchweek();
+		
+	}
 	
 	private Match mapMatch(MatchJson matchJson) {
+		
 		Match match = getLeagueFactory().createMatch();
 		
-		
-		match.setHometeam(mapTeam(matchJson.homeTeam));
-		match.setAwayteam(mapTeam(matchJson.awayTeam));
+	
+		match.setHometeam(getTeam(matchJson.homeTeam.name));
+		match.setAwayteam(getTeam(matchJson.awayTeam.name));
 		
 		match.setReferee(matchJson.referee);
 		
-		match.setHomegoals(matchJson.homeGoals);
-		match.setAvaygoals(matchJson.awayGoals);
+		int homeGoals = Integer.parseInt(matchJson.score.homeTeam);
+		int awayGoals = Integer.parseInt(matchJson.score.awayTeam);
+		
+		match.setHomegoals(homeGoals);
+		match.setAvaygoals(awayGoals);
+
+		
 		
 		return match;
 	}
