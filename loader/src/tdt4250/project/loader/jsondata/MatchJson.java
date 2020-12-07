@@ -24,6 +24,8 @@ public class MatchJson {
 		
 	public int matchday;
 	
+	public String status;
+	
 	public static class Score {
 		
 		public String homeTeam;
@@ -35,8 +37,6 @@ public class MatchJson {
 			
 			homeTeam = fullTime.get("homeTeam");
 			awayTeam = fullTime.get("awayTeam");
-
-		
 		}
 	}
 

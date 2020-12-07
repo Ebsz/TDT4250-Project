@@ -1,6 +1,7 @@
 package tdt4250.project.loader;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import TDT4250.Project.league.League;
@@ -67,7 +68,7 @@ public class ModelMapper {
 		season.setName(seasonStartingYear);
 
 		season.getStanding().addAll(mapStandings());
-		season.getMatchweeks().addAll();
+		season.getMatchweeks().addAll(mapMatchweeks());
 		
 		return season;
 	}
@@ -91,8 +92,6 @@ public class ModelMapper {
 
 			Team team = getTeam(s.team.name);
 
-
-
 			standing.setTeam(team);
 
 			standings.add(standing);
@@ -101,11 +100,28 @@ public class ModelMapper {
 		return standings;
 	}
 	
-	private List<Matchweek> mapMatchWeek() {
-		
-		Matchweek matchWeek = getLeagueFactory().createMatchweek();
-		
-	}
+	
+    private List<Matchweek> mapMatchweeks() {
+        HashMap<Integer, Matchweek> matchweekMap = new HashMap<>();
+  
+        for (MatchJson mj: competitionData.matchesJson.matches) {
+            Match match = mapMatch(mj);
+ 
+            int matchWeek = mj.matchday;
+            
+            if(!matchweekMap.containsKey(matchWeek)){
+            	Matchweek mWeek = getLeagueFactory().createMatchweek(); 
+            	mWeek.setMatchweek(matchWeek);
+            	matchweekMap.put(matchWeek, mWeek);
+            }
+            matchweekMap.get(matchWeek).getMatches().add(match);
+
+        }
+        System.out.println(new ArrayList<Matchweek>(matchweekMap.values()));
+        return new ArrayList<Matchweek>(matchweekMap.values());
+        		
+ 
+    }
 	
 	private Match mapMatch(MatchJson matchJson) {
 		
@@ -116,14 +132,12 @@ public class ModelMapper {
 		match.setAwayteam(getTeam(matchJson.awayTeam.name));
 		
 		match.setReferee(matchJson.referee);
-		
-		int homeGoals = Integer.parseInt(matchJson.score.homeTeam);
-		int awayGoals = Integer.parseInt(matchJson.score.awayTeam);
-		
-		match.setHomegoals(homeGoals);
-		match.setAvaygoals(awayGoals);
-
-		
+		if(matchJson.status.equals("FINISHED")) {
+			int homeGoals = Integer.parseInt(matchJson.score.homeTeam);
+			int awayGoals = Integer.parseInt(matchJson.score.awayTeam);
+			match.setHomegoals(homeGoals);
+			match.setAvaygoals(awayGoals);
+		}
 		
 		return match;
 	}
@@ -142,15 +156,6 @@ public class ModelMapper {
 	}
 
 
-	private List<Match> mapMatches(){
-		List<Match> matches = new ArrayList<>();
-		
-		for (MatchJson m : competitionData.matchesJson.matches) {
-			Match match = mapMatch(m);
-			matches.add(match);
-		}
-		return matches;
-	}
 	
 	
 	private static LeagueFactory leagueFactory;
