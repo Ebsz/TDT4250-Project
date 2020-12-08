@@ -2,16 +2,14 @@ package tdt4250.project.loader.data;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
+
 
 /**
  * Fetches data from the remote API
@@ -20,8 +18,34 @@ import org.json.JSONObject;
  * simply return it as Strings that have to be parsed later.
  */
 public class ApiFetcher {
+
 	private static final String API_BASE_URL = "http://api.football-data.org/v2/";
 	private static final String API_KEY = "b7822848398f41b2b76165aeedd97ac2";
+
+	/**
+	 * Sends a request to the desired end-point and handle HTTP 429 Too Many Requests.
+	 * The exception is handled by sleeping for the timeout period and then retrying
+	 * until the API is available.
+	 *
+	 * @param destinationURL
+	 * @return
+	 */
+	public static String sendGet(String apiEndpoint) {
+
+		while(true) {
+			try {
+				return doGet(apiEndpoint);
+			} catch (TooManyRequestsException e) {
+				System.out.println("API returned TooManyRequests (max 10/min), retrying in " + e.getTimeout() + " seconds");
+
+				try {
+					Thread.sleep(1000 * e.getTimeout());
+				} catch (InterruptedException ie) {
+					ie.printStackTrace();
+				}
+			}
+		}
+	}
 
 	/**
 	 * Send a HTTP GET request to a specified URL and return the response
@@ -29,11 +53,11 @@ public class ApiFetcher {
 	 * @param destinationUrl
 	 * @return String containing the response or null on error
 	 */
-	public static String sendGet(String destinationUrl) {
+	private static String doGet(String destinationURL) throws TooManyRequestsException {
 		HttpURLConnection connection = null;
 
 		try {
-			URL url = new URL(destinationUrl);
+			URL url = new URL(destinationURL);
 			connection = (HttpURLConnection) url.openConnection();
 
 			connection.setRequestMethod("GET");
@@ -44,24 +68,42 @@ public class ApiFetcher {
 			connection.setUseCaches(false);
 			connection.setDoOutput(true);
 
-			System.out.println(destinationUrl + " GET response: " + connection.getResponseCode());
-
-			BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-
-			String inputLine = null;
-			StringBuffer response = new StringBuffer();
-
-			while((inputLine = in.readLine()) != null) {
-				response.append(inputLine);
+			if (connection.getResponseCode() == 429) {
+				throw new TooManyRequestsException(60);
 			}
 
-			return response.toString();
+			//System.out.println(destinationURL + " GET response: " + connection.getResponseCode());
+			String response  = readResponse(connection.getInputStream());
+
+			return response;
 
 		} catch (IOException e) {
 			e.printStackTrace();
-			return null;
 		}
+
+		return null;
 	}
+
+	/**
+	 * Read the response from a HTTP request
+	 *
+	 * @param is
+	 * @return the response
+	 * @throws IOException
+	 */
+	private static String readResponse(InputStream is) throws IOException {
+		BufferedReader in = new BufferedReader(new InputStreamReader(is));
+
+		String inputLine = null;
+		StringBuffer response = new StringBuffer();
+
+		while((inputLine = in.readLine()) != null) {
+			response.append(inputLine);
+		}
+
+		return response.toString();
+	}
+
 
 	public static String getCompetition(int id) {
 		final String URI = API_BASE_URL + "competitions/" + String.valueOf(id);
@@ -112,7 +154,22 @@ public class ApiFetcher {
 			}
 		}
 
-		//TODO: better error handling -  raise some kind of exception?
 		return 0;
+	}
+
+	public static class TooManyRequestsException extends Exception {
+		private int timeout;
+
+		public TooManyRequestsException(int timeout) {
+			super();
+
+			this.timeout = timeout;
+		}
+
+		public int getTimeout() {
+			return timeout;
+		}
+
+		private static final long serialVersionUID = 1L;
 	}
 }
