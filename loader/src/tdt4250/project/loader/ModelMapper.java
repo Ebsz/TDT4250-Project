@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import TDT4250.Project.league.Booking;
 import TDT4250.Project.league.League;
 import TDT4250.Project.league.LeagueFactory;
 import TDT4250.Project.league.LeaguePackage;
@@ -14,6 +15,7 @@ import TDT4250.Project.league.Standing;
 import TDT4250.Project.league.Team;
 import tdt4250.project.loader.data.CompetitionData;
 import tdt4250.project.loader.data.json.TeamData;
+import tdt4250.project.loader.jsondata.BookingJson;
 import tdt4250.project.loader.jsondata.MatchJson;
 import tdt4250.project.loader.jsondata.MatchWeekJson;
 import tdt4250.project.loader.jsondata.MatchesJson;
@@ -130,8 +132,9 @@ public class ModelMapper {
 	
 		match.setHometeam(getTeam(matchJson.homeTeam.name));
 		match.setAwayteam(getTeam(matchJson.awayTeam.name));
-		
-		match.setReferee(matchJson.referee);
+		match.setDate(matchJson.utcDate);
+		match.getBookings();
+		//match.setReferee(matchJson.referee.name);
 		if(matchJson.status.equals("FINISHED")) {
 			int homeGoals = Integer.parseInt(matchJson.score.homeTeam);
 			int awayGoals = Integer.parseInt(matchJson.score.awayTeam);
@@ -140,6 +143,16 @@ public class ModelMapper {
 		}
 		
 		return match;
+	}
+	
+	private Booking mapBookings(BookingsJson bookingsJson) {
+		List<Booking> booking = new ArrayList<>();
+		
+		
+		Booking booking = getLeagueFactory().createBooking();
+		booking.setMinute(bookingJson.minute);
+		booking.setBookedPlayer(bookingJson.bookedPlayer);
+		return booking;
 	}
 
 
