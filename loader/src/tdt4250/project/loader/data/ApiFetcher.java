@@ -31,7 +31,6 @@ public class ApiFetcher {
 	 * @return
 	 */
 	public static String sendGet(String apiEndpoint) {
-
 		while(true) {
 			try {
 				return doGet(apiEndpoint);
@@ -72,11 +71,7 @@ public class ApiFetcher {
 				throw new TooManyRequestsException(60);
 			}
 
-			//System.out.println(destinationURL + " GET response: " + connection.getResponseCode());
-			String response  = readResponse(connection.getInputStream());
-
-			return response;
-
+			return readResponse(connection.getInputStream());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -87,7 +82,7 @@ public class ApiFetcher {
 	/**
 	 * Read the response from a HTTP request
 	 *
-	 * @param is
+	 * @param is InputStream
 	 * @return the response
 	 * @throws IOException
 	 */
@@ -104,7 +99,6 @@ public class ApiFetcher {
 		return response.toString();
 	}
 
-
 	public static String getCompetition(int id) {
 		final String URI = API_BASE_URL + "competitions/" + String.valueOf(id);
 
@@ -112,7 +106,6 @@ public class ApiFetcher {
 		return response;
 	}
 
-	// TODO: Add parameterizing by season
 	public static String getCompetitionTeams(int competitionID) {
 		final String URI = API_BASE_URL + "competitions/" + String.valueOf(competitionID) + "/teams";
 

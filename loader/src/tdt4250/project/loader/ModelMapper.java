@@ -16,7 +16,7 @@ import tdt4250.project.loader.jsondata.StandingJson;
 import tdt4250.project.loader.jsondata.TeamJson;
 
 /**
- * Maps data from the API to model instances that can be exported as .xmi
+ * Maps data from the API to model instances
  */
 public class ModelMapper {
 

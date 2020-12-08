@@ -15,7 +15,6 @@ import tdt4250.project.loader.jsondata.TeamsJson;
  */
 public class CompetitionData {
 
-	// TODO: make private, add getters
 	public CompetitionJson competitionJson;
 	public TeamsJson teamsJson;
 	public StandingsJson standingsJson;
@@ -36,7 +35,6 @@ public class CompetitionData {
 			standingsJson = Parser.parseObject(ApiFetcher.getStandings(leagueID), StandingsJson.class);
 
 			loadTeams();
-
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		}
@@ -54,7 +52,7 @@ public class CompetitionData {
 	/**
 	 * Loads data about a team's players
 	 *
-	 * The data is cached because of limitations in the API
+	 * The data is cached because requests are throttled by the API
 	 *
 	 * @param teamID
 	 * @return list of player data
