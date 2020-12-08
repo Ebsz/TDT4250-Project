@@ -19,20 +19,20 @@ public class CompetitionData {
 	public TeamsJson teamsJson;
 	public StandingsJson standingsJson;
 
-	private int leagueID;
+	private int competitionID;
 
-	public CompetitionData(int leagueID) {
-		this.leagueID = leagueID;
+	public CompetitionData(int competitionID) {
+		this.competitionID = competitionID;
 	}
 
 	/**
 	 * Loads the data necessary for building a League
 	 */
 	public void load()  {
-		String competition = ApiFetcher.getCompetition(leagueID);
+		String competition = ApiFetcher.getCompetition(competitionID);
 		try {
 			competitionJson = Parser.parseObject(competition, CompetitionJson.class);
-			standingsJson = Parser.parseObject(ApiFetcher.getStandings(leagueID), StandingsJson.class);
+			standingsJson = Parser.parseObject(ApiFetcher.getStandings(competitionID), StandingsJson.class);
 
 			loadTeams();
 		} catch (JsonProcessingException e) {
@@ -41,7 +41,7 @@ public class CompetitionData {
 	}
 
 	private void loadTeams() throws JsonProcessingException {
-		teamsJson = Parser.parseObject(ApiFetcher.getCompetitionTeams(leagueID), TeamsJson.class);
+		teamsJson = Parser.parseObject(ApiFetcher.getCompetitionTeams(competitionID), TeamsJson.class);
 
 		// Load players for each team - they require an API call per team, so they have to be added manually
 		for (TeamJson team : teamsJson.teams) {
