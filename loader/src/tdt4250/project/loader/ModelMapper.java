@@ -132,7 +132,7 @@ public class ModelMapper {
 		match.setHometeam(getTeam(matchJson.homeTeam.name));
 		match.setAwayteam(getTeam(matchJson.awayTeam.name));
 		match.setDate(matchJson.utcDate);
-		if(matchJson.referees.size() !=0) {
+		if(!matchJson.referees.isEmpty()) {
 			match.setReferee(matchJson.referees.get(0).name);
 		}
 		if(matchJson.status.equals("FINISHED")) {
