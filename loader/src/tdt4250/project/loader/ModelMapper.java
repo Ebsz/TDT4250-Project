@@ -7,6 +7,7 @@ import TDT4250.Project.league.League;
 import TDT4250.Project.league.LeagueFactory;
 import TDT4250.Project.league.LeaguePackage;
 import TDT4250.Project.league.Player;
+import TDT4250.Project.league.PositionType;
 import TDT4250.Project.league.Season;
 import TDT4250.Project.league.Standing;
 import TDT4250.Project.league.Team;
@@ -59,8 +60,14 @@ public class ModelMapper {
 		List<Player> players = new ArrayList<>();
 
 		for (PlayerJson pData : playerData) {
+			if (!pData.role.equals("PLAYER")) { // The data also includes coaches, but we don't care about those
+				continue;
+			}
+
 			Player player =  getLeagueFactory().createPlayer();
+
 			player.setName(pData.name);
+			player.setPosition(PlayerJson.mapPosition(pData.position));
 
 			players.add(player);
 		}
