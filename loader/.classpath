@@ -9,14 +9,6 @@
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="lib" path="lib/json-20200518.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
-	<classpathentry kind="lib" path="/usr/lib/eclipse/plugins/org.eclipse.emf.ecore.xmi_2.16.0.v20190528-0725.jar" sourcepath="/home/einar/.eclipse/org.eclipse.platform_4.17.0_155965261_linux_gtk_x86_64/plugins/org.eclipse.emf.ecore.xmi.source_2.16.0.v20190528-0725.jar">
-		<accessrules>
-			<accessrule kind="accessible" pattern="org/eclipse/emf/ecore/xmi/*"/>
-			<accessrule kind="accessible" pattern="org/eclipse/emf/ecore/xmi/impl/*"/>
-			<accessrule kind="accessible" pattern="org/eclipse/emf/ecore/xmi/util/*"/>
-			<accessrule ignoreifbetter="true" kind="nonaccessible" pattern="**/*"/>
-		</accessrules>
-	</classpathentry>
 	<classpathentry combineaccessrules="false" kind="src" path="/model"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

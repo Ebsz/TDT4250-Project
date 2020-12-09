@@ -1,18 +1,25 @@
 package tdt4250.project.loader;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
+import TDT4250.Project.league.Booking;
 import TDT4250.Project.league.League;
 import TDT4250.Project.league.LeagueFactory;
 import TDT4250.Project.league.LeaguePackage;
 import TDT4250.Project.league.Player;
 import TDT4250.Project.league.PositionType;
+import TDT4250.Project.league.Match;
+import TDT4250.Project.league.Matchweek;
 import TDT4250.Project.league.Season;
 import TDT4250.Project.league.Standing;
 import TDT4250.Project.league.Team;
 import tdt4250.project.loader.data.CompetitionData;
 import tdt4250.project.loader.jsondata.PlayerJson;
+import tdt4250.project.loader.jsondata.MatchJson;
+import tdt4250.project.loader.jsondata.MatchWeekJson;
+import tdt4250.project.loader.jsondata.MatchesJson;
 import tdt4250.project.loader.jsondata.StandingJson;
 import tdt4250.project.loader.jsondata.TeamJson;
 
@@ -47,7 +54,6 @@ public class ModelMapper {
 			team.setName(t.name);
 			team.setAbbr(t.tla);
 			team.setStadium(t.venue);
-
 			team.getOwnedPlayer().addAll(mapPlayers(t.players));
 
 			teams.add(team);
@@ -55,6 +61,8 @@ public class ModelMapper {
 
 		return teams;
 	}
+
+
 
 	private List<Player> mapPlayers(List<PlayerJson> playerData) {
 		List<Player> players = new ArrayList<>();
@@ -84,6 +92,7 @@ public class ModelMapper {
 		season.setName(seasonStartingYear);
 
 		season.getStanding().addAll(mapStandings());
+		season.getMatchweeks().addAll(mapMatchweeks());
 
 		return season;
 	}
@@ -113,6 +122,52 @@ public class ModelMapper {
 		return standings;
 	}
 
+
+    private List<Matchweek> mapMatchweeks() {
+        HashMap<Integer, Matchweek> matchweekMap = new HashMap<>();
+
+        for (MatchJson mj: competitionData.matchesJson.matches) {
+            Match match = mapMatch(mj);
+
+            int matchWeek = mj.matchday;
+
+            if(!matchweekMap.containsKey(matchWeek)){
+            	Matchweek mWeek = getLeagueFactory().createMatchweek();
+            	mWeek.setMatchweek(matchWeek);
+            	matchweekMap.put(matchWeek, mWeek);
+            }
+            matchweekMap.get(matchWeek).getMatches().add(match);
+
+        }
+        System.out.println(new ArrayList<Matchweek>(matchweekMap.values()));
+        return new ArrayList<Matchweek>(matchweekMap.values());
+
+
+    }
+
+	private Match mapMatch(MatchJson matchJson) {
+
+		Match match = getLeagueFactory().createMatch();
+
+
+		match.setHometeam(getTeam(matchJson.homeTeam.name));
+		match.setAwayteam(getTeam(matchJson.awayTeam.name));
+		match.setDate(matchJson.utcDate);
+		if(!matchJson.referees.isEmpty()) {
+			match.setReferee(matchJson.referees.get(0).name);
+		}
+		if(matchJson.status.equals("FINISHED")) {
+			int homeGoals = Integer.parseInt(matchJson.score.homeTeam);
+			int awayGoals = Integer.parseInt(matchJson.score.awayTeam);
+			match.setHomegoals(homeGoals);
+			match.setAvaygoals(awayGoals);
+		}
+
+		return match;
+	}
+
+
+
 	/**
 	 * Get a team by name.
 	 *
@@ -124,6 +179,9 @@ public class ModelMapper {
 	private Team getTeam(String teamName) {
 		return league.getTeams().stream().filter(t -> t.getName().equals(teamName)).findFirst().get();
 	}
+
+
+
 
 	private static LeagueFactory leagueFactory;
 	private static LeagueFactory getLeagueFactory() {

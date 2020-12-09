@@ -150,6 +150,14 @@ public class ApiFetcher {
 		return 0;
 	}
 
+	public static String getMatches(int competitionID) {
+		final String URI = API_BASE_URL + "competitions/" +String.valueOf(competitionID) +"/matches" ;
+		String response = sendGet(URI);
+		
+		return response;
+	}
+
+
 	public static class TooManyRequestsException extends Exception {
 		private int timeout;
 

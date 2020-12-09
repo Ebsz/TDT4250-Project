@@ -56,6 +56,7 @@ public class ResourceLoader {
 
 		ModelMapper mapper = new ModelMapper(data);
 		League league = mapper.mapLeague();
+	
 
 		saveLeagueAsXMI(league, XMI_OUT_FILENAME);
 	}
