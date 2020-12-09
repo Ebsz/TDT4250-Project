@@ -40,11 +40,6 @@ public class CompetitionData {
 			teamsJson = Parser.parseObject(ApiFetcher.getCompetitionTeams(competitionID), TeamsJson.class);
 			standingsJson = Parser.parseObject(ApiFetcher.getStandings(competitionID), StandingsJson.class);
 			matchesJson = Parser.parseObject(ApiFetcher.getMatches(competitionID), MatchesJson.class);
-			for(MatchJson m : matchesJson.matches) {;
-				if(m.referees.size() != 0) {
-					System.out.println(m.referees.get(0).name);
-				}
-			}
 
 			loadTeams();
 		} catch (JsonProcessingException e) {

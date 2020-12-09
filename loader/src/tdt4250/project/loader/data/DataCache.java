@@ -47,8 +47,6 @@ public class DataCache {
 	 * @return cached data
 	 */
 	public static String getTeamData(int teamID) {
-		System.out.println("Retrieving cached data for team: " + teamID);
-
 		String path = getTeamDataPath(teamID);
 		return readData(path);
 	}
@@ -67,7 +65,6 @@ public class DataCache {
 	}
 
 	private static void writeData(String data, String path) {
-		//System.out.println("Writing data to '" + path + "'");
 		try(FileWriter fileWriter = new FileWriter(path)) {
 			fileWriter.write(data);
 			fileWriter.close();
