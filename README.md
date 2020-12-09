@@ -78,10 +78,25 @@ To use the ApiFetcher, you will need to import the libraries found under `lib/`.
    * /src
       * /LeagueValidatorTests.java
 * TDT4250-Project.loader
-   * /src
-      * /ApiFetcher.java
-      * /parser.java
-      * /json
+   * /src/tdt4250/project/loader
+      * ResourceLoader.java
+      * ModelMapper.java
+      * data/
+         * ApiFetcher.java
+         * CompetitionData.java
+         * DataCache.java
+         * Parser.java
+         * json/
+            * CompetitionData.java
+            * MatchesData.java
+            * MatchData.java
+            * MatchWeekData.java
+            * PlayerData.java
+            * SeasonData.java
+            * StandingData.java
+            * StandingsData.java
+            * TeamData.java
+            * TeamsData.java
 * TDT4250-Project.diagram
    * /src
       * /Activator.java
