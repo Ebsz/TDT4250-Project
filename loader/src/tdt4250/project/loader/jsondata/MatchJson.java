@@ -12,19 +12,15 @@ public class MatchJson {
 	public TeamJson homeTeam;
 	public TeamJson awayTeam;
 	
-	public List<BookingJson> bookings;
+	public String booking;
 	
 	public Date utcDate;
 	
-	public Referee referee;
+	public List<Referee> referees;
 	
 	public static class Referee{
-		public String name; 
 		
-		@JsonProperty("referees")
-		public void unpackReferees(Map<String, String> referees){
-			name = referees.get("name");
-		}
+		public String name; 
 	}
 		
 	public Score score;

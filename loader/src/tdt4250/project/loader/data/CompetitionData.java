@@ -37,7 +37,9 @@ public class CompetitionData {
 			standingsJson = Parser.parseObject(ApiFetcher.getStandings(leagueID), StandingsJson.class);
 			matchesJson = Parser.parseObject(ApiFetcher.getMatches(leagueID), MatchesJson.class);
 			for(MatchJson m : matchesJson.matches) {;
-				System.out.println(m.utcDate);
+				if(m.referees.size() != 0) {
+					System.out.println(m.referees.get(0).name);
+				}
 			}
 
 		} catch (JsonProcessingException e) {
