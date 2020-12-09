@@ -1,4 +1,4 @@
-package tdt4250.project.loader.jsondata;
+package tdt4250.project.loader.data.json;
 
 public class StandingJson {
 	public TeamJson team;

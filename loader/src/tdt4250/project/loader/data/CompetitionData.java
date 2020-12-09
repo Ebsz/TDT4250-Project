@@ -4,14 +4,14 @@ import java.util.List;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 
-import tdt4250.project.loader.jsondata.CompetitionJson;
-import tdt4250.project.loader.jsondata.PlayerJson;
-import tdt4250.project.loader.jsondata.MatchJson;
-import tdt4250.project.loader.jsondata.MatchesJson;
-import tdt4250.project.loader.jsondata.StandingJson;
-import tdt4250.project.loader.jsondata.StandingsJson;
-import tdt4250.project.loader.jsondata.TeamJson;
-import tdt4250.project.loader.jsondata.TeamsJson;
+import tdt4250.project.loader.data.json.CompetitionJson;
+import tdt4250.project.loader.data.json.MatchJson;
+import tdt4250.project.loader.data.json.MatchesJson;
+import tdt4250.project.loader.data.json.PlayerJson;
+import tdt4250.project.loader.data.json.StandingJson;
+import tdt4250.project.loader.data.json.StandingsJson;
+import tdt4250.project.loader.data.json.TeamJson;
+import tdt4250.project.loader.data.json.TeamsJson;
 
 /**
  * Loads Competition data from the API

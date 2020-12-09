@@ -14,10 +14,10 @@ import TDT4250.Project.league.Season;
 import TDT4250.Project.league.Standing;
 import TDT4250.Project.league.Team;
 import tdt4250.project.loader.data.CompetitionData;
-import tdt4250.project.loader.jsondata.PlayerJson;
-import tdt4250.project.loader.jsondata.MatchJson;
-import tdt4250.project.loader.jsondata.StandingJson;
-import tdt4250.project.loader.jsondata.TeamJson;
+import tdt4250.project.loader.data.json.MatchJson;
+import tdt4250.project.loader.data.json.PlayerJson;
+import tdt4250.project.loader.data.json.StandingJson;
+import tdt4250.project.loader.data.json.TeamJson;
 
 /**
  * Maps data from the API to model instances
