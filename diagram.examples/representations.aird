@@ -1,7 +1,952 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description" uid="_KyTikC8NEeu1ju-yLds1Yw" selectedViews="_03xVMC8dEeuFuZZYnjfPTQ" version="14.3.1.202003261200">
-  <semanticResources>platform:/resource/model/League.xmi</semanticResources>
-  <ownedViews xmi:type="viewpoint:DView" uid="_03xVMC8dEeuFuZZYnjfPTQ">
-    <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']"/>
-  </ownedViews>
-</viewpoint:DAnalysis>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:description_3="http://www.eclipse.org/sirius/tree/description/1.0.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:league="platform:/plugin/TDT4250.Project/model/League.ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:table="http://www.eclipse.org/sirius/table/1.1.0" xmlns:tree="http://www.eclipse.org/sirius/tree/1.0.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/table/description/1.1.0 http://www.eclipse.org/sirius/table/1.1.0#//description http://www.eclipse.org/sirius/tree/description/1.0.0 http://www.eclipse.org/sirius/tree/1.0.0#//description platform:/plugin/TDT4250.Project/model/League.ecore platform:/resource/model/League.ecore http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis uid="_KyTikC8NEeu1ju-yLds1Yw" selectedViews="_03xVMC8dEeuFuZZYnjfPTQ" version="14.3.1.202003261200">
+    <semanticResources>platform:/resource/model/League.xmi</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_03xVMC8dEeuFuZZYnjfPTQ">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_bOa5sDrUEeuy4eth5RGi4A" name="new MatchDiagram" repPath="#_bM0XMDrUEeuy4eth5RGi4A" changeId="c8bf53eb-a420-4b86-ab2c-62f99f6ea98e">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='MatchDiagram']"/>
+        <target xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_m6GdsDrUEeuy4eth5RGi4A" name="new MatchweekDiagram" repPath="#_m51X8DrUEeuy4eth5RGi4A" changeId="1fa3100d-84c9-4c95-a84e-e8b3f39f53ec">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='MatchweekDiagram']"/>
+        <target xmi:type="league:Matchweek" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_uX1akDrUEeuy4eth5RGi4A" name="new PlayerDiagram" repPath="#_uXSoADrUEeuy4eth5RGi4A" changeId="14b1bbaa-e323-42b6-830b-6d324f64171d">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='PlayerDiagram']"/>
+        <target xmi:type="league:Player" href="platform:/resource/model/League.xmi#//@Teams.0/@OwnedPlayer.3"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_xsozMDrUEeuy4eth5RGi4A" name="new SeasonDiagram" repPath="#_xsawwDrUEeuy4eth5RGi4A" changeId="ddb29ba7-908a-4840-ab3d-1a4ee738c731">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonDiagram']"/>
+        <target xmi:type="league:Season" href="platform:/resource/model/League.xmi#//@Season.0"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_1SKvcTrUEeuy4eth5RGi4A" name="new TeamDiagram" repPath="#_1R8tADrUEeuy4eth5RGi4A" changeId="7083a312-5753-4897-8647-f5376499fb8e">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='TeamDiagram']"/>
+        <target xmi:type="league:Team" href="platform:/resource/model/League.xmi#//@Teams.0"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_4d8u8DrUEeuy4eth5RGi4A" name="new SeasonTable" repPath="#_4duFcDrUEeuy4eth5RGi4A" changeId="2c062ab9-49df-4108-8b82-091864351edf">
+        <description xmi:type="description_2:EditionTableDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTable']"/>
+        <target xmi:type="league:Season" href="platform:/resource/model/League.xmi#//@Season.0"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_IjE_cDrVEeuy4eth5RGi4A" name="new SeasonTree" repPath="#_IiV_oDrVEeuy4eth5RGi4A" changeId="f23153e9-793c-4986-a8ef-aa1a11afd337">
+        <description xmi:type="description_3:TreeDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTree']"/>
+        <target xmi:type="league:Season" href="platform:/resource/model/League.xmi#//@Season.0"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram uid="_bM0XMDrUEeuy4eth5RGi4A">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_bOXPUDrUEeuy4eth5RGi4A" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_bOX2YDrUEeuy4eth5RGi4A"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_bPX78DrUEeuy4eth5RGi4A" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_bPX78TrUEeuy4eth5RGi4A" type="Sirius" element="_bM0XMDrUEeuy4eth5RGi4A" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_bP8jsDrUEeuy4eth5RGi4A" type="2002" element="_bNqrwDrUEeuy4eth5RGi4A">
+          <children xmi:type="notation:Node" xmi:id="_bQJYADrUEeuy4eth5RGi4A" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_bQLNMDrUEeuy4eth5RGi4A" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_bQYokDrUEeuy4eth5RGi4A" type="3009" element="_bOEUYDrUEeuy4eth5RGi4A">
+              <children xmi:type="notation:Node" xmi:id="_bQZPoDrUEeuy4eth5RGi4A" visible="false" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_bQZ2sDrUEeuy4eth5RGi4A" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_bQdhEDrUEeuy4eth5RGi4A" type="3010" element="_bOH-wDrUEeuy4eth5RGi4A">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_bQdhETrUEeuy4eth5RGi4A" fontName="Segoe UI" fontHeight="12"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_bQdhEjrUEeuy4eth5RGi4A"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_bQeIIDrUEeuy4eth5RGi4A" type="3010" element="_bOOFYDrUEeuy4eth5RGi4A">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_bQeIITrUEeuy4eth5RGi4A" fontName="Segoe UI" fontHeight="12"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_bQeIIjrUEeuy4eth5RGi4A"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_bQevMDrUEeuy4eth5RGi4A" type="3010" element="_bOOscDrUEeuy4eth5RGi4A">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_bQevMTrUEeuy4eth5RGi4A" fontName="Segoe UI" fontHeight="12"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_bQevMjrUEeuy4eth5RGi4A"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_bQevMzrUEeuy4eth5RGi4A" type="3010" element="_bOPTgDrUEeuy4eth5RGi4A">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_bQevNDrUEeuy4eth5RGi4A" fontName="Segoe UI" fontHeight="12"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_bQevNTrUEeuy4eth5RGi4A"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_bQZ2sTrUEeuy4eth5RGi4A"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_bQZ2sjrUEeuy4eth5RGi4A"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_bQbE0DrUEeuy4eth5RGi4A"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_bQYokTrUEeuy4eth5RGi4A" fontName="Segoe UI" fontHeight="12" italic="true"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bQYokjrUEeuy4eth5RGi4A"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_bQbr4DrUEeuy4eth5RGi4A" type="3009" element="_bOQhoDrUEeuy4eth5RGi4A">
+              <children xmi:type="notation:Node" xmi:id="_bQcS8DrUEeuy4eth5RGi4A" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_bQcS8TrUEeuy4eth5RGi4A" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_bQfWQDrUEeuy4eth5RGi4A" type="3010" element="_bORIsDrUEeuy4eth5RGi4A">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_bQfWQTrUEeuy4eth5RGi4A" fontName="Segoe UI" fontHeight="12"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_bQfWQjrUEeuy4eth5RGi4A"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_bQf9UDrUEeuy4eth5RGi4A" type="3010" element="_bOSW0DrUEeuy4eth5RGi4A">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_bQf9UTrUEeuy4eth5RGi4A" fontName="Segoe UI" fontHeight="12"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_bQf9UjrUEeuy4eth5RGi4A"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_bQcS8jrUEeuy4eth5RGi4A"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_bQcS8zrUEeuy4eth5RGi4A"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_bQcS9DrUEeuy4eth5RGi4A"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_bQbr4TrUEeuy4eth5RGi4A" fontName="Segoe UI" fontHeight="12" italic="true"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bQbr4jrUEeuy4eth5RGi4A" y="40"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_bQLNMTrUEeuy4eth5RGi4A"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_bQLNMjrUEeuy4eth5RGi4A"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_bP8jsTrUEeuy4eth5RGi4A" fontName="Segoe UI" fontHeight="12" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bP8jsjrUEeuy4eth5RGi4A"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_bPX78jrUEeuy4eth5RGi4A"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_bNqrwDrUEeuy4eth5RGi4A" name="Molde 1 - 3 Rosenborg BK" childrenPresentation="VerticalStack">
+      <target xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0"/>
+      <semanticElements xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_bN5VQDrUEeuy4eth5RGi4A" labelSize="12" showIcon="false" borderSize="2" borderSizeComputationExpression="2" backgroundColor="253,206,137" foregroundColor="224,133,3">
+        <labelFormat>bold</labelFormat>
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='MatchDiagram']/@defaultLayer/@containerMappings[name='MatchContainer']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='MatchDiagram']/@defaultLayer/@containerMappings[name='MatchContainer']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_bOEUYDrUEeuy4eth5RGi4A" name="Information: ">
+        <target xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0"/>
+        <semanticElements xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_bOGwoDrUEeuy4eth5RGi4A"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_bOE7cDrUEeuy4eth5RGi4A" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" hideLabelByDefault="true" backgroundColor="253,206,137" foregroundColor="224,133,3">
+          <labelFormat>italic</labelFormat>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='MatchDiagram']/@defaultLayer/@containerMappings[name='MatchContainer']/@subContainerMappings[name='Data']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='MatchDiagram']/@defaultLayer/@containerMappings[name='MatchContainer']/@subContainerMappings[name='Data']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_bOH-wDrUEeuy4eth5RGi4A" name="Matchweek 1">
+          <target xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0"/>
+          <semanticElements xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0"/>
+          <ownedStyle xmi:type="diagram:BundledImage" uid="_bONeUDrUEeuy4eth5RGi4A" labelSize="12" showIcon="false" labelPosition="node" color="224,133,3">
+            <description xmi:type="style:BundledImageDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='MatchDiagram']/@defaultLayer/@containerMappings[name='MatchContainer']/@subContainerMappings[name='Data']/@subNodeMappings[name='Matchweek']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='MatchDiagram']/@defaultLayer/@containerMappings[name='MatchContainer']/@subContainerMappings[name='Data']/@subNodeMappings[name='Matchweek']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_bOOFYDrUEeuy4eth5RGi4A" name="Sun Oct 11 20:00:00 CEST 2020">
+          <target xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0"/>
+          <semanticElements xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0"/>
+          <ownedStyle xmi:type="diagram:BundledImage" uid="_bOOFYTrUEeuy4eth5RGi4A" labelSize="12" showIcon="false" labelPosition="node" color="224,133,3">
+            <description xmi:type="style:BundledImageDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='MatchDiagram']/@defaultLayer/@containerMappings[name='MatchContainer']/@subContainerMappings[name='Data']/@subNodeMappings[name='Date']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='MatchDiagram']/@defaultLayer/@containerMappings[name='MatchContainer']/@subContainerMappings[name='Data']/@subNodeMappings[name='Date']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_bOOscDrUEeuy4eth5RGi4A" name="Referee: Tom Harald Hagen">
+          <target xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0"/>
+          <semanticElements xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0"/>
+          <ownedStyle xmi:type="diagram:BundledImage" uid="_bOOscTrUEeuy4eth5RGi4A" labelSize="12" showIcon="false" labelPosition="node" color="224,133,3">
+            <description xmi:type="style:BundledImageDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='MatchDiagram']/@defaultLayer/@containerMappings[name='MatchContainer']/@subContainerMappings[name='Data']/@subNodeMappings[name='Referee']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='MatchDiagram']/@defaultLayer/@containerMappings[name='MatchContainer']/@subContainerMappings[name='Data']/@subNodeMappings[name='Referee']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_bOPTgDrUEeuy4eth5RGi4A" name="Stadium: Aker Stadion">
+          <target xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0"/>
+          <semanticElements xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0"/>
+          <ownedStyle xmi:type="diagram:BundledImage" uid="_bOPTgTrUEeuy4eth5RGi4A" labelSize="12" showIcon="false" labelPosition="node">
+            <description xmi:type="style:BundledImageDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='MatchDiagram']/@defaultLayer/@containerMappings[name='MatchContainer']/@subContainerMappings[name='Data']/@subNodeMappings[name='Stadium']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='MatchDiagram']/@defaultLayer/@containerMappings[name='MatchContainer']/@subContainerMappings[name='Data']/@subNodeMappings[name='Stadium']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_bOQhoDrUEeuy4eth5RGi4A" name="Bookings: ">
+        <target xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0"/>
+        <semanticElements xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_bOQhoTrUEeuy4eth5RGi4A" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundColor="253,206,137" foregroundColor="224,133,3">
+          <labelFormat>italic</labelFormat>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='MatchDiagram']/@defaultLayer/@containerMappings[name='MatchContainer']/@subContainerMappings[name='Bookings']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='MatchDiagram']/@defaultLayer/@containerMappings[name='MatchContainer']/@subContainerMappings[name='Bookings']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_bORIsDrUEeuy4eth5RGi4A" name="55. min: Pål Andre Helland (YellowCard)">
+          <target xmi:type="league:Booking" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0/@Bookings.0"/>
+          <semanticElements xmi:type="league:Booking" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0/@Bookings.0"/>
+          <ownedStyle xmi:type="diagram:BundledImage" uid="_bORvwDrUEeuy4eth5RGi4A" labelSize="12" showIcon="false" labelPosition="node" color="224,133,3">
+            <description xmi:type="style:BundledImageDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='MatchDiagram']/@defaultLayer/@containerMappings[name='MatchContainer']/@subContainerMappings[name='Bookings']/@subNodeMappings[name='Booking']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='MatchDiagram']/@defaultLayer/@containerMappings[name='MatchContainer']/@subContainerMappings[name='Bookings']/@subNodeMappings[name='Booking']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_bOSW0DrUEeuy4eth5RGi4A" name="12. min: Markus Henriksen (Goal)">
+          <target xmi:type="league:Booking" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0/@Bookings.1"/>
+          <semanticElements xmi:type="league:Booking" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0/@Bookings.1"/>
+          <ownedStyle xmi:type="diagram:BundledImage" uid="_bOSW0TrUEeuy4eth5RGi4A" labelSize="12" showIcon="false" labelPosition="node" color="224,133,3">
+            <description xmi:type="style:BundledImageDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='MatchDiagram']/@defaultLayer/@containerMappings[name='MatchContainer']/@subContainerMappings[name='Bookings']/@subNodeMappings[name='Booking']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='MatchDiagram']/@defaultLayer/@containerMappings[name='MatchContainer']/@subContainerMappings[name='Bookings']/@subNodeMappings[name='Booking']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='MatchDiagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_bNFc8DrUEeuy4eth5RGi4A"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='MatchDiagram']/@defaultLayer"/>
+    <target xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_m51X8DrUEeuy4eth5RGi4A">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_m6FPkDrUEeuy4eth5RGi4A" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_m6FPkTrUEeuy4eth5RGi4A"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_m6GdsTrUEeuy4eth5RGi4A" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_m6GdsjrUEeuy4eth5RGi4A" type="Sirius" element="_m51X8DrUEeuy4eth5RGi4A" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_m6Hr0DrUEeuy4eth5RGi4A" type="2003" element="_m5-h4DrUEeuy4eth5RGi4A">
+          <children xmi:type="notation:Node" xmi:id="_m6IS4DrUEeuy4eth5RGi4A" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_m6I58DrUEeuy4eth5RGi4A" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_m6L9QDrUEeuy4eth5RGi4A" type="3010" element="_m6A-IDrUEeuy4eth5RGi4A">
+              <styles xmi:type="notation:FontStyle" xmi:id="_m6MkUDrUEeuy4eth5RGi4A" fontName="Segoe UI" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_m6MkUTrUEeuy4eth5RGi4A"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_m6Q1wDrUEeuy4eth5RGi4A" type="3010" element="_m6EogDrUEeuy4eth5RGi4A">
+              <styles xmi:type="notation:FontStyle" xmi:id="_m6Q1wTrUEeuy4eth5RGi4A" fontName="Segoe UI" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_m6Q1wjrUEeuy4eth5RGi4A"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_m6I58TrUEeuy4eth5RGi4A"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_m6JhADrUEeuy4eth5RGi4A"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_m6Hr0TrUEeuy4eth5RGi4A" fontName="Segoe UI" fontHeight="12" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m6Hr0jrUEeuy4eth5RGi4A"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_m6GdszrUEeuy4eth5RGi4A"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_m5-h4DrUEeuy4eth5RGi4A" name="Matchweek 1:">
+      <target xmi:type="league:Matchweek" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0"/>
+      <semanticElements xmi:type="league:Matchweek" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_m5_wADrUEeuy4eth5RGi4A" labelSize="12" showIcon="false" borderSize="2" borderSizeComputationExpression="2" backgroundStyle="GradientTopToBottom" backgroundColor="253,206,137" foregroundColor="224,133,3">
+        <labelFormat>bold</labelFormat>
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='MatchweekDiagram']/@defaultLayer/@containerMappings[name='MatchweekContainer']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='MatchweekDiagram']/@defaultLayer/@containerMappings[name='MatchweekContainer']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_m6A-IDrUEeuy4eth5RGi4A" name="Molde - Rosenborg BK">
+        <target xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0"/>
+        <semanticElements xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_m6DaYDrUEeuy4eth5RGi4A" labelSize="12" showIcon="false" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='MatchweekDiagram']/@defaultLayer/@containerMappings[name='MatchweekContainer']/@subNodeMappings[name='Match']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='MatchweekDiagram']/@defaultLayer/@containerMappings[name='MatchweekContainer']/@subNodeMappings[name='Match']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_m6EogDrUEeuy4eth5RGi4A" name="Rosenborg BK - Molde">
+        <target xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.1"/>
+        <semanticElements xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.1"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_m6EogTrUEeuy4eth5RGi4A" labelSize="12" showIcon="false" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='MatchweekDiagram']/@defaultLayer/@containerMappings[name='MatchweekContainer']/@subNodeMappings[name='Match']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='MatchweekDiagram']/@defaultLayer/@containerMappings[name='MatchweekContainer']/@subNodeMappings[name='Match']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='MatchweekDiagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_m51_ADrUEeuy4eth5RGi4A"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='MatchweekDiagram']/@defaultLayer"/>
+    <target xmi:type="league:Matchweek" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_uXSoADrUEeuy4eth5RGi4A">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_uXy-UDrUEeuy4eth5RGi4A" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_uXy-UTrUEeuy4eth5RGi4A"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_uX7hMDrUEeuy4eth5RGi4A" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_uX7hMTrUEeuy4eth5RGi4A" type="Sirius" element="_uXSoADrUEeuy4eth5RGi4A" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_uX7hMzrUEeuy4eth5RGi4A" type="2003" element="_uXaj0DrUEeuy4eth5RGi4A">
+          <children xmi:type="notation:Node" xmi:id="_uX7hNjrUEeuy4eth5RGi4A" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_uX8IQDrUEeuy4eth5RGi4A" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_uX8IQzrUEeuy4eth5RGi4A" type="3010" element="_uXbx8DrUEeuy4eth5RGi4A">
+              <styles xmi:type="notation:FontStyle" xmi:id="_uX8IRDrUEeuy4eth5RGi4A" fontName="Segoe UI" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_uX8IRTrUEeuy4eth5RGi4A"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_uX8vUDrUEeuy4eth5RGi4A" type="3010" element="_uXdnIDrUEeuy4eth5RGi4A">
+              <styles xmi:type="notation:FontStyle" xmi:id="_uX8vUTrUEeuy4eth5RGi4A" fontName="Segoe UI" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_uX8vUjrUEeuy4eth5RGi4A"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_uX8vUzrUEeuy4eth5RGi4A" type="3010" element="_uXe1QDrUEeuy4eth5RGi4A">
+              <styles xmi:type="notation:FontStyle" xmi:id="_uX8vVDrUEeuy4eth5RGi4A" fontName="Segoe UI" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_uX8vVTrUEeuy4eth5RGi4A"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_uX9WYDrUEeuy4eth5RGi4A" type="3010" element="_uXus4TrUEeuy4eth5RGi4A">
+              <styles xmi:type="notation:FontStyle" xmi:id="_uX9WYTrUEeuy4eth5RGi4A" fontName="Segoe UI" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_uX9WYjrUEeuy4eth5RGi4A"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_uX99cDrUEeuy4eth5RGi4A" type="3010" element="_uXxJIDrUEeuy4eth5RGi4A">
+              <styles xmi:type="notation:FontStyle" xmi:id="_uX99cTrUEeuy4eth5RGi4A" fontName="Segoe UI" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_uX99cjrUEeuy4eth5RGi4A"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_uX8IQTrUEeuy4eth5RGi4A"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_uX8IQjrUEeuy4eth5RGi4A"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_uX7hNDrUEeuy4eth5RGi4A" fontName="Segoe UI" fontHeight="12" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uX7hNTrUEeuy4eth5RGi4A"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_uX7hMjrUEeuy4eth5RGi4A"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_uXaj0DrUEeuy4eth5RGi4A" name="Pål Andre Helland">
+      <target xmi:type="league:Player" href="platform:/resource/model/League.xmi#//@Teams.0/@OwnedPlayer.3"/>
+      <semanticElements xmi:type="league:Player" href="platform:/resource/model/League.xmi#//@Teams.0/@OwnedPlayer.3"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_uXaj0TrUEeuy4eth5RGi4A" labelSize="12" showIcon="false" borderSize="2" borderSizeComputationExpression="2" backgroundStyle="GradientTopToBottom" backgroundColor="253,206,137" foregroundColor="224,133,3">
+        <labelFormat>bold</labelFormat>
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='PlayerDiagram']/@defaultLayer/@containerMappings[name='PlayerContainer']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='PlayerDiagram']/@defaultLayer/@containerMappings[name='PlayerContainer']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_uXbx8DrUEeuy4eth5RGi4A" name="Team: Rosenborg BK">
+        <target xmi:type="league:Player" href="platform:/resource/model/League.xmi#//@Teams.0/@OwnedPlayer.3"/>
+        <semanticElements xmi:type="league:Player" href="platform:/resource/model/League.xmi#//@Teams.0/@OwnedPlayer.3"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_uXdAEDrUEeuy4eth5RGi4A" labelSize="12" showIcon="false" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='PlayerDiagram']/@defaultLayer/@containerMappings[name='PlayerContainer']/@subNodeMappings[name='Team']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='PlayerDiagram']/@defaultLayer/@containerMappings[name='PlayerContainer']/@subNodeMappings[name='Team']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_uXdnIDrUEeuy4eth5RGi4A" name="Posistion: Attacker">
+        <target xmi:type="league:Player" href="platform:/resource/model/League.xmi#//@Teams.0/@OwnedPlayer.3"/>
+        <semanticElements xmi:type="league:Player" href="platform:/resource/model/League.xmi#//@Teams.0/@OwnedPlayer.3"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_uXeOMDrUEeuy4eth5RGi4A" labelSize="12" showIcon="false" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='PlayerDiagram']/@defaultLayer/@containerMappings[name='PlayerContainer']/@subNodeMappings[name='Position']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='PlayerDiagram']/@defaultLayer/@containerMappings[name='PlayerContainer']/@subNodeMappings[name='Position']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_uXe1QDrUEeuy4eth5RGi4A" name="Red Cards: 1">
+        <target xmi:type="league:Player" href="platform:/resource/model/League.xmi#//@Teams.0/@OwnedPlayer.3"/>
+        <semanticElements xmi:type="league:Player" href="platform:/resource/model/League.xmi#//@Teams.0/@OwnedPlayer.3"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_uXus4DrUEeuy4eth5RGi4A" labelSize="12" showIcon="false" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='PlayerDiagram']/@defaultLayer/@containerMappings[name='PlayerContainer']/@subNodeMappings[name='Red%20Cards']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='PlayerDiagram']/@defaultLayer/@containerMappings[name='PlayerContainer']/@subNodeMappings[name='Red%20Cards']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_uXus4TrUEeuy4eth5RGi4A" name="Yellow Cards: 1">
+        <target xmi:type="league:Player" href="platform:/resource/model/League.xmi#//@Teams.0/@OwnedPlayer.3"/>
+        <semanticElements xmi:type="league:Player" href="platform:/resource/model/League.xmi#//@Teams.0/@OwnedPlayer.3"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_uXwiEDrUEeuy4eth5RGi4A" labelSize="12" showIcon="false" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='PlayerDiagram']/@defaultLayer/@containerMappings[name='PlayerContainer']/@subNodeMappings[name='Yellow%20Cards']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='PlayerDiagram']/@defaultLayer/@containerMappings[name='PlayerContainer']/@subNodeMappings[name='Yellow%20Cards']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_uXxJIDrUEeuy4eth5RGi4A" name="Goals: 0">
+        <target xmi:type="league:Player" href="platform:/resource/model/League.xmi#//@Teams.0/@OwnedPlayer.3"/>
+        <semanticElements xmi:type="league:Player" href="platform:/resource/model/League.xmi#//@Teams.0/@OwnedPlayer.3"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_uXyXQDrUEeuy4eth5RGi4A" labelSize="12" showIcon="false" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='PlayerDiagram']/@defaultLayer/@containerMappings[name='PlayerContainer']/@subNodeMappings[name='Goals']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='PlayerDiagram']/@defaultLayer/@containerMappings[name='PlayerContainer']/@subNodeMappings[name='Goals']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='PlayerDiagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_uXTPEDrUEeuy4eth5RGi4A"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='PlayerDiagram']/@defaultLayer"/>
+    <target xmi:type="league:Player" href="platform:/resource/model/League.xmi#//@Teams.0/@OwnedPlayer.3"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_xsawwDrUEeuy4eth5RGi4A">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_xsm-ADrUEeuy4eth5RGi4A" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_xsm-ATrUEeuy4eth5RGi4A"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_xssdkDrUEeuy4eth5RGi4A" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_xssdkTrUEeuy4eth5RGi4A" type="Sirius" element="_xsawwDrUEeuy4eth5RGi4A" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_xstrsDrUEeuy4eth5RGi4A" type="2002" element="_xsdNADrUEeuy4eth5RGi4A">
+          <children xmi:type="notation:Node" xmi:id="_xsu50DrUEeuy4eth5RGi4A" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_xsu50TrUEeuy4eth5RGi4A" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_xsvg4DrUEeuy4eth5RGi4A" type="3009" element="_xsfCMDrUEeuy4eth5RGi4A">
+              <children xmi:type="notation:Node" xmi:id="_xsvg4zrUEeuy4eth5RGi4A" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_xsxWEDrUEeuy4eth5RGi4A" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_xsykNDrUEeuy4eth5RGi4A" type="3010" element="_xslI0DrUEeuy4eth5RGi4A">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_xsykNTrUEeuy4eth5RGi4A" fontName="Segoe UI" fontHeight="12"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_xsykNjrUEeuy4eth5RGi4A"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_xszLQDrUEeuy4eth5RGi4A" type="3010" element="_xslv4DrUEeuy4eth5RGi4A">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_xszLQTrUEeuy4eth5RGi4A" fontName="Segoe UI" fontHeight="12"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_xszLQjrUEeuy4eth5RGi4A"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_xsxWETrUEeuy4eth5RGi4A"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_xsxWEjrUEeuy4eth5RGi4A"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_xsxWEzrUEeuy4eth5RGi4A"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_xsvg4TrUEeuy4eth5RGi4A" fontName="Segoe UI" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xsvg4jrUEeuy4eth5RGi4A"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_xsx9IDrUEeuy4eth5RGi4A" type="3009" element="_xsjToDrUEeuy4eth5RGi4A">
+              <children xmi:type="notation:Node" xmi:id="_xsx9IzrUEeuy4eth5RGi4A" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_xsykMDrUEeuy4eth5RGi4A" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_xs1AcDrUEeuy4eth5RGi4A" type="3010" element="_xsmW8DrUEeuy4eth5RGi4A">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_xs1AcTrUEeuy4eth5RGi4A" fontName="Segoe UI" fontHeight="12"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_xs1AcjrUEeuy4eth5RGi4A"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_xsykMTrUEeuy4eth5RGi4A"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_xsykMjrUEeuy4eth5RGi4A"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_xsykMzrUEeuy4eth5RGi4A"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_xsx9ITrUEeuy4eth5RGi4A" fontName="Segoe UI" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xsx9IjrUEeuy4eth5RGi4A" y="40"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_xsu50jrUEeuy4eth5RGi4A"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_xsu50zrUEeuy4eth5RGi4A"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_xstrsTrUEeuy4eth5RGi4A" fontName="Segoe UI" fontHeight="12" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xstrsjrUEeuy4eth5RGi4A"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_xssdkjrUEeuy4eth5RGi4A"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_xsdNADrUEeuy4eth5RGi4A" name="Eliteserien 2020" childrenPresentation="VerticalStack">
+      <target xmi:type="league:Season" href="platform:/resource/model/League.xmi#//@Season.0"/>
+      <semanticElements xmi:type="league:Season" href="platform:/resource/model/League.xmi#//@Season.0"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_xsdNATrUEeuy4eth5RGi4A" labelSize="12" showIcon="false" borderSize="2" borderSizeComputationExpression="2" backgroundColor="253,206,137" foregroundColor="224,133,3">
+        <labelFormat>bold</labelFormat>
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonDiagram']/@defaultLayer/@containerMappings[name='Season']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonDiagram']/@defaultLayer/@containerMappings[name='Season']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_xsfCMDrUEeuy4eth5RGi4A" name="Matchweek 1">
+        <target xmi:type="league:Matchweek" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0"/>
+        <semanticElements xmi:type="league:Matchweek" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_xsfCMTrUEeuy4eth5RGi4A" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundColor="253,206,137" foregroundColor="224,133,3">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonDiagram']/@defaultLayer/@containerMappings[name='Season']/@subContainerMappings[name='Matchweek']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonDiagram']/@defaultLayer/@containerMappings[name='Season']/@subContainerMappings[name='Matchweek']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_xslI0DrUEeuy4eth5RGi4A" name="Molde 1 - 3 Rosenborg BK">
+          <target xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0"/>
+          <semanticElements xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0"/>
+          <ownedStyle xmi:type="diagram:BundledImage" uid="_xslI0TrUEeuy4eth5RGi4A" labelSize="12" showIcon="false" labelPosition="node">
+            <description xmi:type="style:BundledImageDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonDiagram']/@defaultLayer/@containerMappings[name='Season']/@subContainerMappings[name='Matchweek']/@subNodeMappings[name='Matches']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonDiagram']/@defaultLayer/@containerMappings[name='Season']/@subContainerMappings[name='Matchweek']/@subNodeMappings[name='Matches']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_xslv4DrUEeuy4eth5RGi4A" name="Rosenborg BK 2 - 2 Molde">
+          <target xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.1"/>
+          <semanticElements xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.1"/>
+          <ownedStyle xmi:type="diagram:BundledImage" uid="_xslv4TrUEeuy4eth5RGi4A" labelSize="12" showIcon="false" labelPosition="node">
+            <description xmi:type="style:BundledImageDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonDiagram']/@defaultLayer/@containerMappings[name='Season']/@subContainerMappings[name='Matchweek']/@subNodeMappings[name='Matches']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonDiagram']/@defaultLayer/@containerMappings[name='Season']/@subContainerMappings[name='Matchweek']/@subNodeMappings[name='Matches']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_xsjToDrUEeuy4eth5RGi4A" name="Matchweek 2">
+        <target xmi:type="league:Matchweek" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.1"/>
+        <semanticElements xmi:type="league:Matchweek" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.1"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_xsj6sDrUEeuy4eth5RGi4A" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundColor="253,206,137" foregroundColor="224,133,3">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonDiagram']/@defaultLayer/@containerMappings[name='Season']/@subContainerMappings[name='Matchweek']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonDiagram']/@defaultLayer/@containerMappings[name='Season']/@subContainerMappings[name='Matchweek']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_xsmW8DrUEeuy4eth5RGi4A" name="Rosenborg BK 4 - 5 Molde">
+          <target xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.1/@matches.0"/>
+          <semanticElements xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.1/@matches.0"/>
+          <ownedStyle xmi:type="diagram:BundledImage" uid="_xsmW8TrUEeuy4eth5RGi4A" labelSize="12" showIcon="false" labelPosition="node">
+            <description xmi:type="style:BundledImageDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonDiagram']/@defaultLayer/@containerMappings[name='Season']/@subContainerMappings[name='Matchweek']/@subNodeMappings[name='Matches']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonDiagram']/@defaultLayer/@containerMappings[name='Season']/@subContainerMappings[name='Matchweek']/@subNodeMappings[name='Matches']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonDiagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_xsbX0DrUEeuy4eth5RGi4A"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonDiagram']/@defaultLayer"/>
+    <target xmi:type="league:Season" href="platform:/resource/model/League.xmi#//@Season.0"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_1R8tADrUEeuy4eth5RGi4A">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_1SITMjrUEeuy4eth5RGi4A" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_1SITMzrUEeuy4eth5RGi4A"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_1SLWgDrUEeuy4eth5RGi4A" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_1SLWgTrUEeuy4eth5RGi4A" type="Sirius" element="_1R8tADrUEeuy4eth5RGi4A" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_1SLWgzrUEeuy4eth5RGi4A" type="2002" element="_1R-iMDrUEeuy4eth5RGi4A">
+          <children xmi:type="notation:Node" xmi:id="_1SPn8DrUEeuy4eth5RGi4A" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_1SPn8TrUEeuy4eth5RGi4A" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_1SQPADrUEeuy4eth5RGi4A" type="3009" element="_1R_wUDrUEeuy4eth5RGi4A">
+              <children xmi:type="notation:Node" xmi:id="_1SQ2EDrUEeuy4eth5RGi4A" visible="false" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_1SQ2ETrUEeuy4eth5RGi4A" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_1SSEODrUEeuy4eth5RGi4A" type="3010" element="_1SAXYDrUEeuy4eth5RGi4A">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_1SSEOTrUEeuy4eth5RGi4A" fontName="Segoe UI" fontHeight="12"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_1SSEOjrUEeuy4eth5RGi4A"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_1STSUDrUEeuy4eth5RGi4A" type="3010" element="_1SBlgDrUEeuy4eth5RGi4A">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_1STSUTrUEeuy4eth5RGi4A" fontName="Segoe UI" fontHeight="12"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_1STSUjrUEeuy4eth5RGi4A"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_1SQ2EjrUEeuy4eth5RGi4A"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_1SQ2EzrUEeuy4eth5RGi4A"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_1SQ2FDrUEeuy4eth5RGi4A"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_1SQPATrUEeuy4eth5RGi4A" fontName="Segoe UI" fontHeight="12" italic="true"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1SQPAjrUEeuy4eth5RGi4A"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_1SSEMDrUEeuy4eth5RGi4A" type="3009" element="_1SEBwDrUEeuy4eth5RGi4A">
+              <children xmi:type="notation:Node" xmi:id="_1SSEMzrUEeuy4eth5RGi4A" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_1SSENDrUEeuy4eth5RGi4A" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_1STSUzrUEeuy4eth5RGi4A" type="3010" element="_1SGeADrUEeuy4eth5RGi4A">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_1STSVDrUEeuy4eth5RGi4A" fontName="Segoe UI" fontHeight="12"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_1STSVTrUEeuy4eth5RGi4A"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_1STSVjrUEeuy4eth5RGi4A" type="3010" element="_1SHsIDrUEeuy4eth5RGi4A">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_1STSVzrUEeuy4eth5RGi4A" fontName="Segoe UI" fontHeight="12"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_1STSWDrUEeuy4eth5RGi4A"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_1SUgcDrUEeuy4eth5RGi4A" type="3010" element="_1SHsIjrUEeuy4eth5RGi4A">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_1SUgcTrUEeuy4eth5RGi4A" fontName="Segoe UI" fontHeight="12"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_1SUgcjrUEeuy4eth5RGi4A"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_1SUgczrUEeuy4eth5RGi4A" type="3010" element="_1SITMDrUEeuy4eth5RGi4A">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_1SUgdDrUEeuy4eth5RGi4A" fontName="Segoe UI" fontHeight="12"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_1SUgdTrUEeuy4eth5RGi4A"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_1SSENTrUEeuy4eth5RGi4A"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_1SSENjrUEeuy4eth5RGi4A"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_1SSENzrUEeuy4eth5RGi4A"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_1SSEMTrUEeuy4eth5RGi4A" fontName="Segoe UI" fontHeight="12" italic="true"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1SSEMjrUEeuy4eth5RGi4A" y="40"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_1SPn8jrUEeuy4eth5RGi4A"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_1SPn8zrUEeuy4eth5RGi4A"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_1SLWhDrUEeuy4eth5RGi4A" fontName="Segoe UI" fontHeight="12" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1SLWhTrUEeuy4eth5RGi4A"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_1SLWgjrUEeuy4eth5RGi4A"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_1R-iMDrUEeuy4eth5RGi4A" name="Rosenborg BK" childrenPresentation="VerticalStack">
+      <target xmi:type="league:Team" href="platform:/resource/model/League.xmi#//@Teams.0"/>
+      <semanticElements xmi:type="league:Team" href="platform:/resource/model/League.xmi#//@Teams.0"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_1R_JQDrUEeuy4eth5RGi4A" labelSize="12" showIcon="false" borderSize="2" borderSizeComputationExpression="2" backgroundColor="253,206,137" foregroundColor="224,133,3">
+        <labelFormat>bold</labelFormat>
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='TeamDiagram']/@defaultLayer/@containerMappings[name='TeamContainer']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='TeamDiagram']/@defaultLayer/@containerMappings[name='TeamContainer']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_1R_wUDrUEeuy4eth5RGi4A" name="Information: ">
+        <target xmi:type="league:Team" href="platform:/resource/model/League.xmi#//@Teams.0"/>
+        <semanticElements xmi:type="league:Team" href="platform:/resource/model/League.xmi#//@Teams.0"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_1R_wUzrUEeuy4eth5RGi4A"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_1R_wUTrUEeuy4eth5RGi4A" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" hideLabelByDefault="true" backgroundColor="253,206,137" foregroundColor="224,133,3">
+          <labelFormat>italic</labelFormat>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='TeamDiagram']/@defaultLayer/@containerMappings[name='TeamContainer']/@subContainerMappings[name='Data']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='TeamDiagram']/@defaultLayer/@containerMappings[name='TeamContainer']/@subContainerMappings[name='Data']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_1SAXYDrUEeuy4eth5RGi4A" name="Short name: RBK">
+          <target xmi:type="league:Team" href="platform:/resource/model/League.xmi#//@Teams.0"/>
+          <semanticElements xmi:type="league:Team" href="platform:/resource/model/League.xmi#//@Teams.0"/>
+          <ownedStyle xmi:type="diagram:BundledImage" uid="_1SA-cDrUEeuy4eth5RGi4A" labelSize="12" showIcon="false" labelPosition="node">
+            <description xmi:type="style:BundledImageDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='TeamDiagram']/@defaultLayer/@containerMappings[name='TeamContainer']/@subContainerMappings[name='Data']/@subNodeMappings[name='Abbr']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='TeamDiagram']/@defaultLayer/@containerMappings[name='TeamContainer']/@subContainerMappings[name='Data']/@subNodeMappings[name='Abbr']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_1SBlgDrUEeuy4eth5RGi4A" name="Stadium: Lerkendal">
+          <target xmi:type="league:Team" href="platform:/resource/model/League.xmi#//@Teams.0"/>
+          <semanticElements xmi:type="league:Team" href="platform:/resource/model/League.xmi#//@Teams.0"/>
+          <ownedStyle xmi:type="diagram:BundledImage" uid="_1SCMkDrUEeuy4eth5RGi4A" labelSize="12" showIcon="false" labelPosition="node">
+            <description xmi:type="style:BundledImageDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='TeamDiagram']/@defaultLayer/@containerMappings[name='TeamContainer']/@subContainerMappings[name='Data']/@subNodeMappings[name='Stadium']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='TeamDiagram']/@defaultLayer/@containerMappings[name='TeamContainer']/@subContainerMappings[name='Data']/@subNodeMappings[name='Stadium']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_1SEBwDrUEeuy4eth5RGi4A" name="Players: ">
+        <target xmi:type="league:Team" href="platform:/resource/model/League.xmi#//@Teams.0"/>
+        <semanticElements xmi:type="league:Team" href="platform:/resource/model/League.xmi#//@Teams.0"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_1SFP4DrUEeuy4eth5RGi4A" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundColor="253,206,137" foregroundColor="224,133,3">
+          <labelFormat>italic</labelFormat>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='TeamDiagram']/@defaultLayer/@containerMappings[name='TeamContainer']/@subContainerMappings[name='Players']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='TeamDiagram']/@defaultLayer/@containerMappings[name='TeamContainer']/@subContainerMappings[name='Players']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_1SGeADrUEeuy4eth5RGi4A" name="Andre Hansen (Keeper)">
+          <target xmi:type="league:Player" href="platform:/resource/model/League.xmi#//@Teams.0/@OwnedPlayer.0"/>
+          <semanticElements xmi:type="league:Player" href="platform:/resource/model/League.xmi#//@Teams.0/@OwnedPlayer.0"/>
+          <ownedStyle xmi:type="diagram:BundledImage" uid="_1SHFEDrUEeuy4eth5RGi4A" labelSize="12" showIcon="false" labelPosition="node">
+            <description xmi:type="style:BundledImageDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='TeamDiagram']/@defaultLayer/@containerMappings[name='TeamContainer']/@subContainerMappings[name='Players']/@subNodeMappings[name='Player']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='TeamDiagram']/@defaultLayer/@containerMappings[name='TeamContainer']/@subContainerMappings[name='Players']/@subNodeMappings[name='Player']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_1SHsIDrUEeuy4eth5RGi4A" name="Tore Reginiussen (Defence)">
+          <target xmi:type="league:Player" href="platform:/resource/model/League.xmi#//@Teams.0/@OwnedPlayer.1"/>
+          <semanticElements xmi:type="league:Player" href="platform:/resource/model/League.xmi#//@Teams.0/@OwnedPlayer.1"/>
+          <ownedStyle xmi:type="diagram:BundledImage" uid="_1SHsITrUEeuy4eth5RGi4A" labelSize="12" showIcon="false" labelPosition="node">
+            <description xmi:type="style:BundledImageDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='TeamDiagram']/@defaultLayer/@containerMappings[name='TeamContainer']/@subContainerMappings[name='Players']/@subNodeMappings[name='Player']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='TeamDiagram']/@defaultLayer/@containerMappings[name='TeamContainer']/@subContainerMappings[name='Players']/@subNodeMappings[name='Player']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_1SHsIjrUEeuy4eth5RGi4A" name="Markus Henriksen (Midfield)">
+          <target xmi:type="league:Player" href="platform:/resource/model/League.xmi#//@Teams.0/@OwnedPlayer.2"/>
+          <semanticElements xmi:type="league:Player" href="platform:/resource/model/League.xmi#//@Teams.0/@OwnedPlayer.2"/>
+          <ownedStyle xmi:type="diagram:BundledImage" uid="_1SHsIzrUEeuy4eth5RGi4A" labelSize="12" showIcon="false" labelPosition="node">
+            <description xmi:type="style:BundledImageDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='TeamDiagram']/@defaultLayer/@containerMappings[name='TeamContainer']/@subContainerMappings[name='Players']/@subNodeMappings[name='Player']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='TeamDiagram']/@defaultLayer/@containerMappings[name='TeamContainer']/@subContainerMappings[name='Players']/@subNodeMappings[name='Player']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_1SITMDrUEeuy4eth5RGi4A" name="Pål Andre Helland (Attacker)">
+          <target xmi:type="league:Player" href="platform:/resource/model/League.xmi#//@Teams.0/@OwnedPlayer.3"/>
+          <semanticElements xmi:type="league:Player" href="platform:/resource/model/League.xmi#//@Teams.0/@OwnedPlayer.3"/>
+          <ownedStyle xmi:type="diagram:BundledImage" uid="_1SITMTrUEeuy4eth5RGi4A" labelSize="12" showIcon="false" labelPosition="node">
+            <description xmi:type="style:BundledImageDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='TeamDiagram']/@defaultLayer/@containerMappings[name='TeamContainer']/@subContainerMappings[name='Players']/@subNodeMappings[name='Player']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='TeamDiagram']/@defaultLayer/@containerMappings[name='TeamContainer']/@subContainerMappings[name='Players']/@subNodeMappings[name='Player']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='TeamDiagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_1R8tATrUEeuy4eth5RGi4A"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='TeamDiagram']/@defaultLayer"/>
+    <target xmi:type="league:Team" href="platform:/resource/model/League.xmi#//@Teams.0"/>
+  </diagram:DSemanticDiagram>
+  <table:DTable uid="_4duFcDrUEeuy4eth5RGi4A" headerColumnWidth="117">
+    <target xmi:type="league:Season" href="platform:/resource/model/League.xmi#//@Season.0"/>
+    <lines xmi:type="table:DLine" uid="_4duFcTrUEeuy4eth5RGi4A" label="Standing 1">
+      <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.0"/>
+      <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.0"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTable']/@ownedLineMappings[name='Position%20Line']"/>
+      <cells xmi:type="table:DCell" uid="_4d0MFjrUEeuy4eth5RGi4A" label="1" column="_4dxv0DrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.0"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.0"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d0MGDrUEeuy4eth5RGi4A" label="Rosenborg BK" column="_4dxv0jrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.0"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.0"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d0MGjrUEeuy4eth5RGi4A" label="1" column="_4dxv1DrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.0"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.0"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d0MHDrUEeuy4eth5RGi4A" label="1" column="_4dyW4DrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.0"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.0"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d0MHjrUEeuy4eth5RGi4A" label="0" column="_4dyW4jrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.0"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.0"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d0zITrUEeuy4eth5RGi4A" label="0" column="_4dy98DrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.0"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.0"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d1aMTrUEeuy4eth5RGi4A" label="3" column="_4dy98jrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.0"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.0"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d2BQTrUEeuy4eth5RGi4A" label="1" column="_4d0MEDrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.0"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.0"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d3PYDrUEeuy4eth5RGi4A" label="2" column="_4d0MEjrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.0"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.0"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d32cTrUEeuy4eth5RGi4A" label="3" column="_4d0MFDrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.0"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.0"/>
+      </cells>
+      <currentStyle xmi:type="table:DTableElementStyle" uid="_4dusgDrUEeuy4eth5RGi4A" backgroundColor="204,242,166"/>
+    </lines>
+    <lines xmi:type="table:DLine" uid="_4dusgTrUEeuy4eth5RGi4A" label="Standing 2">
+      <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.1"/>
+      <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.1"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTable']/@ownedLineMappings[name='Position%20Line']"/>
+      <cells xmi:type="table:DCell" uid="_4d4dgDrUEeuy4eth5RGi4A" label="2" column="_4dxv0DrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.1"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.1"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d4dgjrUEeuy4eth5RGi4A" label="Molde" column="_4dxv0jrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.1"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.1"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d4dhDrUEeuy4eth5RGi4A" label="1" column="_4dxv1DrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.1"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.1"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d4dhjrUEeuy4eth5RGi4A" label="0" column="_4dyW4DrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.1"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.1"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d4diDrUEeuy4eth5RGi4A" label="0" column="_4dyW4jrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.1"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.1"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d4dijrUEeuy4eth5RGi4A" label="1" column="_4dy98DrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.1"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.1"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d4djDrUEeuy4eth5RGi4A" label="1" column="_4dy98jrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.1"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.1"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d4djjrUEeuy4eth5RGi4A" label="3" column="_4d0MEDrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.1"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.1"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d4dkDrUEeuy4eth5RGi4A" label="-2" column="_4d0MEjrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.1"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.1"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d4dkjrUEeuy4eth5RGi4A" label="0" column="_4d0MFDrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.1"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.1"/>
+      </cells>
+      <currentStyle xmi:type="table:DTableElementStyle" uid="_4dusgjrUEeuy4eth5RGi4A" backgroundColor="204,242,166"/>
+    </lines>
+    <lines xmi:type="table:DLine" uid="_4dusgzrUEeuy4eth5RGi4A" label="Standing 3">
+      <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.2"/>
+      <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.2"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTable']/@ownedLineMappings[name='Position%20Line']"/>
+      <cells xmi:type="table:DCell" uid="_4d4dlDrUEeuy4eth5RGi4A" label="3" column="_4dxv0DrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.2"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.2"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d5EkDrUEeuy4eth5RGi4A" label="Ranheim" column="_4dxv0jrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.2"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.2"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d5EkjrUEeuy4eth5RGi4A" label="3" column="_4dxv1DrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.2"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.2"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d5ElDrUEeuy4eth5RGi4A" label="0" column="_4dyW4DrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.2"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.2"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d5EljrUEeuy4eth5RGi4A" label="1" column="_4dyW4jrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.2"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.2"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d5EmDrUEeuy4eth5RGi4A" label="1" column="_4dy98DrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.2"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.2"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d5EmjrUEeuy4eth5RGi4A" label="4" column="_4dy98jrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.2"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.2"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d5EnDrUEeuy4eth5RGi4A" label="2" column="_4d0MEDrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.2"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.2"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d5EnjrUEeuy4eth5RGi4A" label="5" column="_4d0MEjrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.2"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.2"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d5EoDrUEeuy4eth5RGi4A" label="0" column="_4d0MFDrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.2"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.2"/>
+      </cells>
+      <currentStyle xmi:type="table:DTableElementStyle" uid="_4dushDrUEeuy4eth5RGi4A" backgroundColor="204,242,166"/>
+    </lines>
+    <lines xmi:type="table:DLine" uid="_4dushTrUEeuy4eth5RGi4A" label="Standing 4">
+      <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.3"/>
+      <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.3"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTable']/@ownedLineMappings[name='Position%20Line']"/>
+      <cells xmi:type="table:DCell" uid="_4d5roDrUEeuy4eth5RGi4A" label="4" column="_4dxv0DrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.3"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.3"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d5rojrUEeuy4eth5RGi4A" label="Vålerenga" column="_4dxv0jrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.3"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.3"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d6SsTrUEeuy4eth5RGi4A" label="0" column="_4dxv1DrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.3"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.3"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d6SszrUEeuy4eth5RGi4A" label="0" column="_4dyW4DrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.3"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.3"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d6StTrUEeuy4eth5RGi4A" label="0" column="_4dyW4jrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.3"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.3"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d6StzrUEeuy4eth5RGi4A" label="0" column="_4dy98DrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.3"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.3"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d6SuTrUEeuy4eth5RGi4A" label="0" column="_4dy98jrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.3"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.3"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d6SuzrUEeuy4eth5RGi4A" label="0" column="_4d0MEDrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.3"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.3"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d6SvTrUEeuy4eth5RGi4A" label="0" column="_4d0MEjrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.3"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.3"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d6SvzrUEeuy4eth5RGi4A" label="0" column="_4d0MFDrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.3"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.3"/>
+      </cells>
+      <currentStyle xmi:type="table:DTableElementStyle" uid="_4dushjrUEeuy4eth5RGi4A" backgroundColor="204,242,166"/>
+    </lines>
+    <lines xmi:type="table:DLine" uid="_4dv6oDrUEeuy4eth5RGi4A" label="Standing 5">
+      <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.4"/>
+      <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.4"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTable']/@ownedLineMappings[name='Position%20Line']"/>
+      <cells xmi:type="table:DCell" uid="_4d6SwTrUEeuy4eth5RGi4A" label="5" column="_4dxv0DrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.4"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.4"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d6SwzrUEeuy4eth5RGi4A" label="BodøGlimt" column="_4dxv0jrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.4"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.4"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d6SxTrUEeuy4eth5RGi4A" label="0" column="_4dxv1DrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.4"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.4"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d6SxzrUEeuy4eth5RGi4A" label="0" column="_4dyW4DrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.4"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.4"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d6SyTrUEeuy4eth5RGi4A" label="0" column="_4dyW4jrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.4"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.4"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d6SyzrUEeuy4eth5RGi4A" label="0" column="_4dy98DrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.4"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.4"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d6SzTrUEeuy4eth5RGi4A" label="0" column="_4dy98jrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.4"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.4"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d65wTrUEeuy4eth5RGi4A" label="0" column="_4d0MEDrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.4"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.4"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d65wzrUEeuy4eth5RGi4A" label="0" column="_4d0MEjrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.4"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.4"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d65xTrUEeuy4eth5RGi4A" label="0" column="_4d0MFDrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.4"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.4"/>
+      </cells>
+      <currentStyle xmi:type="table:DTableElementStyle" uid="_4dwhsDrUEeuy4eth5RGi4A" backgroundColor="114,159,207"/>
+    </lines>
+    <lines xmi:type="table:DLine" uid="_4dwhsTrUEeuy4eth5RGi4A" label="Standing 6">
+      <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.5"/>
+      <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.5"/>
+      <originMapping xmi:type="description_2:LineMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTable']/@ownedLineMappings[name='Position%20Line']"/>
+      <cells xmi:type="table:DCell" uid="_4d65xzrUEeuy4eth5RGi4A" label="6" column="_4dxv0DrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.5"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.5"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d65yTrUEeuy4eth5RGi4A" label="Brann" column="_4dxv0jrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.5"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.5"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d65yzrUEeuy4eth5RGi4A" label="0" column="_4dxv1DrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.5"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.5"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d65zTrUEeuy4eth5RGi4A" label="0" column="_4dyW4DrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.5"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.5"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d65zzrUEeuy4eth5RGi4A" label="0" column="_4dyW4jrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.5"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.5"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d650TrUEeuy4eth5RGi4A" label="0" column="_4dy98DrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.5"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.5"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d650zrUEeuy4eth5RGi4A" label="0" column="_4dy98jrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.5"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.5"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d7g0TrUEeuy4eth5RGi4A" label="0" column="_4d0MEDrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.5"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.5"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d7g0zrUEeuy4eth5RGi4A" label="0" column="_4d0MEjrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.5"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.5"/>
+      </cells>
+      <cells xmi:type="table:DCell" uid="_4d7g1TrUEeuy4eth5RGi4A" label="0" column="_4d0MFDrUEeuy4eth5RGi4A">
+        <target xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.5"/>
+        <semanticElements xmi:type="league:Standing" href="platform:/resource/model/League.xmi#//@Season.0/@standing.5"/>
+      </cells>
+    </lines>
+    <columns xmi:type="table:DFeatureColumn" uid="_4dxv0DrUEeuy4eth5RGi4A" label="Pos" cells="_4d0MFjrUEeuy4eth5RGi4A _4d4dgDrUEeuy4eth5RGi4A _4d4dlDrUEeuy4eth5RGi4A _4d5roDrUEeuy4eth5RGi4A _4d6SwTrUEeuy4eth5RGi4A _4d65xzrUEeuy4eth5RGi4A" width="37" featureName="Position">
+      <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTable']/@ownedColumnMappings[name='Position']"/>
+      <currentStyle xmi:type="table:DTableElementStyle" uid="_4dxv0TrUEeuy4eth5RGi4A" labelSize="12" defaultForegroundStyle="true" defaultBackgroundStyle="true" backgroundColor="209,209,209">
+        <labelFormat>bold</labelFormat>
+      </currentStyle>
+    </columns>
+    <columns xmi:type="table:DFeatureColumn" uid="_4dxv0jrUEeuy4eth5RGi4A" label="Team" cells="_4d0MGDrUEeuy4eth5RGi4A _4d4dgjrUEeuy4eth5RGi4A _4d5EkDrUEeuy4eth5RGi4A _4d5rojrUEeuy4eth5RGi4A _4d6SwzrUEeuy4eth5RGi4A _4d65yTrUEeuy4eth5RGi4A" width="103" featureName="team">
+      <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTable']/@ownedColumnMappings[name='Team']"/>
+      <currentStyle xmi:type="table:DTableElementStyle" uid="_4dxv0zrUEeuy4eth5RGi4A" labelSize="12" defaultForegroundStyle="true" defaultBackgroundStyle="true" backgroundColor="209,209,209"/>
+    </columns>
+    <columns xmi:type="table:DFeatureColumn" uid="_4dxv1DrUEeuy4eth5RGi4A" label="GP" cells="_4d0MGjrUEeuy4eth5RGi4A _4d4dhDrUEeuy4eth5RGi4A _4d5EkjrUEeuy4eth5RGi4A _4d6SsTrUEeuy4eth5RGi4A _4d6SxTrUEeuy4eth5RGi4A _4d65yzrUEeuy4eth5RGi4A" width="33" featureName="GamesPlayed">
+      <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTable']/@ownedColumnMappings[name='Games%20Played']"/>
+      <currentStyle xmi:type="table:DTableElementStyle" uid="_4dxv1TrUEeuy4eth5RGi4A" labelSize="12" defaultForegroundStyle="true" defaultBackgroundStyle="true" backgroundColor="209,209,209"/>
+    </columns>
+    <columns xmi:type="table:DFeatureColumn" uid="_4dyW4DrUEeuy4eth5RGi4A" label="W" cells="_4d0MHDrUEeuy4eth5RGi4A _4d4dhjrUEeuy4eth5RGi4A _4d5ElDrUEeuy4eth5RGi4A _4d6SszrUEeuy4eth5RGi4A _4d6SxzrUEeuy4eth5RGi4A _4d65zTrUEeuy4eth5RGi4A" width="29" featureName="Wins">
+      <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTable']/@ownedColumnMappings[name='Wins']"/>
+      <currentStyle xmi:type="table:DTableElementStyle" uid="_4dyW4TrUEeuy4eth5RGi4A" labelSize="12" defaultForegroundStyle="true" defaultBackgroundStyle="true" backgroundColor="209,209,209"/>
+    </columns>
+    <columns xmi:type="table:DFeatureColumn" uid="_4dyW4jrUEeuy4eth5RGi4A" label="D" cells="_4d0MHjrUEeuy4eth5RGi4A _4d4diDrUEeuy4eth5RGi4A _4d5EljrUEeuy4eth5RGi4A _4d6StTrUEeuy4eth5RGi4A _4d6SyTrUEeuy4eth5RGi4A _4d65zzrUEeuy4eth5RGi4A" width="26" featureName="Draws">
+      <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTable']/@ownedColumnMappings[name='Draws']"/>
+      <currentStyle xmi:type="table:DTableElementStyle" uid="_4dyW4zrUEeuy4eth5RGi4A" labelSize="12" defaultForegroundStyle="true" defaultBackgroundStyle="true" backgroundColor="209,209,209"/>
+    </columns>
+    <columns xmi:type="table:DFeatureColumn" uid="_4dy98DrUEeuy4eth5RGi4A" label="L" cells="_4d0zITrUEeuy4eth5RGi4A _4d4dijrUEeuy4eth5RGi4A _4d5EmDrUEeuy4eth5RGi4A _4d6StzrUEeuy4eth5RGi4A _4d6SyzrUEeuy4eth5RGi4A _4d650TrUEeuy4eth5RGi4A" width="22" featureName="Loose">
+      <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTable']/@ownedColumnMappings[name='Lost']"/>
+      <currentStyle xmi:type="table:DTableElementStyle" uid="_4dy98TrUEeuy4eth5RGi4A" labelSize="12" defaultForegroundStyle="true" defaultBackgroundStyle="true" backgroundColor="209,209,209"/>
+    </columns>
+    <columns xmi:type="table:DFeatureColumn" uid="_4dy98jrUEeuy4eth5RGi4A" label="GF" cells="_4d1aMTrUEeuy4eth5RGi4A _4d4djDrUEeuy4eth5RGi4A _4d5EmjrUEeuy4eth5RGi4A _4d6SuTrUEeuy4eth5RGi4A _4d6SzTrUEeuy4eth5RGi4A _4d650zrUEeuy4eth5RGi4A" width="32" featureName="GoalsFor">
+      <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTable']/@ownedColumnMappings[name='Goals%20For']"/>
+      <currentStyle xmi:type="table:DTableElementStyle" uid="_4dy98zrUEeuy4eth5RGi4A" labelSize="12" defaultForegroundStyle="true" defaultBackgroundStyle="true" backgroundColor="209,209,209"/>
+    </columns>
+    <columns xmi:type="table:DFeatureColumn" uid="_4d0MEDrUEeuy4eth5RGi4A" label="GA" cells="_4d2BQTrUEeuy4eth5RGi4A _4d4djjrUEeuy4eth5RGi4A _4d5EnDrUEeuy4eth5RGi4A _4d6SuzrUEeuy4eth5RGi4A _4d65wTrUEeuy4eth5RGi4A _4d7g0TrUEeuy4eth5RGi4A" width="35" featureName="GoalsAgainst">
+      <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTable']/@ownedColumnMappings[name='Goals%20Against']"/>
+      <currentStyle xmi:type="table:DTableElementStyle" uid="_4d0METrUEeuy4eth5RGi4A" labelSize="12" defaultForegroundStyle="true" defaultBackgroundStyle="true" backgroundColor="209,209,209"/>
+    </columns>
+    <columns xmi:type="table:DFeatureColumn" uid="_4d0MEjrUEeuy4eth5RGi4A" label="GD" cells="_4d3PYDrUEeuy4eth5RGi4A _4d4dkDrUEeuy4eth5RGi4A _4d5EnjrUEeuy4eth5RGi4A _4d6SvTrUEeuy4eth5RGi4A _4d65wzrUEeuy4eth5RGi4A _4d7g0zrUEeuy4eth5RGi4A" width="36" featureName="GoalDifference">
+      <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTable']/@ownedColumnMappings[name='Goal%20Difference']"/>
+      <currentStyle xmi:type="table:DTableElementStyle" uid="_4d0MEzrUEeuy4eth5RGi4A" labelSize="12" defaultForegroundStyle="true" defaultBackgroundStyle="true" backgroundColor="209,209,209"/>
+    </columns>
+    <columns xmi:type="table:DFeatureColumn" uid="_4d0MFDrUEeuy4eth5RGi4A" label="Pts" cells="_4d32cTrUEeuy4eth5RGi4A _4d4dkjrUEeuy4eth5RGi4A _4d5EoDrUEeuy4eth5RGi4A _4d6SvzrUEeuy4eth5RGi4A _4d65xTrUEeuy4eth5RGi4A _4d7g1TrUEeuy4eth5RGi4A" width="34" featureName="Points">
+      <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTable']/@ownedColumnMappings[name='Points']"/>
+      <currentStyle xmi:type="table:DTableElementStyle" uid="_4d0MFTrUEeuy4eth5RGi4A" labelSize="12" defaultForegroundStyle="true" defaultBackgroundStyle="true" backgroundColor="209,209,209"/>
+    </columns>
+    <description xmi:type="description_2:EditionTableDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTable']"/>
+  </table:DTable>
+  <tree:DTree uid="_IiV_oDrVEeuy4eth5RGi4A">
+    <target xmi:type="league:Season" href="platform:/resource/model/League.xmi#//@Season.0"/>
+    <ownedTreeItems xmi:type="tree:DTreeItem" uid="_Ii1H0DrVEeuy4eth5RGi4A" name=" Matchweek 1" expanded="true">
+      <target xmi:type="league:Matchweek" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0"/>
+      <ownedTreeItems xmi:type="tree:DTreeItem" uid="_IjB8IDrVEeuy4eth5RGi4A" name=" Molde 1 - 3 Rosenborg BK" expanded="true">
+        <target xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0"/>
+        <ownedTreeItems xmi:type="tree:DTreeItem" uid="_Iz_JQDrVEeuy4eth5RGi4A" name="55'  YellowCard - Pål Andre Helland">
+          <target xmi:type="league:Booking" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0/@Bookings.0"/>
+          <semanticElements xmi:type="league:Booking" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0/@Bookings.0"/>
+          <ownedStyle xmi:type="tree:TreeItemStyle" uid="_Iz_JQTrVEeuy4eth5RGi4A" labelSize="10" showIcon="false"/>
+          <actualMapping xmi:type="description_3:TreeItemMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTree']/@subItemMappings[name='Matchweek']/@subItemMappings[name='Match']/@subItemMappings[name='Booking']"/>
+        </ownedTreeItems>
+        <ownedTreeItems xmi:type="tree:DTreeItem" uid="_JCZYsDrVEeuy4eth5RGi4A" name="12'  Goal - Markus Henriksen">
+          <target xmi:type="league:Booking" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0/@Bookings.1"/>
+          <semanticElements xmi:type="league:Booking" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0/@Bookings.1"/>
+          <ownedStyle xmi:type="tree:TreeItemStyle" uid="_JCZYsTrVEeuy4eth5RGi4A" labelSize="10" showIcon="false"/>
+          <actualMapping xmi:type="description_3:TreeItemMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTree']/@subItemMappings[name='Matchweek']/@subItemMappings[name='Match']/@subItemMappings[name='Booking']"/>
+        </ownedTreeItems>
+        <semanticElements xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.0"/>
+        <ownedStyle xmi:type="tree:TreeItemStyle" uid="_IjB8ITrVEeuy4eth5RGi4A" labelSize="11" showIcon="false"/>
+        <actualMapping xmi:type="description_3:TreeItemMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTree']/@subItemMappings[name='Matchweek']/@subItemMappings[name='Match']"/>
+      </ownedTreeItems>
+      <ownedTreeItems xmi:type="tree:DTreeItem" uid="_Iz97IDrVEeuy4eth5RGi4A" name=" Rosenborg BK 2 - 2 Molde" expanded="true">
+        <target xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.1"/>
+        <ownedTreeItems xmi:type="tree:DTreeItem" uid="_Iz_wUDrVEeuy4eth5RGi4A" name="3'  RedCard - Pål Andre Helland">
+          <target xmi:type="league:Booking" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.1/@Bookings.0"/>
+          <semanticElements xmi:type="league:Booking" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.1/@Bookings.0"/>
+          <ownedStyle xmi:type="tree:TreeItemStyle" uid="_Iz_wUTrVEeuy4eth5RGi4A" labelSize="10" showIcon="false"/>
+          <actualMapping xmi:type="description_3:TreeItemMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTree']/@subItemMappings[name='Matchweek']/@subItemMappings[name='Match']/@subItemMappings[name='Booking']"/>
+        </ownedTreeItems>
+        <semanticElements xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0/@matches.1"/>
+        <ownedStyle xmi:type="tree:TreeItemStyle" uid="_Iz97ITrVEeuy4eth5RGi4A" labelSize="11" showIcon="false"/>
+        <actualMapping xmi:type="description_3:TreeItemMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTree']/@subItemMappings[name='Matchweek']/@subItemMappings[name='Match']"/>
+      </ownedTreeItems>
+      <semanticElements xmi:type="league:Matchweek" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.0"/>
+      <ownedStyle xmi:type="tree:TreeItemStyle" uid="_Ii4LIDrVEeuy4eth5RGi4A" labelSize="12" showIcon="false">
+        <labelFormat>bold</labelFormat>
+      </ownedStyle>
+      <actualMapping xmi:type="description_3:TreeItemMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTree']/@subItemMappings[name='Matchweek']"/>
+    </ownedTreeItems>
+    <ownedTreeItems xmi:type="tree:DTreeItem" uid="_Ii-RwDrVEeuy4eth5RGi4A" name=" Matchweek 2" expanded="true">
+      <target xmi:type="league:Matchweek" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.1"/>
+      <ownedTreeItems xmi:type="tree:DTreeItem" uid="_IjCjMDrVEeuy4eth5RGi4A" name=" Rosenborg BK 4 - 5 Molde">
+        <target xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.1/@matches.0"/>
+        <semanticElements xmi:type="league:Match" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.1/@matches.0"/>
+        <ownedStyle xmi:type="tree:TreeItemStyle" uid="_IjCjMTrVEeuy4eth5RGi4A" labelSize="11" showIcon="false"/>
+        <actualMapping xmi:type="description_3:TreeItemMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTree']/@subItemMappings[name='Matchweek']/@subItemMappings[name='Match']"/>
+      </ownedTreeItems>
+      <semanticElements xmi:type="league:Matchweek" href="platform:/resource/model/League.xmi#//@Season.0/@matchweeks.1"/>
+      <ownedStyle xmi:type="tree:TreeItemStyle" uid="_Ii-RwTrVEeuy4eth5RGi4A" labelSize="12" showIcon="false">
+        <labelFormat>bold</labelFormat>
+      </ownedStyle>
+      <actualMapping xmi:type="description_3:TreeItemMapping" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTree']/@subItemMappings[name='Matchweek']"/>
+    </ownedTreeItems>
+    <description xmi:type="description_3:TreeDescription" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']/@ownedRepresentations[name='SeasonTree']"/>
+  </tree:DTree>
+</xmi:XMI>
