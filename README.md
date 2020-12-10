@@ -78,6 +78,7 @@ To use the ApiFetcher, you will need to import the libraries found under `lib/`.
 ## Model
 The model illustrates the case description, and is as follows:
 
+<img style="display: block;" width="600" alt="model" src="./pictures/model.png">
 
 <!-- Viewponts -->
 ## Viewpoints
@@ -90,19 +91,33 @@ The types of viewpoints are listed below:
 ### Diagrams
 * **Match:** Tha match diagram is an illustration of a single match from the data source. And also lists all bookings in that single match. 
 
+<img style="display: block;" width="400" alt="match" src="./pictures/match.png">
+
 * **Matchweek:** Lists all matches in a single matchweek to get an overview of relevant matches the wanted week
+
+<img style="display: block;" width="300" alt="matchweek" src="./pictures/matchweek.png">
 
 * **Team:** Illustrates all data on a selected team, and also lists all players owned by this team. Double clicking on a listed player will automatically direct the user to a player diagram of this player.
 
+<img style="display: block;" width="400" alt="team" src="./pictures/team.png">
+
 * **Player:** Shows all data on a player, and also counts all goals and bookings this player has been involved with during a season.
 
+<img style="display: block;" width="300" alt="player" src="./pictures/player.png">
+
 * **Season:** Shows like the matchweek diagram all relevant matches played, but is for an entire season.
+
+<img style="display: block;" width="400" alt="season" src="./pictures/season.png">
 
 ### Table
 The table is located at season level, and will illustrate the standings of all teams included in the season selected
 
+<img style="display: block;" width="400" alt="table" src="./pictures/table.PNG">
+
 ### Tree
 The tree structure is also at season level, and will illustrate all matches per matchweek during that season
+
+<img style="display: block;" width="400" alt="tree" src="./pictures/tree.PNG">
 
 <!-- Repo Structure -->
 ## Repo Structure
