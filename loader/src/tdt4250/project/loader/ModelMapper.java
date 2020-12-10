@@ -105,7 +105,7 @@ public class ModelMapper {
 			standing.setPoints(s.points);
 			standing.setGoalsFor(s.goalsFor);
 			standing.setGoalsAgainst(s.goalsAgainst);
-			standing.setGoalDifference(s.goalsDifference);
+			standing.setGoalDifference(s.goalDifference);
 
 			Team team = getTeam(s.team.name);
 			standing.setTeam(team);

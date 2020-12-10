@@ -5,10 +5,8 @@ import java.util.List;
 import com.fasterxml.jackson.core.JsonProcessingException;
 
 import tdt4250.project.loader.data.json.CompetitionJson;
-import tdt4250.project.loader.data.json.MatchJson;
 import tdt4250.project.loader.data.json.MatchesJson;
 import tdt4250.project.loader.data.json.PlayerJson;
-import tdt4250.project.loader.data.json.StandingJson;
 import tdt4250.project.loader.data.json.StandingsJson;
 import tdt4250.project.loader.data.json.TeamJson;
 import tdt4250.project.loader.data.json.TeamsJson;

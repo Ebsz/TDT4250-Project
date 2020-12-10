@@ -13,5 +13,5 @@ public class StandingJson {
 
 	public int goalsFor;
 	public int goalsAgainst;
-	public int goalsDifference;
+	public int goalDifference;
 }
