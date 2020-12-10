@@ -10,6 +10,12 @@ Contributors: Vegard Sporstøl, Ralf Leistad, Øystein Bjørkend Haugen and Eina
 * [Getting Started](#getting-started)
   * [Clone](#clone)
   * [Prerequisites](#prerequisites)
+   * [ApiFetcher](#apifetcher)
+* [Model](#model)
+* [Viewpoints](#viewpoints)
+  * [Diagrams](#diagrams)
+  * [Table](#table)
+  * [Tree](#tree)
 * [Repo Structure](#repo-structure)
 
 
@@ -24,11 +30,12 @@ This project is done as a part of the NTNU course TDT4250 - Advanced Software De
 The general task is to build a DSL usable in Eclipse, using relevant frameworks including Xtext and Sirius, but also EMF Forms. 
 It may also be relevant to include transformations.
 
-You will have some freedom in the details, but here are two more specific suggestions you may consider:
+We had some freedom in the details, but we ended up doing a project for creating viewpoints of football matches played in Premier League:
 
-1. Find a public or easily available data source with some volume of data and interesting level of complexity. Model the data using Ecore and implement an transformation facility so you can import, view and process the data using EMF. Then create a viewer and editor for the data using (preferably) Sirius or EMF Forms, that can be installed into Eclipse.
-
-2. Find a kind of artifact, e.g. file format, preferably text-based, that is used within software development. Create an alternative textual syntax that is easier to use (read and write) and implement an Xtext-based editor for it, and an M2M or M2T transformation to the existing format. Details of your project should be discussed with me, to ensure suitable relevance and scope (since the whole point is getting more experience and learn thing better).
+1. We wanted to base the project on the public available data source API from https://www.football-data.org/.
+2. The Ecore model should be created in such a way that it is generic, and can be utilized for any kind of football leagues played in a season structure.
+3. Sirius will be used for creating different viewpoints, such as mathces, matchweeks, teams, players, seasons, tables and tree structures. 
+4. To raise complexity we want to add players and bookings to the model. As well as constraints to ensure that all data in the model is according to relevant rules of the game.
 
 
 <!-- GETTING STARTED -->
@@ -67,6 +74,36 @@ The Eclipse PlantUML plugin is incompatible with the latest graphviz version, so
 #### ApiFetcher
 To use the ApiFetcher, you will need to import the libraries found under `lib/`. In Eclipse, select all the `*.jar` files and right click -> Build Path -> Add to build path.
 
+<!-- Model -->
+## Model
+The model illustrates the case description, and is as follows:
+
+
+<!-- Viewponts -->
+## Viewpoints
+We have created several viewpoints such as diagrams, a table and a tree structure using Sirius to illustrate the date from the API. These viewpoints are located in the diagram.odesign file in the diagrams-folder. 
+
+To run the transformation and create specific viewpoints for selected parts of the data, the XMI file parsed from the ApiFetcher must be imported in the representations.aird file located in the folder diagrams.examples. From here, double click on the wanted type of viewpoint, and choose the wanted data for creating i.e. a diagram.
+
+The types of viewpoints are listed below:
+
+### Diagrams
+* **Match:** Tha match diagram is an illustration of a single match from the data source. And also lists all bookings in that single match. 
+
+* **Matchweek:** Lists all matches in a single matchweek to get an overview of relevant matches the wanted week
+
+* **Team:** Illustrates all data on a selected team, and also lists all players owned by this team. Double clicking on a listed player will automatically direct the user to a player diagram of this player.
+
+* **Player:** Shows all data on a player, and also counts all goals and bookings this player has been involved with during a season.
+
+* **Season:** Shows like the matchweek diagram all relevant matches played, but is for an entire season.
+
+### Table
+The table is located at season level, and will illustrate the standings of all teams included in the season selected
+
+### Tree
+The tree structure is also at season level, and will illustrate all matches per matchweek during that season
+
 <!-- Repo Structure -->
 ## Repo Structure
 * TDT4250-Project.model
@@ -77,6 +114,9 @@ To use the ApiFetcher, you will need to import the libraries found under `lib/`.
 * TDT4250-Project.model.tests
    * /src
       * /LeagueValidatorTests.java
+   * /League.ecore
+   * /League.genmodel
+   * /League.xmi
 * TDT4250-Project.loader
    * /src/tdt4250/project/loader
       * ResourceLoader.java
