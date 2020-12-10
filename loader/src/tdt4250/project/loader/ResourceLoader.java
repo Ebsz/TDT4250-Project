@@ -20,7 +20,7 @@ import tdt4250.project.loader.data.CompetitionData;
  */
 public class ResourceLoader {
 	public static final String XMI_OUT_FILENAME = "league.xmi";
-	public static final String XMI_OUT_DIRECTORY = "output";
+	public static final String XMI_OUT_DIRECTORY = "../diagram.examples/output";
 
 	public static final String COMPETITION_NAME = "Premier League";
 	public static final int COMPETITION_ID = 2021;
@@ -51,12 +51,14 @@ public class ResourceLoader {
 	}
 
 	public void load() {
+		System.out.println("Loading resource data..");
 		CompetitionData data = new CompetitionData(COMPETITION_ID);
 		data.load();
 
+		System.out.println("Mapping data to model..");
 		ModelMapper mapper = new ModelMapper(data);
 		League league = mapper.mapLeague();
-	
+
 
 		saveLeagueAsXMI(league, XMI_OUT_FILENAME);
 	}
