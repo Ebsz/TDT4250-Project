@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description" uid="_Nl8-oC78EeuC__Tb92H6Vg" selectedViews="_8Ywn8C79EeuC__Tb92H6Vg" version="14.3.1.202003261200">
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description" uid="_KyTikC8NEeu1ju-yLds1Yw" selectedViews="_03xVMC8dEeuFuZZYnjfPTQ" version="14.3.1.202003261200">
   <semanticResources>platform:/resource/model/League.xmi</semanticResources>
-  <ownedViews xmi:type="viewpoint:DView" uid="_8Ywn8C79EeuC__Tb92H6Vg">
+  <ownedViews xmi:type="viewpoint:DView" uid="_03xVMC8dEeuFuZZYnjfPTQ">
     <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/diagram/description/diagram.odesign#//@ownedViewpoints[name='LeagueDiagramViewpoint']"/>
   </ownedViews>
 </viewpoint:DAnalysis>

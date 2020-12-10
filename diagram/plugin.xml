@@ -2,8 +2,8 @@
 <?eclipse version="3.0"?>
 <plugin>
   <extension point="org.eclipse.sirius.componentization">
-    <component class="TDT4250.Project.diagram.Activator"
-               id="TDT4250.Project.diagram"
+    <component class="diagram.Activator"
+               id="diagram"
 	       name="diagram">
     </component>
   </extension>
