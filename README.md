@@ -22,7 +22,7 @@ Contributors: Vegard Sporstøl, Ralf Leistad, Øystein Bjørkend Haugen and Eina
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This project is done as a part of the NTNU course TDT4250 - Advanced Software Design
+This project is done as a part of the NTNU course TDT4250 - Advanced Software Design during the fall of 2020
 
 <!-- CASE DESCRIPTION -->
 ### Case Description
@@ -32,11 +32,10 @@ It may also be relevant to include transformations.
 
 We had some freedom in the details, but we ended up doing a project for creating viewpoints of football matches played in Premier League:
 
-1. We wanted to base the project on the public available data source API from https://www.football-data.org/.
+1. We want to base the project on the public available data source API from `https://www.football-data.org/`.
 2. The Ecore model should be created in such a way that it is generic, and can be utilized for any kind of football leagues played in a season structure.
 3. Sirius will be used for creating different viewpoints, such as mathces, matchweeks, teams, players, seasons, tables and tree structures. 
-4. To raise complexity we want to add players and bookings to the model. As well as constraints to ensure that all data in the model is according to relevant rules of the game.
-
+4. To raise complexity we want to add players and bookings and players to the model. As well as constraints to ensure that all data in the model is according to relevant rules of the game.
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -46,7 +45,7 @@ The following section will cover how to clone and build the project
 <!-- CLONE -->
 ### Clone
 
-The repo must be clone through git using this link: https://github.com/Ebsz/TDT4250-Project.git
+The repo must be clone through git using this link: `https://github.com/Ebsz/TDT4250-Project.git`
 
 ### Prerequisites
 You need to have the latest versions of Java (8.0.261) and Eclipse (2020-06)
@@ -64,7 +63,7 @@ From the standard software site (select Eclipse 2020-06 in drop-down) and with G
 From the standard software site (select Eclipse 2020-06 in drop-down) and with Group Items by Category un-checked:
 * Acceleo Query SDK - OCL implementation
 
-From the software site http://hallvard.github.io/plantuml (type into text field):
+From the software site `http://hallvard.github.io/plantuml` (type into text field):
 * PlantUML Ecore Feature and PlantUML Feature (under PlantUML Eclipse support)
 * PlantUML Library Feature (under PlantUML Library)
 
@@ -74,25 +73,26 @@ The Eclipse PlantUML plugin is incompatible with the latest graphviz version, so
 #### ApiFetcher
 To use the ApiFetcher, you will need to import the libraries found under `lib/`. In Eclipse, select all the `*.jar` files and right click -> Build Path -> Add to build path.
 
+To run the fethcer and get the most recent data from the api. The main method in `/loader/ResourceLoader.java` must be run. This loader saves the data as a XMI-file named `league.xmi`, that can be located in `/diagram.examples/output`.
+
 <!-- Model -->
 ## Model
-The model illustrates the case description, and is as follows:
+The model is created using Ecore and is supposed to cover the entire case description, and is illustrated as follows using PlantUML:
 
-<img style="display: block;" width="600" alt="model" src="./pictures/model.png">
+<img style="display: block;" width="500" alt="model" src="./pictures/model.png">
 
 <!-- Viewponts -->
 ## Viewpoints
-We have created several viewpoints such as diagrams, a table and a tree structure using Sirius to illustrate the date from the API. These viewpoints are located in the diagram.odesign file in the diagrams-folder. 
+We have created several viewpoints such as diagrams, a table and a tree structure using Sirius to illustrate the date from the API. These viewpoints are located in the `diagram.odesign` file in the diagrams-package. 
 
-To run the transformation and create specific viewpoints for selected parts of the data, the XMI file parsed from the ApiFetcher must be imported in the representations.aird file located in the folder diagrams.examples. From here, double click on the wanted type of viewpoint, and choose the wanted data for creating i.e. a diagram.
+To run the transformation and create specific viewpoints for selected parts of the data, the XMI-file parsed from the ApiFetcher must be imported in the `representations.aird` file located in the package `diagrams.examples`. From here, double click on the wanted type of viewpoint, and choose the wanted data for creating i.e. a diagram.
 
-The types of viewpoints are listed below:
+The types of viewpoints and their features are listed below:
 
 ### Diagrams
-* **Match:** Tha match diagram is an illustration of a single match from the data source. And also lists all bookings in that single match. 
+* **Match:** Tha match diagram is an illustration of a single match from the data source. And also lists all bookings in that single match. Due to the api taking extra charges to access the bookings, these are not included when creating viewpoints from the real data source. To illustrate that this feature actually works, an image and a manually created instance from Eliteserien is also accessible in the project.
 
-<img style="display: block;" width="400" alt="match1" src="./pictures/match1.jpg">
-<img style="display: block;" width="400" alt="match2" src="./pictures/match2.jpg">
+<img style="display: block;" width="400" alt="match2" src="./pictures/match2.jpg"><img style="display: block;" width="400" alt="match1" src="./pictures/match1.jpg">
 
 * **Matchweek:** Lists all matches in a single matchweek to get an overview of relevant matches the wanted week
 
@@ -100,13 +100,11 @@ The types of viewpoints are listed below:
 
 * **Team:** Illustrates all data on a selected team, and also lists all players owned by this team. Double clicking on a listed player will automatically direct the user to a player diagram of this player.
 
-<img style="display: block;" width="400" alt="team1" src="./pictures/team1.jpg">
-<img style="display: block;" width="400" alt="team2" src="./pictures/team2.JPG">
+<img style="display: block;" width="400" alt="team2" src="./pictures/team2.JPG"><img style="display: block;" width="400" alt="team1" src="./pictures/team1.jpg">
 
-* **Player:** Shows all data on a player, and also counts all goals and bookings this player has been involved with during a season.
+* **Player:** Shows all data on a player, and also counts all goals and bookings this player has been involved with during a season. In this case, an example of the manually instance from Eliteserien is included, due to the same issue with bookings not being free in the api.
 
-<img style="display: block;" width="300" alt="player1" src="./pictures/player1.jpg">
-<img style="display: block;" width="300" alt="player2" src="./pictures/player2.jpg">
+<img style="display: block;" width="300" alt="player2" src="./pictures/player2.jpg"><img style="display: block;" width="300" alt="player1" src="./pictures/player1.jpg">
 
 * **Season:** Shows like the matchweek diagram all relevant matches played, but is for an entire season.
 
@@ -118,10 +116,9 @@ The table is located at season level, and will illustrate the standings of all t
 <img style="display: block;" width="400" alt="table" src="./pictures/table.JPG">
 
 ### Tree
-The tree structure is also at season level, and will illustrate all matches per matchweek during that season
+The tree structure is also at season level, and will illustrate all matches per matchweek during that season. An example of how bookings is supposed to be illustrated is also added here.
 
-<img style="display: block;" width="400" alt="tree" src="./pictures/tree.PNG">
-<img style="display: block;" width="400" alt="tree2" src="./pictures/tree2.JPG">
+<img style="display: block;" width="400" alt="tree2" src="./pictures/tree2.JPG"><img style="display: block;" width="400" alt="tree" src="./pictures/tree.PNG">
 
 <!-- Repo Structure -->
 ## Repo Structure
@@ -164,3 +161,6 @@ The tree structure is also at season level, and will illustrate all matches per 
       * /diagram.odesign
 * TDT4250-Project.diagram.examples
    * /representations.aird
+   * /output
+      * /league.xmi
+* TDT4250-Project.pictures
