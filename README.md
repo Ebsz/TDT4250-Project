@@ -5,27 +5,27 @@ Contributors: Vegard Sporstøl, Ralf Leistad, Øystein Bjørkend Haugen and Eina
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
-* [About the Project](#about-the-project)
-    * [Case Description](#case-description)
-* [Getting Started](#getting-started)
-  * [Clone](#clone)
-  * [Prerequisites](#prerequisites)
-   * [ApiFetcher](#apifetcher)
-* [Model](#model)
-* [Viewpoints](#viewpoints)
-  * [Diagrams](#diagrams)
-  * [Table](#table)
-  * [Tree](#tree)
-* [Repo Structure](#repo-structure)
+* [1. About the Project](#about-the-project)
+  * [1.1 Case Description](#case-description)
+* [2. Getting Started](#getting-started)
+  * [2.1 Clone](#clone)
+  * [2.2 Prerequisites](#prerequisites)
+  * [2.3ApiFetcher](#apifetcher)
+* [3. Model](#model)
+* [4. Viewpoints](#viewpoints)
+  * [4.1 Diagrams](#diagrams)
+  * [4.2 Table](#table)
+  * [4.3 Tree](#tree)
+* [5. Repo Structure](#repo-structure)
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## 1. About The Project
 
 This project is done as a part of the NTNU course TDT4250 - Advanced Software Design during the fall of 2020
 
 <!-- CASE DESCRIPTION -->
-### Case Description
+### 1.1 Case Description
 
 The general task is to build a DSL usable in Eclipse, using relevant frameworks including Xtext and Sirius, but also EMF Forms. 
 It may also be relevant to include transformations.
@@ -38,16 +38,16 @@ We had some freedom in the details, but we ended up doing a project for creating
 4. To raise complexity we want to add players and bookings and players to the model. As well as constraints to ensure that all data in the model is according to relevant rules of the game.
 
 <!-- GETTING STARTED -->
-## Getting Started
+## 2. Getting Started
 
 The following section will cover how to clone and build the project
 
 <!-- CLONE -->
-### Clone
+### 2.1 Clone
 
 The repo must be clone through git using this link: `https://github.com/Ebsz/TDT4250-Project.git`
 
-### Prerequisites
+### 2.2 Prerequisites
 You need to have the latest versions of Java (8.0.261) and Eclipse (2020-06)
 
 **The following plug-ins must be installed:**
@@ -70,26 +70,26 @@ From the software site `http://hallvard.github.io/plantuml` (type into text fiel
 In addition, install the graphviz command line application and register its path to dot executable in the PlantUML preferences in Eclipse. 
 The Eclipse PlantUML plugin is incompatible with the latest graphviz version, so use v2.38.
 
-#### ApiFetcher
+### 2.3 ApiFetcher
 To use the ApiFetcher, you will need to import the libraries found under `lib/`. In Eclipse, select all the `*.jar` files and right click -> Build Path -> Add to build path.
 
 To run the fethcer and get the most recent data from the api. The main method in `/loader/ResourceLoader.java` must be run. This loader saves the data as a XMI-file named `league.xmi`, that can be located in `/diagram.examples/output`.
 
 <!-- Model -->
-## Model
+## 3. Model
 The model is created using Ecore and is supposed to cover the entire case description, and is illustrated as follows using PlantUML:
 
 <img style="display: block;" width="500" alt="model" src="./pictures/model.png">
 
 <!-- Viewponts -->
-## Viewpoints
+## 4. Viewpoints
 We have created several viewpoints such as diagrams, a table and a tree structure using Sirius to illustrate the date from the API. These viewpoints are located in the `diagram.odesign` file in the diagrams-package. 
 
 To run the transformation and create specific viewpoints for selected parts of the data, the XMI-file parsed from the ApiFetcher must be imported in the `representations.aird` file located in the package `diagrams.examples`. From here, double click on the wanted type of viewpoint, and choose the wanted data for creating i.e. a diagram.
 
 The types of viewpoints and their features are listed below:
 
-### Diagrams
+### 4.1 Diagrams
 * **Match:** Tha match diagram is an illustration of a single match from the data source. And also lists all bookings in that single match. Due to the api taking extra charges to access the bookings, these are not included when creating viewpoints from the real data source. To illustrate that this feature actually works, an image and a manually created instance from Eliteserien is also accessible in the project.
 
 <img style="display: block;" width="400" alt="match2" src="./pictures/match2.jpg"><img style="display: block;" width="400" alt="match1" src="./pictures/match1.jpg">
@@ -110,18 +110,18 @@ The types of viewpoints and their features are listed below:
 
 <img style="display: block;" width="400" alt="season" src="./pictures/season.jpg">
 
-### Table
+### 4.2 Table
 The table is located at season level, and will illustrate the standings of all teams included in the season selected
 
 <img style="display: block;" width="400" alt="table" src="./pictures/table.JPG">
 
-### Tree
+### 4.3 Tree
 The tree structure is also at season level, and will illustrate all matches per matchweek during that season. An example of how bookings is supposed to be illustrated is also added here.
 
 <img style="display: block;" width="400" alt="tree2" src="./pictures/tree2.JPG"><img style="display: block;" width="400" alt="tree" src="./pictures/tree.PNG">
 
 <!-- Repo Structure -->
-## Repo Structure
+## 5. Repo Structure
 * TDT4250-Project.model
    * /src
       * /impl
