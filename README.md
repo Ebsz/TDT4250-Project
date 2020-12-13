@@ -22,15 +22,15 @@ Contributors: Vegard Sporstøl, Ralf Leistad, Øystein Bjørkend Haugen and Eina
 <!-- 1 ABOUT THE PROJECT -->
 ## 1. About The Project
 
-This project is done as a part of the NTNU course TDT4250 - Advanced Software Design during the fall of 2020
+This project was done as a part of the NTNU course TDT4250 - Advanced Software Design during the fall of 2020
 
 <!-- 1.1 CASE DESCRIPTION -->
 ### 1.1 Case Description
 
-The general task is to build a DSL usable in Eclipse, using relevant frameworks including Xtext and Sirius, but also EMF Forms. 
+The general task was to build a DSL usable in Eclipse, using relevant frameworks including Xtext and Sirius, but also EMF Forms. 
 It may also be relevant to include transformations.
 
-We had some freedom in the details, but we ended up doing a project for creating viewpoints of football matches played in Premier League:
+We had some freedom in the details, but ended up doing a project for creating viewpoints of football matches played in Premier League:
 
 1. We want to base the project on the public available data source API from `https://www.football-data.org/`.
 2. The Ecore model should be created in such a way that it is generic, and can be utilized for any kind of football leagues played in a season structure.
@@ -38,42 +38,42 @@ We had some freedom in the details, but we ended up doing a project for creating
 4. To raise complexity we want to add players and bookings and players to the model. As well as constraints to ensure that all data in the model is according to relevant rules of the game.
 
 <!-- 2 GETTING STARTED -->
-## 2. Getting Started
-
+## 2. How-to
 The following section will cover how to clone and build the project
 
+<!-- 2.1 PREREQUISITES -->
+### 2.1 Prerequisites
+You should have the latest version of Eclipse and at least Java 11 (though it should probably work with previous versions as well) already installed.
+
+#### Plugins
+The project requires the following plugins to be present in Eclipse. 
+
+Open the install dialog from the dropdown `Help -> Install new software` and install the following from each site:
+
+From the standard software site (`Eclipse 2020-09` at time of writing):
+* With Group Items by Category **checked**:
+  * Acceleo - model to text transformation (M2T) and OCL interpreter view
+  * Ecore Diagram Editor (SDK) - editor for ecore models as diagram
+  * EMF Forms SDK - forms for ecore models
+  * Sirius Specifier Environment - diagram-based DSL framework
+  * Sirius Properties Views - Specifier Support
+  * Mylyn WikiText - editor for various wiki markup formats, including markdown
+* With Group Items by Category **un-checked**:
+  * Acceleo Query SDK - OCL implementation
+From `http://ghillairet.github.io/p2`:
+* EMF Json (Jackson)
+
+
 <!-- 2.1 CLONE -->
-### 2.1 Clone
+### 2.2 Project setup
+1. Clone the project using `git clone`
+2. Import all five root-level projects -`diagram`, `diagram.examples`, `loader`, `model`, and `model.tests` -  into eclipse with
+  `File -> Import.. -> Existings Projects into Workspace`. Select the repository as root directory, make sure all 5 projects are checked, then click finish.
+### 2.3 Usage
 
-The repo must be clone through git using this link: `https://github.com/Ebsz/TDT4250-Project.git`
-
-<!-- 2.2 PREREQUISITES -->
-### 2.2 Prerequisites
-You need to have the latest versions of Java (8.0.261) and Eclipse (2020-06)
-
-**The following plug-ins must be installed:**
-
-From the standard software site (select Eclipse 2020-06 in drop-down) and with Group Items by Category checked
-* Acceleo - model to text transformation (M2T) and OCL interpreter view
-* Ecore Diagram Editor (SDK) - editor for ecore models as diagram
-* EMF Forms SDK - forms for ecore models
-* Sirius Specifier Environment - diagram-based DSL framework
-* Sirius Properties Views - Specifier Support
-* Mylyn WikiText - editor for various wiki markup formats, including markdown
-
-From the standard software site (select Eclipse 2020-06 in drop-down) and with Group Items by Category un-checked:
-* Acceleo Query SDK - OCL implementation
-
-From the software site `http://hallvard.github.io/plantuml` (type into text field):
-* PlantUML Ecore Feature and PlantUML Feature (under PlantUML Eclipse support)
-* PlantUML Library Feature (under PlantUML Library)
-
-In addition, install the graphviz command line application and register its path to dot executable in the PlantUML preferences in Eclipse. 
-The Eclipse PlantUML plugin is incompatible with the latest graphviz version, so use v2.38.
-
-<!-- 2.3 APIFETCHER -->
-### 2.3 ApiFetcher
-To use the ApiFetcher, you will need to import the libraries found under `lib/`. In Eclipse, select all the `*.jar` files and right click -> Build Path -> Add to build path.
+<!-- 2.4 Data -->
+### 2.4 Data
+To use the Dataloader, you will need to import the libraries found under `lib/`. In Eclipse, select all the `*.jar` files and right click -> Build Path -> Add to build path.
 
 To run the fetcher and get the most recent data from the api. The main method in `/loader/ResourceLoader.java` must be run. This loader saves the data as a XMI-file named `league.xmi`, that can be located in `/diagram.examples/output`.
 
@@ -148,16 +148,16 @@ The tree structure is also at season level, and will illustrate all matches per 
          * DataCache.java
          * Parser.java
          * json/
-            * CompetitionJson.java
-            * MatchesJson.java
-            * MatchJson.java
-            * MatchWeekJson.java
-            * PlayerJson.java
-            * SeasonJson.java
-            * StandingJson.java
-            * StandingsJson.java
-            * TeamJson.java
-            * TeamsJson.java
+            * CompetitionData.java
+            * MatchesData.java
+            * MatchData.java
+            * MatchWeekData.java
+            * PlayerData.java
+            * SeasonData.java
+            * StandingData.java
+            * StandingsData.java
+            * TeamData.java
+            * TeamsData.java
 * TDT4250-Project.diagram
    * /src
       * /Activator.java
