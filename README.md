@@ -1,6 +1,6 @@
 # TDT4250 - Advanced Software Design
 
-Contributors: Vegard Sporstøl, Ralf Leistad, Øystein Bjørkend Haugen and Einar Sønju
+Contributors: [Vegard Sporstøl](https://github.com/VegardMS), [Ralf Leistad](https://github.com/ralfleistad), [Øystein Bjørkeng Haugen](https://github.com/oystebha) and [Einar Sønju](https://github.com/ebsz)
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
