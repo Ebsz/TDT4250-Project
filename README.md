@@ -8,9 +8,9 @@ Contributors: Vegard Sporstøl, Ralf Leistad, Øystein Bjørkend Haugen and Eina
 * [1 About the Project](#1-about-the-project)
   * [1.1 Case Description](#11-case-description)
 * [2. Getting Started](#2-getting-started)
-  * [2.1 Clone](#21-clone)
-  * [2.2 Prerequisites](#22-prerequisites)
-  * [2.3ApiFetcher](#23-apifetcher)
+  * [2.1 Prerequisites](#21-prerequisites)
+  * [2.2 Project Setup](#22-project-setup)
+  * [2.3 Data](#23-data)
 * [3. Model](#3-model)
 * [4. Viewpoints](#4-viewpoints)
   * [4.1 Diagrams](#41-diagrams)
@@ -38,8 +38,8 @@ We had some freedom in the details, but ended up doing a project for creating vi
 4. To raise complexity we want to add players and bookings and players to the model. As well as constraints to ensure that all data in the model is according to relevant rules of the game.
 
 <!-- 2 GETTING STARTED -->
-## 2. How-to
-The following section will cover how to clone and build the project
+## 2. Getting Started
+The following section covers how to setup the project.
 
 <!-- 2.1 PREREQUISITES -->
 ### 2.1 Prerequisites
@@ -60,22 +60,23 @@ From the standard software site (`Eclipse 2020-09` at time of writing):
   * Mylyn WikiText - editor for various wiki markup formats, including markdown
 * With Group Items by Category **un-checked**:
   * Acceleo Query SDK - OCL implementation
+  
 From `http://ghillairet.github.io/p2`:
 * EMF Json (Jackson)
 
 
 <!-- 2.1 CLONE -->
 ### 2.2 Project setup
-1. Clone the project using `git clone`
+1. Clone the project with `git clone`
 2. Import all five root-level projects -`diagram`, `diagram.examples`, `loader`, `model`, and `model.tests` -  into eclipse with
-  `File -> Import.. -> Existings Projects into Workspace`. Select the repository as root directory, make sure all 5 projects are checked, then click finish.
-### 2.3 Usage
+  `File -> Import.. -> Existings Projects into Workspace`. Select the directory you previously cloned to repository to as root directory, make sure all 5 projects are checked, then click finish.
+<!-- 2.3 Data -->
+### 2.3 Data
+A generated Premier League model can be found at `diagram.examples/output/premier_league.xmi`, as well as a handwritten example model at `model/League.xmi`
 
-<!-- 2.4 Data -->
-### 2.4 Data
-To use the Dataloader, you will need to import the libraries found under `lib/`. In Eclipse, select all the `*.jar` files and right click -> Build Path -> Add to build path.
+To get the most recent data from the api, run `/loader/ResourceLoader.java`. This will fetch data about a league from the [API](https://www.football-data.org/) and generates the corresponding model. By default the file is saved to `/diagram.examples/output/league.xmi.` It defaults to the latest season of Premier League, but supports fetching data about any competition available in the API by changing `COMPETITION_ID` in the main `ResourceLoader` class.
 
-To run the fetcher and get the most recent data from the api. The main method in `/loader/ResourceLoader.java` must be run. This loader saves the data as a XMI-file named `league.xmi`, that can be located in `/diagram.examples/output`.
+Note: due to an unresolved bug, all players' positions are incorrectly set to be Keepers.  
 
 <!-- 3. MODEL -->
 ## 3. Model
@@ -148,16 +149,16 @@ The tree structure is also at season level, and will illustrate all matches per 
          * DataCache.java
          * Parser.java
          * json/
-            * CompetitionData.java
-            * MatchesData.java
-            * MatchData.java
-            * MatchWeekData.java
-            * PlayerData.java
-            * SeasonData.java
-            * StandingData.java
-            * StandingsData.java
-            * TeamData.java
-            * TeamsData.java
+            * CompetitionJson.java
+            * MatchesJson.java
+            * MatchJson.java
+            * MatchWeekJson.java
+            * PlayerJson.java
+            * SeasonJson.java
+            * StandingJson.java
+            * StandingsJson.java
+            * TeamJson.java
+            * TeamsJson.java
 * TDT4250-Project.diagram
    * /src
       * /Activator.java
