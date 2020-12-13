@@ -148,16 +148,16 @@ The tree structure is also at season level, and will illustrate all matches per 
          * DataCache.java
          * Parser.java
          * json/
-            * CompetitionData.java
-            * MatchesData.java
-            * MatchData.java
-            * MatchWeekData.java
-            * PlayerData.java
-            * SeasonData.java
-            * StandingData.java
-            * StandingsData.java
-            * TeamData.java
-            * TeamsData.java
+            * CompetitionJson.java
+            * MatchesJson.java
+            * MatchJson.java
+            * MatchWeekJson.java
+            * PlayerJson.java
+            * SeasonJson.java
+            * StandingJson.java
+            * StandingsJson.java
+            * TeamJson.java
+            * TeamsJson.java
 * TDT4250-Project.diagram
    * /src
       * /Activator.java
